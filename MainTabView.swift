@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
+    // MARK: - Body
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        SplashScreenView()
     }
 }
 
+// MARK: - Preview
 #Preview {
     MainTabView()
 }
