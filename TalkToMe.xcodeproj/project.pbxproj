@@ -12,6 +12,8 @@
 		4B74F42C2C529E90008C8393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42B2C529E90008C8393 /* Assets.xcassets */; };
 		4B74F42F2C529E90008C8393 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */; };
 		4B74F4392C52A4BD008C8393 /* ImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4382C52A4BD008C8393 /* ImagesView.swift */; };
+		4B74F43B2C52B312008C8393 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F43A2C52B312008C8393 /* HomeView.swift */; };
+		4B74F43D2C52B45B008C8393 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F43C2C52B45B008C8393 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		4B74F42B2C529E90008C8393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B74F4382C52A4BD008C8393 /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
+		4B74F43A2C52B312008C8393 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4B74F43C2C52B45B008C8393 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				4B74F4382C52A4BD008C8393 /* ImagesView.swift */,
+				4B74F43A2C52B312008C8393 /* HomeView.swift */,
+				4B74F43C2C52B45B008C8393 /* EmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
+				4B74F43D2C52B45B008C8393 /* EmptyView.swift in Sources */,
+				4B74F43B2C52B312008C8393 /* HomeView.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4B74F4392C52A4BD008C8393 /* ImagesView.swift in Sources */,
 			);
