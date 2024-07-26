@@ -22,7 +22,13 @@ struct LoginScreen: View {
                 .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.green)
+        .background(
+            Image(.blacksky)
+                .resizable()
+                .scaledToFill()
+        
+        )
+        
                 .ignoresSafeArea()
     }
 }
