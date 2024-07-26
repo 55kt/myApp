@@ -14,6 +14,7 @@
 		4B74F4392C52A4BD008C8393 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4382C52A4BD008C8393 /* SplashScreenView.swift */; };
 		4B74F4422C52C927008C8393 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4412C52C927008C8393 /* LoginScreen.swift */; };
 		4B74F4442C53D89A008C8393 /* AuthCustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4432C53D89A008C8393 /* AuthCustomField.swift */; };
+		4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4B74F4382C52A4BD008C8393 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		4B74F4412C52C927008C8393 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		4B74F4432C53D89A008C8393 /* AuthCustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCustomField.swift; sourceTree = "<group>"; };
+		4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		4B74F4262C529E8F008C8393 /* TalkToMe */ = {
 			isa = PBXGroup;
 			children = (
+				4B74F4452C541221008C8393 /* Helper */,
 				4B74F4352C529F76008C8393 /* Screens */,
 				4B74F42B2C529E90008C8393 /* Assets.xcassets */,
 				4B74F42D2C529E90008C8393 /* Preview Content */,
@@ -114,6 +117,14 @@
 				4B74F4432C53D89A008C8393 /* AuthCustomField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4B74F4452C541221008C8393 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +201,7 @@
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4B74F4392C52A4BD008C8393 /* SplashScreenView.swift in Sources */,
+				4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */,
 				4B74F4422C52C927008C8393 /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

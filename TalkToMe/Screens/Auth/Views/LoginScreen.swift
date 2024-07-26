@@ -12,6 +12,7 @@ struct LoginScreen: View {
     // MARK: - Body
     var body: some View {
         VStack {
+            
             AuthCustomField(fieldDescription: "Email")
             AuthCustomField(fieldDescription: "Password")
             
@@ -21,15 +22,15 @@ struct LoginScreen: View {
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
         }
+        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             Image(.blacksky)
                 .resizable()
                 .scaledToFill()
-        
         )
-        
-                .ignoresSafeArea()
+        .hideKeyboardOnTap()
+        .ignoresSafeArea()
     }
 }
 

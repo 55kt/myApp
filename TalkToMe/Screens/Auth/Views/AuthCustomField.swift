@@ -99,4 +99,5 @@ struct AuthCustomField: View {
 // MARK: - Preview
 #Preview {
     AuthCustomField(fieldDescription: "Email")
+        .hideKeyboardOnTap()
 }
