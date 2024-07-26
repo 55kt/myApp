@@ -12,6 +12,9 @@ struct LoginScreen: View {
     // MARK: - Body
     var body: some View {
         VStack {
+            AuthCustomField(fieldDescription: "Email")
+            AuthCustomField(fieldDescription: "Password")
+            
             Text("Login Screen")
                 .bold()
                 .font(.system(size: 70))
@@ -19,7 +22,7 @@ struct LoginScreen: View {
                 .multilineTextAlignment(.center)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(Color.black)
+                .background(Color.green)
                 .ignoresSafeArea()
     }
 }

@@ -13,6 +13,7 @@
 		4B74F42F2C529E90008C8393 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */; };
 		4B74F4392C52A4BD008C8393 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4382C52A4BD008C8393 /* SplashScreenView.swift */; };
 		4B74F4422C52C927008C8393 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4412C52C927008C8393 /* LoginScreen.swift */; };
+		4B74F4442C53D89A008C8393 /* AuthCustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4432C53D89A008C8393 /* AuthCustomField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B74F4382C52A4BD008C8393 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		4B74F4412C52C927008C8393 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		4B74F4432C53D89A008C8393 /* AuthCustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCustomField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				4B74F4412C52C927008C8393 /* LoginScreen.swift */,
+				4B74F4432C53D89A008C8393 /* AuthCustomField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B74F4442C53D89A008C8393 /* AuthCustomField.swift in Sources */,
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4B74F4392C52A4BD008C8393 /* SplashScreenView.swift in Sources */,
