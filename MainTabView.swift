@@ -11,7 +11,11 @@ struct MainTabView: View {
     
     // MARK: - Body
     var body: some View {
-        SplashScreenView()
+        NavigationStack {
+            OTPLoginScreen()
+                .toolbar(.hidden)
+                .navigationBarBackButtonHidden(true)
+        }
     }
 }
 

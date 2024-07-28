@@ -15,6 +15,11 @@
 		4B74F4422C52C927008C8393 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4412C52C927008C8393 /* LoginScreen.swift */; };
 		4B74F4442C53D89A008C8393 /* AuthCustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4432C53D89A008C8393 /* AuthCustomField.swift */; };
 		4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */; };
+		4B74F4492C556131008C8393 /* OTPLoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4482C556131008C8393 /* OTPLoginScreen.swift */; };
+		4B74F44C2C556812008C8393 /* OTPLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F44B2C556812008C8393 /* OTPLoginViewModel.swift */; };
+		4B74F44F2C556D48008C8393 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F44E2C556D48008C8393 /* Countries.swift */; };
+		4B74F4512C565402008C8393 /* OTPVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4502C565402008C8393 /* OTPVerificationScreen.swift */; };
+		4B74F4532C5665BB008C8393 /* CustomNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		4B74F4412C52C927008C8393 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		4B74F4432C53D89A008C8393 /* AuthCustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCustomField.swift; sourceTree = "<group>"; };
 		4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissModifier.swift; sourceTree = "<group>"; };
+		4B74F4482C556131008C8393 /* OTPLoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginScreen.swift; sourceTree = "<group>"; };
+		4B74F44B2C556812008C8393 /* OTPLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginViewModel.swift; sourceTree = "<group>"; };
+		4B74F44E2C556D48008C8393 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		4B74F4502C565402008C8393 /* OTPVerificationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPVerificationScreen.swift; sourceTree = "<group>"; };
+		4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumberPad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,8 @@
 		4B74F43E2C52C8EC008C8393 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				4B74F44D2C556C37008C8393 /* Model */,
+				4B74F44A2C5567F2008C8393 /* ViewModel */,
 				4B74F43F2C52C8F4008C8393 /* Views */,
 			);
 			path = Auth;
@@ -115,6 +127,9 @@
 			children = (
 				4B74F4412C52C927008C8393 /* LoginScreen.swift */,
 				4B74F4432C53D89A008C8393 /* AuthCustomField.swift */,
+				4B74F4482C556131008C8393 /* OTPLoginScreen.swift */,
+				4B74F4502C565402008C8393 /* OTPVerificationScreen.swift */,
+				4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +140,22 @@
 				4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		4B74F44A2C5567F2008C8393 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B74F44B2C556812008C8393 /* OTPLoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B74F44D2C556C37008C8393 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B74F44E2C556D48008C8393 /* Countries.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,9 +228,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B74F4512C565402008C8393 /* OTPVerificationScreen.swift in Sources */,
 				4B74F4442C53D89A008C8393 /* AuthCustomField.swift in Sources */,
+				4B74F4532C5665BB008C8393 /* CustomNumberPad.swift in Sources */,
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
+				4B74F44C2C556812008C8393 /* OTPLoginViewModel.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
+				4B74F44F2C556D48008C8393 /* Countries.swift in Sources */,
+				4B74F4492C556131008C8393 /* OTPLoginScreen.swift in Sources */,
 				4B74F4392C52A4BD008C8393 /* SplashScreenView.swift in Sources */,
 				4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */,
 				4B74F4422C52C927008C8393 /* LoginScreen.swift in Sources */,
