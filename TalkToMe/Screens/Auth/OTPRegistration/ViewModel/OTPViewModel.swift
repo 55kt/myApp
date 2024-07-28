@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class OTPLoginViewModel: ObservableObject {
+class OTPViewModel: ObservableObject {
     
     // MARK: - Properties
     @Published var phoneNumber = ""

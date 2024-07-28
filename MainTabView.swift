@@ -11,11 +11,7 @@ struct MainTabView: View {
     
     // MARK: - Body
     var body: some View {
-        NavigationStack {
-            OTPLoginScreen()
-                .toolbar(.hidden)
-                .navigationBarBackButtonHidden(true)
-        }
+        OnBoardingView()
     }
 }
 

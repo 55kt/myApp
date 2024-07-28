@@ -35,9 +35,8 @@ struct CustomNumberPad: View {
                                         .foregroundStyle(.black)
                                 }
                             }
-                            
-                                .frame(width: getWidth(frame: reader.frame(in: .global)), height: getHeight(frame: reader.frame(in: .global)))
-                                .background(.white)
+                            .frame(width: getWidth(frame: reader.frame(in: .global)), height: getHeight(frame: reader.frame(in: .global)))
+                            .background(.white)
                             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         }
                         .disabled(value == "" ? true : false)
@@ -51,13 +50,19 @@ struct CustomNumberPad: View {
     // MARK: - Functions
     func getWidth(frame: CGRect) -> CGFloat {
         let width = frame.width
+        guard width.isFinite && width > 0 else {
+            return 50
+        }
         let actualWidth = width - 40
         return actualWidth / 3
     }
     
     func getHeight(frame: CGRect) -> CGFloat {
         let height = frame.height
-        let actualHeight = height - 30
+        guard height.isFinite && height > 0 else {
+            return 50
+        }
+        let actualHeight = height - 40
         return actualHeight / 4
     }
     

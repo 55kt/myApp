@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct OTPLoginScreen: View {
+struct OTPhoneInput: View {
     // MARK: - Properties
-    @StateObject var loginData = OTPLoginViewModel()
+    @StateObject var loginData = OTPViewModel()
     
     // MARK: - Body
     var body: some View {
@@ -49,7 +49,7 @@ struct OTPLoginScreen: View {
                     
                     Spacer(minLength: 0)
                     
-                    NavigationLink(destination: OTPVerificationScreen(loginData: loginData)) {
+                    NavigationLink(destination: OTPhoneVerifyCode(loginData: loginData)) {
                         
                         Text("Continue")
                             .foregroundStyle(.black)
@@ -76,6 +76,6 @@ struct OTPLoginScreen: View {
 
 #Preview {
     NavigationStack {
-        OTPLoginScreen()
+        OTPhoneInput()
     }
 }

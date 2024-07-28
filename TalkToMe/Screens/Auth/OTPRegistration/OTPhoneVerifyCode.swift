@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct OTPVerificationScreen: View {
+struct OTPhoneVerifyCode: View {
     // MARK: - Properties
-    @StateObject var loginData: OTPLoginViewModel
+    @StateObject var loginData: OTPViewModel
     @Environment(\.presentationMode) var present
     
     // MARK: - Body
@@ -129,6 +129,6 @@ struct CodeView: View {
 }
 
 //// MARK: - Preview
-//#Preview {
-//    OTPVerificationScreen()
-//}
+#Preview {
+    OTPhoneVerifyCode(loginData: .init())
+}

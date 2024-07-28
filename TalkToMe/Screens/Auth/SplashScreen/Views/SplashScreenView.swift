@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashScreenView: View {
     // MARK: - Properties
-    @State var showLoginView = false
+    @State var showNextView = false
     @State var show = false
     
     // MARK: - Body
@@ -25,10 +25,9 @@ struct SplashScreenView: View {
                 .background(
                     skyImage()
                 )
-                LoginScreen()
+                OTPhoneInput()
                     .frame(width: geo.size.width, height: geo.size.height)
-                    .offset(y: showLoginView ? -geo.size.height : 0)
-                
+                    .offset(y: showNextView ? -geo.size.height : 0)
             }
         }
         .ignoresSafeArea()
@@ -38,7 +37,7 @@ struct SplashScreenView: View {
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 withAnimation(.linear(duration: 0.8)) {
-                    showLoginView = true
+                    showNextView = true
                 }
             }
         }
@@ -64,7 +63,7 @@ struct SplashScreenView: View {
             .frame(width: geo.size.width)
             .position(x: geo.size.width / 2, y: geo.size.height - (geo.size.height / 4.5))
             .foregroundStyle(.black)
-            .offset(y: showLoginView ? -geo.size.height : 0)
+            .offset(y: showNextView ? -geo.size.height : 0)
         }
     
     private func skyImage() -> some View {
