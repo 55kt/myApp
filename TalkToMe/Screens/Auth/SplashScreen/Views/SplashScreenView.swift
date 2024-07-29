@@ -19,13 +19,13 @@ struct SplashScreenView: View {
                 ZStack {
                     tagline()
                     
-                    womanImage(geo: geo)
+                    (geo: geo) // In front of these brackets paste your image who go up
                 }
                 .frame(width: geo.size.width, height: geo.size.height)
                 .background(
-                    skyImage()
+                    // Your Background Image Here
                 )
-                OTPhoneInput()
+                // Here past your next view
                     .frame(width: geo.size.width, height: geo.size.height)
                     .offset(y: showNextView ? -geo.size.height : 0)
             }
@@ -56,7 +56,7 @@ struct SplashScreenView: View {
             .multilineTextAlignment(.center)
     }
     
-    private func womanImage(geo: GeometryProxy) -> some View {
+    private func yourImageWhoGoUp(geo: GeometryProxy) -> some View {
         Image(.womanimg)
             .resizable()
             .scaledToFit()
@@ -66,7 +66,7 @@ struct SplashScreenView: View {
             .offset(y: showNextView ? -geo.size.height : 0)
         }
     
-    private func skyImage() -> some View {
+    private func yourImageWhoIsBackground() -> some View {
         Image(.sky)
             .resizable()
             .scaledToFill()

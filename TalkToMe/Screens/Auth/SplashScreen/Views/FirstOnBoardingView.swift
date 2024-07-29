@@ -16,31 +16,33 @@ struct FirstOnBoardingView: View {
     
     // MARK: - Body
     var body: some View {
-        ZStack {
-            
-            AnimatedView(isExpanded: $isExpanded, startType: $startType, showText: $showText, color: LinearGradient(colors: [.yellow, .orange, .red], startPoint: .topLeading, endPoint: .bottomTrailing), image: "")
-            
-            VStack(alignment: .leading) {
-                Text("lorem ipsum \n0ndolor")
-                    .font(.system(size: 50))
-                    .bold()
-                    .foregroundStyle(.white)
+        NavigationStack {
+            ZStack {
                 
-                TypingEffect(fullText: """
-lorem ipsum dolor dnfa hjdafhasdhf uhpdauhfuh dfuhodsuHf. uhDOfuhoiuDsfjhgsadhghgdskfhg uih fhiasuh fikuash fkaiu fhash fi.
-
-df;lkjaksjdghkajsdkjhgkajsd;gjkjasdkgjhlkajshdgklhladsghlkjahsdglkjhsladjghjshad.
-
-adsokgjoaud hasd hgoiuash uhio hguahsВп рш пгфырвпп гшпрфышв п
-
-""", isExpended: $startType)
+                AnimatedView(isExpanded: $isExpanded, startType: $startType, showText: $showText, color: LinearGradient(colors: [.yellow, .orange, .red], startPoint: .topLeading, endPoint: .bottomTrailing), image: "")
                 
+                VStack(alignment: .leading) {
+                    Text("lorem ipsum \n0ndolor")
+                        .font(.system(size: 50))
+                        .bold()
+                        .foregroundStyle(.white)
+                    
+                    TypingEffect(fullText: """
+    lorem ipsum dolor dnfa hjdafhasdhf uhpdauhfuh dfuhodsuHf. uhDOfuhoiuDsfjhgsadhghgdskfhg uih fhiasuh fikuash fkaiu fhash fi.
+
+    df;lkjaksjdghkajsdkjhgkajsd;gjkjasdkgjhlkajshdgklhladsghlkjahsdglkjhsladjghjshad.
+
+    adsokgjoaud hasd hgoiuash uhio hguahsВп рш пгфырвпп гшпрфышв п
+
+    """, isExpended: $startType)
+                    
+                }
+                .opacity(isExpanded ? 1 : 0)
+                .scaleEffect(isExpanded ? 1 : 0)
+                .offset(x: showText ? 0 : UIScreen.main.bounds.width)
             }
-            .opacity(isExpanded ? 1 : 0)
-            .scaleEffect(isExpanded ? 1 : 0)
-            .offset(x: showText ? 0 : UIScreen.main.bounds.width)
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 

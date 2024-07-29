@@ -11,7 +11,9 @@ struct MainTabView: View {
     
     // MARK: - Body
     var body: some View {
-        OnBoardingView()
+        NavigationStack {
+            OTPhoneInput()
+        }
     }
 }
 

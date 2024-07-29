@@ -11,22 +11,13 @@
 		4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4292C529E8F008C8393 /* MainTabView.swift */; };
 		4B74F42C2C529E90008C8393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42B2C529E90008C8393 /* Assets.xcassets */; };
 		4B74F42F2C529E90008C8393 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */; };
-		4B74F4392C52A4BD008C8393 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4382C52A4BD008C8393 /* SplashScreenView.swift */; };
-		4B74F4422C52C927008C8393 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4412C52C927008C8393 /* LoginScreen.swift */; };
-		4B74F4442C53D89A008C8393 /* AuthCustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4432C53D89A008C8393 /* AuthCustomField.swift */; };
 		4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */; };
 		4B74F4492C556131008C8393 /* OTPhoneInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4482C556131008C8393 /* OTPhoneInput.swift */; };
 		4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F44B2C556812008C8393 /* OTPViewModel.swift */; };
 		4B74F44F2C556D48008C8393 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F44E2C556D48008C8393 /* Countries.swift */; };
 		4B74F4512C565402008C8393 /* OTPhoneVerifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */; };
 		4B74F4532C5665BB008C8393 /* CustomNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */; };
-		4B74F4562C56910F008C8393 /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4552C56910F008C8393 /* GradientBackground.swift */; };
-		4B74F4592C56AD24008C8393 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4582C56AD24008C8393 /* OnBoardingView.swift */; };
-		4B74F45B2C56AD80008C8393 /* FirstOnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F45A2C56AD80008C8393 /* FirstOnBoardingView.swift */; };
-		4B74F45D2C56B6E1008C8393 /* SecondOnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F45C2C56B6E1008C8393 /* SecondOnBoardingView.swift */; };
-		4B74F45F2C56B930008C8393 /* StartOnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F45E2C56B930008C8393 /* StartOnBoardingView.swift */; };
-		4B74F4612C56B9E3008C8393 /* TypingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4602C56B9E3008C8393 /* TypingEffect.swift */; };
-		4B74F4632C56BA5D008C8393 /* ViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4622C56BA5D008C8393 /* ViewAnimation.swift */; };
+		4B74F4562C56910F008C8393 /* CremeGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4552C56910F008C8393 /* CremeGradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,22 +26,13 @@
 		4B74F4292C529E8F008C8393 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		4B74F42B2C529E90008C8393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4B74F4382C52A4BD008C8393 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		4B74F4412C52C927008C8393 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
-		4B74F4432C53D89A008C8393 /* AuthCustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCustomField.swift; sourceTree = "<group>"; };
 		4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissModifier.swift; sourceTree = "<group>"; };
 		4B74F4482C556131008C8393 /* OTPhoneInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPhoneInput.swift; sourceTree = "<group>"; };
 		4B74F44B2C556812008C8393 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		4B74F44E2C556D48008C8393 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPhoneVerifyCode.swift; sourceTree = "<group>"; };
 		4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumberPad.swift; sourceTree = "<group>"; };
-		4B74F4552C56910F008C8393 /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
-		4B74F4582C56AD24008C8393 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
-		4B74F45A2C56AD80008C8393 /* FirstOnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnBoardingView.swift; sourceTree = "<group>"; };
-		4B74F45C2C56B6E1008C8393 /* SecondOnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnBoardingView.swift; sourceTree = "<group>"; };
-		4B74F45E2C56B930008C8393 /* StartOnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOnBoardingView.swift; sourceTree = "<group>"; };
-		4B74F4602C56B9E3008C8393 /* TypingEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingEffect.swift; sourceTree = "<group>"; };
-		4B74F4622C56BA5D008C8393 /* ViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnimation.swift; sourceTree = "<group>"; };
+		4B74F4552C56910F008C8393 /* CremeGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CremeGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +67,9 @@
 		4B74F4262C529E8F008C8393 /* TalkToMe */ = {
 			isa = PBXGroup;
 			children = (
-				4B74F4542C5690F3008C8393 /* Components */,
-				4B74F4452C541221008C8393 /* Helper */,
 				4B74F4352C529F76008C8393 /* Screens */,
+				4B74F4452C541221008C8393 /* Helper */,
+				4B74F4542C5690F3008C8393 /* Components */,
 				4B74F42B2C529E90008C8393 /* Assets.xcassets */,
 				4B74F42D2C529E90008C8393 /* Preview Content */,
 			);
@@ -110,51 +92,18 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		4B74F4362C529F94008C8393 /* SplashScreen */ = {
-			isa = PBXGroup;
-			children = (
-				4B74F4372C529FAE008C8393 /* Views */,
-			);
-			path = SplashScreen;
-			sourceTree = "<group>";
-		};
-		4B74F4372C529FAE008C8393 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4B74F4382C52A4BD008C8393 /* SplashScreenView.swift */,
-				4B74F4582C56AD24008C8393 /* OnBoardingView.swift */,
-				4B74F45A2C56AD80008C8393 /* FirstOnBoardingView.swift */,
-				4B74F45C2C56B6E1008C8393 /* SecondOnBoardingView.swift */,
-				4B74F45E2C56B930008C8393 /* StartOnBoardingView.swift */,
-				4B74F4602C56B9E3008C8393 /* TypingEffect.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		4B74F43E2C52C8EC008C8393 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				4B74F4362C529F94008C8393 /* SplashScreen */,
-				4B74F43F2C52C8F4008C8393 /* Views */,
 				4B74F4572C56921E008C8393 /* OTPRegistration */,
 			);
 			path = Auth;
-			sourceTree = "<group>";
-		};
-		4B74F43F2C52C8F4008C8393 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4B74F4412C52C927008C8393 /* LoginScreen.swift */,
-				4B74F4432C53D89A008C8393 /* AuthCustomField.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		4B74F4452C541221008C8393 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */,
-				4B74F4622C56BA5D008C8393 /* ViewAnimation.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -178,7 +127,7 @@
 		4B74F4542C5690F3008C8393 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4B74F4552C56910F008C8393 /* GradientBackground.swift */,
+				4B74F4552C56910F008C8393 /* CremeGradient.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -265,24 +214,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B74F45F2C56B930008C8393 /* StartOnBoardingView.swift in Sources */,
 				4B74F4512C565402008C8393 /* OTPhoneVerifyCode.swift in Sources */,
-				4B74F4442C53D89A008C8393 /* AuthCustomField.swift in Sources */,
-				4B74F45D2C56B6E1008C8393 /* SecondOnBoardingView.swift in Sources */,
 				4B74F4532C5665BB008C8393 /* CustomNumberPad.swift in Sources */,
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
-				4B74F4562C56910F008C8393 /* GradientBackground.swift in Sources */,
-				4B74F45B2C56AD80008C8393 /* FirstOnBoardingView.swift in Sources */,
-				4B74F4612C56B9E3008C8393 /* TypingEffect.swift in Sources */,
+				4B74F4562C56910F008C8393 /* CremeGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4B74F44F2C556D48008C8393 /* Countries.swift in Sources */,
 				4B74F4492C556131008C8393 /* OTPhoneInput.swift in Sources */,
-				4B74F4392C52A4BD008C8393 /* SplashScreenView.swift in Sources */,
 				4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */,
-				4B74F4632C56BA5D008C8393 /* ViewAnimation.swift in Sources */,
-				4B74F4422C52C927008C8393 /* LoginScreen.swift in Sources */,
-				4B74F4592C56AD24008C8393 /* OnBoardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
