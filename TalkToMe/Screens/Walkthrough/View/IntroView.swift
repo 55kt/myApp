@@ -28,13 +28,15 @@ struct IntroView: View {
                         foregroundColor: .white
                     )
                 )
-                textContents(size: size)
+                tabViewContents(size: size)
                 
                 Spacer(minLength: 0)
                 
                 indicatorView()
                 
-                continueButton()
+                if activePage == .page4 {
+                    continueButton()
+                }
             }
             .frame(maxWidth: .infinity)
             .overlay(alignment: .top) {
@@ -79,38 +81,33 @@ struct IntroView: View {
     }
     
     @ViewBuilder
-    func textContents(size: CGSize) -> some View {
-        VStack(spacing: 8) {
-            HStack(alignment: .top, spacing: 0) {
+        func tabViewContents(size: CGSize) -> some View {
+            TabView(selection: $activePage) {
                 ForEach(Page.allCases, id: \.rawValue) { page in
-                    Text(page.title)
-                        .lineLimit(1)
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .kerning(1.1)
-                        .frame(width: size.width)
+                    VStack(spacing: 8) {
+                        Text(page.title)
+                            .lineLimit(1)
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .kerning(1.1)
+                            .frame(width: size.width, alignment: .center)
+                        
+                        Text(page.subTitle)
+                            .font(.callout)
+                            .foregroundStyle(.gray)
+                            .frame(width: size.width)
+                            .multilineTextAlignment(.center)
+                    }
+                    .tag(page)
+                    .padding(.top, 15)
+                    .frame(width: size.width, alignment: .leading)
                 }
             }
-            // Sliding Left\Right based on the active page
-            .offset(x: -activePage.index * size.width)
-            .animation(.smooth(duration: 0.7, extraBounce: 0.1), value: activePage)
-            
-            HStack(alignment: .top, spacing: 0) {
-                ForEach(Page.allCases, id: \.rawValue) { page in
-                    Text(page.subTitle)
-                        .font(.callout)
-                        .foregroundStyle(.gray)
-                        .frame(width: size.width)
-                        .multilineTextAlignment(.center)
-                }
-            }
-            // Sliding Left\Right based on the active page
-            .offset(x: -activePage.index * size.width)
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .animation(.smooth(duration: 0.9, extraBounce: 0.1), value: activePage)
+            .frame(height: 110)
+            .padding(.bottom)
         }
-        .padding(.top, 15)
-        .frame(width: size.width, alignment: .leading)
-    }
     
     @ViewBuilder
     func indicatorView() -> some View {
