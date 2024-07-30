@@ -12,7 +12,8 @@ struct MainTabView: View {
     // MARK: - Body
     var body: some View {
         NavigationStack {
-            OTPhoneInput()
+            IntroView()
+                .environment(\.colorScheme, .dark)
         }
     }
 }
