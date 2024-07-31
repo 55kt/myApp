@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct CremeGradient: View {
+struct IntroGradient: View {
     var body: some View {
         LinearGradient(
-            gradient: Gradient(colors: [Color(red: 1.0, green: 0.9, blue: 0.8), Color(red: 1.0, green: 0.8, blue: 0.6)]),
+            gradient: Gradient(colors: [Color(red: 1.0, green: 0.6, blue: 0.2), Color(red: 0.9, green: 0.4, blue: 0.1)]),
             startPoint: .top,
             endPoint: .bottom
         )
@@ -19,5 +19,5 @@ struct CremeGradient: View {
 }
 
 #Preview {
-    CremeGradient()
+    IntroGradient()
 }

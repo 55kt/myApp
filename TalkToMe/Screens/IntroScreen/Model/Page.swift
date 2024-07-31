@@ -8,16 +8,16 @@
 import SwiftUI
 
 enum Page: String, CaseIterable {
-    case page1 = "playstation.logo"
-    case page2 = "gamecontroller.fill"
-    case page3 = "link.icloud.fill"
-    case page4 = "text.bubble.fill"
+    case page1 = "text.bubble"
+    case page2 = "lock.shield"
+    case page3 = "gauge.with.dots.needle.67percent"
+    case page4 = "person.line.dotted.person.fill"
     
     var title: String {
         switch self {
-        case .page1: "Welcome to Playstation"
-        case .page2: "Dualsense Wireles controller"
-        case .page3: "Playstation Remote Play"
+        case .page1: "Welcome to ChatMe"
+        case .page2: "Privacy and Security"
+        case .page3: "Speed"
         case .page4: "Connect With People"
         }
     }
