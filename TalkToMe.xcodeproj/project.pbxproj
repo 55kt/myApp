@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B382FF02C5C09E40094FA11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* Country.swift */; };
+		4B382FF22C5C0A050094FA11 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */; };
 		4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */; };
 		4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4292C529E8F008C8393 /* MainTabView.swift */; };
 		4B74F42C2C529E90008C8393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42B2C529E90008C8393 /* Assets.xcassets */; };
@@ -26,10 +28,11 @@
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
 		4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4762C5BE3E8008C8393 /* PhoneView.swift */; };
-		4B74F47A2C5BE904008C8393 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 4B74F4792C5BE904008C8393 /* CountryPicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B382FEF2C5C09E40094FA11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
 		4B74F4242C529E8F008C8393 /* TalkToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToMeApp.swift; sourceTree = "<group>"; };
 		4B74F4292C529E8F008C8393 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B74F47A2C5BE904008C8393 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +162,8 @@
 				4B74F44A2C5567F2008C8393 /* ViewModel */,
 				4B74F44D2C556C37008C8393 /* Model */,
 				4B74F4762C5BE3E8008C8393 /* PhoneView.swift */,
+				4B382FEF2C5C09E40094FA11 /* Country.swift */,
+				4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */,
 			);
 			path = OTPRegistration;
 			sourceTree = "<group>";
@@ -211,7 +215,6 @@
 			);
 			name = TalkToMe;
 			packageProductDependencies = (
-				4B74F4792C5BE904008C8393 /* CountryPicker */,
 			);
 			productName = TalkToMe;
 			productReference = 4B74F4242C529E8F008C8393 /* TalkToMe.app */;
@@ -242,7 +245,6 @@
 			);
 			mainGroup = 4B74F41B2C529E8F008C8393;
 			packageReferences = (
-				4B74F4782C5BE904008C8393 /* XCRemoteSwiftPackageReference "CountryPicker" */,
 			);
 			productRefGroup = 4B74F4252C529E8F008C8393 /* Products */;
 			projectDirPath = "";
@@ -278,9 +280,11 @@
 				4B74F4672C57EF73008C8393 /* Page.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
 				4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */,
+				4B382FF02C5C09E40094FA11 /* Country.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4B74F44F2C556D48008C8393 /* Countries.swift in Sources */,
+				4B382FF22C5C0A050094FA11 /* CountryPickerView.swift in Sources */,
 				4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */,
 				4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */,
 				4B74F46C2C57F8DC008C8393 /* MorphingSymbolView.swift in Sources */,
@@ -492,25 +496,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4B74F4782C5BE904008C8393 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mobven/CountryPicker.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.3;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		4B74F4792C5BE904008C8393 /* CountryPicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4B74F4782C5BE904008C8393 /* XCRemoteSwiftPackageReference "CountryPicker" */;
-			productName = CountryPicker;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B74F41C2C529E8F008C8393 /* Project object */;
 }
