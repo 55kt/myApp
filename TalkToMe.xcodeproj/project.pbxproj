@@ -25,6 +25,8 @@
 		4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */; };
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
+		4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4762C5BE3E8008C8393 /* PhoneView.swift */; };
+		4B74F47A2C5BE904008C8393 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 4B74F4792C5BE904008C8393 /* CountryPicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,7 @@
 		4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonView.swift; sourceTree = "<group>"; };
 		4B74F4722C5AA5DA008C8393 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		4B74F4762C5BE3E8008C8393 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B74F47A2C5BE904008C8393 /* CountryPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +159,7 @@
 				4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */,
 				4B74F44A2C5567F2008C8393 /* ViewModel */,
 				4B74F44D2C556C37008C8393 /* Model */,
+				4B74F4762C5BE3E8008C8393 /* PhoneView.swift */,
 			);
 			path = OTPRegistration;
 			sourceTree = "<group>";
@@ -205,6 +210,9 @@
 			dependencies = (
 			);
 			name = TalkToMe;
+			packageProductDependencies = (
+				4B74F4792C5BE904008C8393 /* CountryPicker */,
+			);
 			productName = TalkToMe;
 			productReference = 4B74F4242C529E8F008C8393 /* TalkToMe.app */;
 			productType = "com.apple.product-type.application";
@@ -233,6 +241,9 @@
 				Base,
 			);
 			mainGroup = 4B74F41B2C529E8F008C8393;
+			packageReferences = (
+				4B74F4782C5BE904008C8393 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+			);
 			productRefGroup = 4B74F4252C529E8F008C8393 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,6 +277,7 @@
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
 				4B74F4672C57EF73008C8393 /* Page.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
+				4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4B74F44F2C556D48008C8393 /* Countries.swift in Sources */,
@@ -480,6 +492,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B74F4782C5BE904008C8393 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mobven/CountryPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B74F4792C5BE904008C8393 /* CountryPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B74F4782C5BE904008C8393 /* XCRemoteSwiftPackageReference "CountryPicker" */;
+			productName = CountryPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B74F41C2C529E8F008C8393 /* Project object */;
 }

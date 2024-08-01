@@ -26,6 +26,7 @@ struct TextTabHolderView: View {
                         .kerning(1.1)
                     
                     Text(page.subTitle)
+                        .bold()
                         .font(.callout)
                         .foregroundStyle(.white.opacity(0.8))
                         .frame(width: size.width)

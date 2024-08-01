@@ -25,9 +25,9 @@ enum Page: String, CaseIterable {
     var subTitle: String {
         switch self {
         case .page1: "Your Journey starts here"
-        case .page2: "Discover a deeper gaming experience\nwith the DualSense controller"
-        case .page3: "Stream your PS5 to Mac or\nApple devices"
-        case .page4: "Reach out and make new friends"
+        case .page2: "Your privacy and safety come first"
+        case .page3: "Our application is fast and responsive"
+        case .page4: "Easily and simply make new friends from all over the world"
         }
     }
     

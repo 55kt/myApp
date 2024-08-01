@@ -36,7 +36,7 @@ struct CustomNumberPad: View {
                                 }
                             }
                             .frame(width: getWidth(frame: reader.frame(in: .global)), height: getHeight(frame: reader.frame(in: .global)))
-                            .background(.white)
+                            .background(.white.opacity(0.9))
                             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         }
                         .disabled(value == "" ? true : false)
@@ -45,6 +45,7 @@ struct CustomNumberPad: View {
             }
         }
         .padding()
+        .background(Color(.clear))
     }
     
     // MARK: - Functions
