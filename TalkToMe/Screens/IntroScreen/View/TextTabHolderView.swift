@@ -20,6 +20,7 @@ struct TextTabHolderView: View {
             ForEach(Page.allCases, id: \.rawValue) { page in
                 VStack(spacing: 8) {
                     Text(page.title)
+                        .foregroundStyle(.white)
                         .lineLimit(1)
                         .font(.title)
                         .fontWeight(.bold)

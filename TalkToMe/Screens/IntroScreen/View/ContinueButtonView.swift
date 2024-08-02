@@ -12,7 +12,7 @@ struct ContinueButtonView: View {
 
     var body: some View {
         if activePage == .page4 {
-            NavigationLink(destination: OTPhoneInput()) {
+            NavigationLink(destination: OTPPhoneNumberInput()) {
                 buttonContent
             }
         } else {

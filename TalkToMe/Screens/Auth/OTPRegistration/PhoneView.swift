@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PhoneInputView: View {
-    @State private var selectedCountry: Country = Country(name: "Greece", isoCode: "GR", phoneCode: "+30")
+    @State private var selectedCountry: Country = Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")
     @State private var phoneNumber: String = ""
     @State private var isCountryPickerPresented: Bool = false
     @State private var isConfirmPresented: Bool = false
@@ -18,22 +18,22 @@ struct PhoneInputView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Image(systemName: "phone.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 100)
-                    .padding()
-                
-                Text("Your Phone")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .padding()
-                
-                Text("Please confirm your country code and enter your phone number.")
-                    .font(.body)
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-                    .padding()
+                Group {
+                    Image(systemName: "phone.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200)
+                        
+                    Text("Your Phone")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .padding()
+                    
+                    Text("Please confirm your country code and enter your phone number.")
+                        .font(.body)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                }
                 
                 // Country Area
                 Button(action: {
@@ -49,7 +49,6 @@ struct PhoneInputView: View {
                     }
                     .padding()
                     .background()
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 }
                 .padding(.horizontal)
                 .sheet(isPresented: $isCountryPickerPresented) {
@@ -75,8 +74,10 @@ struct PhoneInputView: View {
                         .keyboardType(.numberPad)
                         .background(Color(.systemGray6))
                 }
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .padding(.horizontal)
                 .frame(height: 25)
+                
                 
                 // Continue Button
                 Button(action: {
