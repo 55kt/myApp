@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4B382FF02C5C09E40094FA11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* Country.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */; };
+		4B382FF62C5D1FA10094FA11 /* FocusedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF52C5D1FA10094FA11 /* FocusedModifier.swift */; };
+		4B382FF92C5D30C00094FA11 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */; };
 		4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */; };
 		4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4292C529E8F008C8393 /* MainTabView.swift */; };
 		4B74F42C2C529E90008C8393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42B2C529E90008C8393 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		4B382FEF2C5C09E40094FA11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
+		4B382FF52C5D1FA10094FA11 /* FocusedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedModifier.swift; sourceTree = "<group>"; };
+		4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		4B74F4242C529E8F008C8393 /* TalkToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToMeApp.swift; sourceTree = "<group>"; };
 		4B74F4292C529E8F008C8393 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B382FF72C5D30A30094FA11 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4B74F41B2C529E8F008C8393 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +99,7 @@
 		4B74F4262C529E8F008C8393 /* TalkToMe */ = {
 			isa = PBXGroup;
 			children = (
+				4B382FF72C5D30A30094FA11 /* Extensions */,
 				4B74F4352C529F76008C8393 /* Screens */,
 				4B74F4452C541221008C8393 /* Helper */,
 				4B74F4542C5690F3008C8393 /* Components */,
@@ -164,6 +177,7 @@
 				4B74F4762C5BE3E8008C8393 /* PhoneView.swift */,
 				4B382FEF2C5C09E40094FA11 /* Country.swift */,
 				4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */,
+				4B382FF52C5D1FA10094FA11 /* FocusedModifier.swift */,
 			);
 			path = OTPRegistration;
 			sourceTree = "<group>";
@@ -278,8 +292,10 @@
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
 				4B74F4672C57EF73008C8393 /* Page.swift in Sources */,
+				4B382FF92C5D30C00094FA11 /* RoundedCorner.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
 				4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */,
+				4B382FF62C5D1FA10094FA11 /* FocusedModifier.swift in Sources */,
 				4B382FF02C5C09E40094FA11 /* Country.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,

@@ -10,10 +10,11 @@ import SwiftUI
 struct PhoneInputView: View {
     @State private var selectedCountry: Country = Country(name: "Greece", isoCode: "GR", phoneCode: "+30")
     @State private var phoneNumber: String = ""
-    @State private var isCountryPickerPresented: Bool = true
+    @State private var isCountryPickerPresented: Bool = false
     @State private var isConfirmPresented: Bool = false
     @State private var searchText = ""
-
+    @FocusState private var isSearchFocused: Bool
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -22,52 +23,62 @@ struct PhoneInputView: View {
                     .scaledToFit()
                     .frame(height: 100)
                     .padding()
-
+                
                 Text("Your Phone")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()
-
+                
                 Text("Please confirm your country code and enter your phone number.")
                     .font(.body)
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.center)
                     .padding()
-
+                
+                // Country Area
                 Button(action: {
                     isCountryPickerPresented.toggle()
                 }) {
                     HStack {
                         Text("\(selectedCountry.flag) \(selectedCountry.name)")
-                            .foregroundColor(.blue)
+                            .foregroundColor(.black)
+                            .frame(width: 307)
                         Spacer()
                         Image(systemName: "chevron.down")
-                            .foregroundColor(.blue)
+                            .foregroundColor(.black)
                     }
                     .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
+                    .background()
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 }
                 .padding(.horizontal)
                 .sheet(isPresented: $isCountryPickerPresented) {
                     CountryPickerView(selectedCountry: $selectedCountry)
                 }
-
+                
+                // Border Line
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(.gray)
+                    .opacity(0.5)
+                    .padding(.horizontal)
+                    .padding(.vertical, -15)
+                
+                // Phone Number Field
                 HStack(spacing: 0) {
                     Text(selectedCountry.phoneCode)
                         .padding()
                         .background(Color(.systemGray6))
-                        .cornerRadius(10, corners: [.topLeft, .bottomLeft])
-
+                    
                     TextField("000 000 0000", text: $phoneNumber)
                         .padding()
                         .keyboardType(.numberPad)
                         .background(Color(.systemGray6))
-                        .cornerRadius(10, corners: [.topRight, .bottomRight])
                 }
                 .padding(.horizontal)
-                .padding(.top)
-
+                .frame(height: 25)
+                
+                // Continue Button
                 Button(action: {
                     isConfirmPresented.toggle()
                 }) {
@@ -89,34 +100,7 @@ struct PhoneInputView: View {
                     )
                 }
             }
-            .navigationTitle("Phone Input")
         }
-    }
-}
-
-extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape(RoundedCorner(radius: radius, corners: corners) )
-    }
-}
-
-struct RoundedCorner: Shape {
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(
-            roundedRect: rect,
-            byRoundingCorners: corners,
-            cornerRadii: CGSize(width: radius, height: radius)
-        )
-        return Path(path.cgPath)
-    }
-}
-
-struct PhoneInputView_Previews: PreviewProvider {
-    static var previews: some View {
-        PhoneInputView()
     }
 }
 

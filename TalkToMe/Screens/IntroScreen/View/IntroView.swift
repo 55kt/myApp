@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IntroView: View {
     // MARK: - Properties
-    @State private var activePage: Page = .page4
+    @State private var activePage: Page = .page1
     
     // MARK: - Body
     var body: some View {
