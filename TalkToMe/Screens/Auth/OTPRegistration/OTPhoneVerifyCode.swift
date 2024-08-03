@@ -130,5 +130,5 @@ struct CodeView: View {
 
 //// MARK: - Preview
 #Preview {
-    OTPhoneVerifyCode(loginData: .init())
+    OTPhoneVerifyCode(loginData: OTPViewModel())
 }

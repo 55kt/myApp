@@ -12,6 +12,8 @@ struct OTPPhoneNumberInput: View {
     @State private var selectedCountry: Country = Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")
     @State private var phoneNumber: String = ""
     
+    @StateObject var loginData = OTPViewModel()
+    
         
     // MARK: - Body
     var body: some View {
@@ -25,7 +27,7 @@ struct OTPPhoneNumberInput: View {
                     CountryPicker(selectedCountry: $selectedCountry)
                     
                     // Phone Number Field
-                    PhoneNumberInputField(selectedCountry: $selectedCountry, phoneNumber: $phoneNumber)
+                    PhoneNumberInputField(selectedCountry: $selectedCountry, phoneNumber: $phoneNumber, loginData: loginData)
                 }
                 .padding(.bottom, 250)
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)

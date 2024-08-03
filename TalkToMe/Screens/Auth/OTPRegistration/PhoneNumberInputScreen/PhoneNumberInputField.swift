@@ -45,7 +45,11 @@ struct PhoneNumberInputField: View {
         }
         .padding(.horizontal)
         
-        NavigationLink(destination: OTPhoneVerifyCode(loginData: loginData)) {
+        NavigationLink(destination: OTPhoneVerifyCode(loginData: loginData)
+            .onAppear {
+                                    loginData.phoneNumber = "\(selectedCountry.phoneCode) \(phoneNumber)"
+                                }
+        ) {
             Text("Continue")
                 .foregroundStyle(.black)
                 .font(.system(size: 20))
@@ -55,7 +59,7 @@ struct PhoneNumberInputField: View {
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .padding(.horizontal, 120)
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
-                .disabled(loginData.phoneNumber == "" ? true : false)
+                .disabled(phoneNumber.count != 10)
         }
         .frame(height: 44)
         .background(Color.clear)
@@ -64,5 +68,5 @@ struct PhoneNumberInputField: View {
 }
 
 #Preview {
-    PhoneNumberInputField(selectedCountry: .constant(Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")), phoneNumber: .constant(""))
+    PhoneNumberInputField(selectedCountry: .constant(Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")), phoneNumber: .constant(""), loginData: OTPViewModel())
 }
