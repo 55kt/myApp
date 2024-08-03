@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct PhoneNumberInputField: View {
-    @State private var selectedCountry: Country = Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")
-    @State private var phoneNumber: String = ""
+    @Binding var selectedCountry: Country
+    @Binding var phoneNumber: String
     @StateObject var loginData = OTPViewModel()
-
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -43,7 +43,7 @@ struct PhoneNumberInputField: View {
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             
         }
-.padding(.horizontal)
+        .padding(.horizontal)
         
         NavigationLink(destination: OTPhoneVerifyCode(loginData: loginData)) {
             Text("Continue")
@@ -64,5 +64,5 @@ struct PhoneNumberInputField: View {
 }
 
 #Preview {
-    PhoneNumberInputField()
+    PhoneNumberInputField(selectedCountry: .constant(Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")), phoneNumber: .constant(""))
 }

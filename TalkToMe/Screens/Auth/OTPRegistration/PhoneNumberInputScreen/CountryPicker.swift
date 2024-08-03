@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CountryPicker: View {
     // MARK: - Properties
-    @State private var selectedCountry: Country = Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")
+    @Binding var selectedCountry: Country
     @State private var isCountryPickerPresented: Bool = false
 
     // MARK: - Body
@@ -47,5 +47,5 @@ struct CountryPicker: View {
 
 // MARK: - Preview
 #Preview {
-    CountryPicker()
+    CountryPicker(selectedCountry: .constant(Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")))
 }

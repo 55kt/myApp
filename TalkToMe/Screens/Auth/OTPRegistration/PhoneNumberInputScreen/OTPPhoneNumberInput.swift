@@ -10,12 +10,9 @@ import SwiftUI
 struct OTPPhoneNumberInput: View {
     // MARK: - Properties
     @State private var selectedCountry: Country = Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")
-    @State private var isCountryPickerPresented: Bool = false
     @State private var phoneNumber: String = ""
     
-    
-    @StateObject var loginData = OTPViewModel()
-    
+        
     // MARK: - Body
     var body: some View {
         ZStack {
@@ -25,10 +22,10 @@ struct OTPPhoneNumberInput: View {
                     // Nav Bar & center screen elements
                     NavPlaceHolder()
                     // Country Area
-                    CountryPicker()
+                    CountryPicker(selectedCountry: $selectedCountry)
                     
                     // Phone Number Field
-                    PhoneNumberInputField()
+                    PhoneNumberInputField(selectedCountry: $selectedCountry, phoneNumber: $phoneNumber)
                 }
                 .padding(.bottom, 250)
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)

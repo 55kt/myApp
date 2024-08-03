@@ -22,7 +22,6 @@
 		4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */; };
 		4B74F4492C556131008C8393 /* OTPPhoneNumberInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4482C556131008C8393 /* OTPPhoneNumberInput.swift */; };
 		4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F44B2C556812008C8393 /* OTPViewModel.swift */; };
-		4B74F44F2C556D48008C8393 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F44E2C556D48008C8393 /* Countries.swift */; };
 		4B74F4512C565402008C8393 /* OTPhoneVerifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */; };
 		4B74F4532C5665BB008C8393 /* CustomNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */; };
 		4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4552C56910F008C8393 /* IntroGradient.swift */; };
@@ -34,6 +33,7 @@
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
 		4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4762C5BE3E8008C8393 /* PhoneView.swift */; };
+		4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D1B2C5E7B3000BB41DF /* Countries.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,6 @@
 		4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissModifier.swift; sourceTree = "<group>"; };
 		4B74F4482C556131008C8393 /* OTPPhoneNumberInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPhoneNumberInput.swift; sourceTree = "<group>"; };
 		4B74F44B2C556812008C8393 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
-		4B74F44E2C556D48008C8393 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPhoneVerifyCode.swift; sourceTree = "<group>"; };
 		4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumberPad.swift; sourceTree = "<group>"; };
 		4B74F4552C56910F008C8393 /* IntroGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroGradient.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		4B74F4722C5AA5DA008C8393 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		4B74F4762C5BE3E8008C8393 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
+		4BC70D1B2C5E7B3000BB41DF /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,16 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				4B74F44B2C556812008C8393 /* OTPViewModel.swift */,
+				4BC70D1B2C5E7B3000BB41DF /* Countries.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		4B74F44D2C556C37008C8393 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4B74F44E2C556D48008C8393 /* Countries.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4B74F4542C5690F3008C8393 /* Components */ = {
@@ -193,7 +186,6 @@
 				4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */,
 				4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */,
 				4B74F44A2C5567F2008C8393 /* ViewModel */,
-				4B74F44D2C556C37008C8393 /* Model */,
 				4B74F4762C5BE3E8008C8393 /* PhoneView.swift */,
 				4B382FEF2C5C09E40094FA11 /* Country.swift */,
 				4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */,
@@ -319,9 +311,9 @@
 				4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */,
 				4B382FF62C5D1FA10094FA11 /* FocusedModifier.swift in Sources */,
 				4B382FF02C5C09E40094FA11 /* Country.swift in Sources */,
+				4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
-				4B74F44F2C556D48008C8393 /* Countries.swift in Sources */,
 				4B382FF22C5C0A050094FA11 /* CountryPickerView.swift in Sources */,
 				4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */,
 				4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */,
