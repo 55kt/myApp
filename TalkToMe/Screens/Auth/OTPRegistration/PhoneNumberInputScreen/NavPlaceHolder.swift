@@ -26,7 +26,6 @@ struct NavPlaceHolder: View {
                 .font(.title2)
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
-                .padding()
         }
         .shadow(radius: 10)
     }
