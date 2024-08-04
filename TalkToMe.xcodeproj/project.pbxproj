@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4B382FF02C5C09E40094FA11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* Country.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */; };
-		4B382FF62C5D1FA10094FA11 /* FocusedModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF52C5D1FA10094FA11 /* FocusedModifier.swift */; };
 		4B382FF92C5D30C00094FA11 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */; };
 		4B382FFB2C5D504B0094FA11 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FFA2C5D504B0094FA11 /* KeyboardAwareModifier.swift */; };
 		4B382FFE2C5D64750094FA11 /* NavPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FFD2C5D64750094FA11 /* NavPlaceHolder.swift */; };
@@ -31,15 +30,12 @@
 		4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */; };
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
-		4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4762C5BE3E8008C8393 /* PhoneView.swift */; };
 		4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D1B2C5E7B3000BB41DF /* Countries.swift */; };
-		4BC70D1E2C5E931100BB41DF /* ConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D1D2C5E931100BB41DF /* ConfirmationSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4B382FEF2C5C09E40094FA11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
-		4B382FF52C5D1FA10094FA11 /* FocusedModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedModifier.swift; sourceTree = "<group>"; };
 		4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		4B382FFA2C5D504B0094FA11 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
 		4B382FFD2C5D64750094FA11 /* NavPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPlaceHolder.swift; sourceTree = "<group>"; };
@@ -62,9 +58,7 @@
 		4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonView.swift; sourceTree = "<group>"; };
 		4B74F4722C5AA5DA008C8393 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		4B74F4762C5BE3E8008C8393 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		4BC70D1B2C5E7B3000BB41DF /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
-		4BC70D1D2C5E931100BB41DF /* ConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +86,7 @@
 				4B74F4482C556131008C8393 /* OTPPhoneNumberInput.swift */,
 				4B382FFD2C5D64750094FA11 /* NavPlaceHolder.swift */,
 				4B382FFF2C5D65260094FA11 /* PhoneNumberInputField.swift */,
-				4B3830012C5D65CE0094FA11 /* CountryPicker.swift */,
-				4BC70D1D2C5E931100BB41DF /* ConfirmationSheet.swift */,
+				4BC70D1F2C5FC93D00BB41DF /* CountryPicker */,
 			);
 			path = PhoneNumberInputScreen;
 			sourceTree = "<group>";
@@ -167,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				4B74F44B2C556812008C8393 /* OTPViewModel.swift */,
-				4BC70D1B2C5E7B3000BB41DF /* Countries.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,10 +178,6 @@
 				4B382FFC2C5D5B020094FA11 /* PhoneNumberInputScreen */,
 				4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */,
 				4B74F44A2C5567F2008C8393 /* ViewModel */,
-				4B74F4762C5BE3E8008C8393 /* PhoneView.swift */,
-				4B382FEF2C5C09E40094FA11 /* Country.swift */,
-				4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */,
-				4B382FF52C5D1FA10094FA11 /* FocusedModifier.swift */,
 			);
 			path = OTPRegistration;
 			sourceTree = "<group>";
@@ -222,6 +210,17 @@
 				4B74F4652C57EF6A008C8393 /* Model */,
 			);
 			path = IntroScreen;
+			sourceTree = "<group>";
+		};
+		4BC70D1F2C5FC93D00BB41DF /* CountryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				4B3830012C5D65CE0094FA11 /* CountryPicker.swift */,
+				4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */,
+				4BC70D1B2C5E7B3000BB41DF /* Countries.swift */,
+				4B382FEF2C5C09E40094FA11 /* Country.swift */,
+			);
+			path = CountryPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC70D1E2C5E931100BB41DF /* ConfirmationSheet.swift in Sources */,
 				4B74F4512C565402008C8393 /* OTPhoneVerifyCode.swift in Sources */,
 				4B74F46F2C5AA40B008C8393 /* TextTabHolderView.swift in Sources */,
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
@@ -308,8 +306,6 @@
 				4B382FF92C5D30C00094FA11 /* RoundedCorner.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
 				4B382FFB2C5D504B0094FA11 /* KeyboardAwareModifier.swift in Sources */,
-				4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */,
-				4B382FF62C5D1FA10094FA11 /* FocusedModifier.swift in Sources */,
 				4B382FF02C5C09E40094FA11 /* Country.swift in Sources */,
 				4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,

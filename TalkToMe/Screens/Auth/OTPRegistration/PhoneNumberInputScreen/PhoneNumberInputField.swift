@@ -1,12 +1,14 @@
 import SwiftUI
 
 struct PhoneNumberInputField: View {
+    // MARK: - Properties
     @Binding var selectedCountry: Country
     @Binding var phoneNumber: String
     @State private var showAlert = false
     @State private var navigateToVerify = false
     @StateObject var loginData = OTPViewModel()
 
+    // MARK: - Body
     var body: some View {
         VStack {
             ZStack {
@@ -80,6 +82,7 @@ struct PhoneNumberInputField: View {
     }
 }
 
+// MARK: - Previews
 #Preview {
     PhoneNumberInputField(selectedCountry: .constant(Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")), phoneNumber: .constant(""), loginData: OTPViewModel())
 }
