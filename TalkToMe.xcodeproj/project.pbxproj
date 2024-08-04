@@ -23,7 +23,6 @@
 		4B74F4492C556131008C8393 /* OTPPhoneNumberInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4482C556131008C8393 /* OTPPhoneNumberInput.swift */; };
 		4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F44B2C556812008C8393 /* OTPViewModel.swift */; };
 		4B74F4512C565402008C8393 /* OTPhoneVerifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */; };
-		4B74F4532C5665BB008C8393 /* CustomNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */; };
 		4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4552C56910F008C8393 /* IntroGradient.swift */; };
 		4B74F4672C57EF73008C8393 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4662C57EF73008C8393 /* Page.swift */; };
 		4B74F4692C57F7BB008C8393 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4682C57F7BB008C8393 /* IntroView.swift */; };
@@ -34,6 +33,7 @@
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
 		4B74F4772C5BE3E8008C8393 /* PhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4762C5BE3E8008C8393 /* PhoneView.swift */; };
 		4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D1B2C5E7B3000BB41DF /* Countries.swift */; };
+		4BC70D1E2C5E931100BB41DF /* ConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D1D2C5E931100BB41DF /* ConfirmationSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,7 +54,6 @@
 		4B74F4482C556131008C8393 /* OTPPhoneNumberInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPhoneNumberInput.swift; sourceTree = "<group>"; };
 		4B74F44B2C556812008C8393 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPhoneVerifyCode.swift; sourceTree = "<group>"; };
-		4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNumberPad.swift; sourceTree = "<group>"; };
 		4B74F4552C56910F008C8393 /* IntroGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroGradient.swift; sourceTree = "<group>"; };
 		4B74F4662C57EF73008C8393 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		4B74F4682C57F7BB008C8393 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		4B74F4762C5BE3E8008C8393 /* PhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneView.swift; sourceTree = "<group>"; };
 		4BC70D1B2C5E7B3000BB41DF /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		4BC70D1D2C5E931100BB41DF /* ConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +93,7 @@
 				4B382FFD2C5D64750094FA11 /* NavPlaceHolder.swift */,
 				4B382FFF2C5D65260094FA11 /* PhoneNumberInputField.swift */,
 				4B3830012C5D65CE0094FA11 /* CountryPicker.swift */,
+				4BC70D1D2C5E931100BB41DF /* ConfirmationSheet.swift */,
 			);
 			path = PhoneNumberInputScreen;
 			sourceTree = "<group>";
@@ -184,7 +185,6 @@
 			children = (
 				4B382FFC2C5D5B020094FA11 /* PhoneNumberInputScreen */,
 				4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */,
-				4B74F4522C5665BB008C8393 /* CustomNumberPad.swift */,
 				4B74F44A2C5567F2008C8393 /* ViewModel */,
 				4B74F4762C5BE3E8008C8393 /* PhoneView.swift */,
 				4B382FEF2C5C09E40094FA11 /* Country.swift */,
@@ -298,9 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC70D1E2C5E931100BB41DF /* ConfirmationSheet.swift in Sources */,
 				4B74F4512C565402008C8393 /* OTPhoneVerifyCode.swift in Sources */,
 				4B74F46F2C5AA40B008C8393 /* TextTabHolderView.swift in Sources */,
-				4B74F4532C5665BB008C8393 /* CustomNumberPad.swift in Sources */,
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
 				4B382FFE2C5D64750094FA11 /* NavPlaceHolder.swift in Sources */,
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
