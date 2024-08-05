@@ -30,7 +30,7 @@ struct ContinueButtonView: View {
             .foregroundStyle(.black.opacity(0.8))
             .padding(.vertical, 15)
             .frame(maxWidth: activePage == .page1 ? 220 : 340, maxHeight: 70)
-            .background(.white, in: .capsule)
+            .background(.yellow, in: .capsule)
             .padding(.bottom, 15)
             .transition(.move(edge: .bottom).combined(with: .opacity))
             .animation(.easeOut(duration: 0.5), value: activePage)

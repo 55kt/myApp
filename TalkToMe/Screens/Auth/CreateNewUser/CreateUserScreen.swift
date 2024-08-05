@@ -11,6 +11,7 @@ struct CreateUserScreen: View {
     // MARK: - Properties
     @State private var keyboardHeight: CGFloat = 0
     @State private var textFieldContent: String = ""
+    @State private var isKeyboardVisible: Bool = false
     
     // MARK: - Body
     var body: some View {
@@ -18,24 +19,27 @@ struct CreateUserScreen: View {
             // Background elements
             IntroGradient()
             
-            // Nav text area
-            VStack {
-                Text("Congrads!\nYour phone has verified successfully..")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundStyle(.white)
-                
-                
-                Text("Now, create your own unique nickname, add your photo, or choose an avatar.")
-                    .font(.headline)
-                    .foregroundStyle(.white)
-                    .padding(2)
-                    .padding(.bottom)
-                Spacer()
+            if !isKeyboardVisible {
+                // Nav text area
+                VStack {
+                    Text("Congrads!\nYour phone has verified successfully..")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(.white)
+                    
+                    
+                    Text("Now, create your own unique nickname, add your photo, or choose an avatar.")
+                        .font(.headline)
+                        .foregroundStyle(.white)
+                        .padding(2)
+                        .padding(.bottom)
+                    Spacer()
+                }
+                .padding()
+                .multilineTextAlignment(.center)
+                .shadow(radius: 10)
+                .transition(.opacity)
             }
-            .padding()
-            .multilineTextAlignment(.center)
-            .shadow(radius: 10)
             
             // Avatar Area
             VStack {
@@ -43,7 +47,7 @@ struct CreateUserScreen: View {
                     Circle()
                         .padding()
                         .scaledToFit()
-                        .frame(width: 190, height: 190)
+                        .frame(width: isKeyboardVisible ? 300 : 190, height: isKeyboardVisible ? 300 : 190)
                         .foregroundStyle(.white)
                         .opacity(0.5)
                         .shadow(radius: 10)
@@ -52,31 +56,32 @@ struct CreateUserScreen: View {
                     Image(systemName: "person.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 100, height: 100)
+                        .frame(width: isKeyboardVisible ? 180 : 100, height: isKeyboardVisible ? 180 : 100)
                 }
             }
-            .padding(.bottom, 160)
+            .padding(.bottom, isKeyboardVisible ? 200 : 160)
             
             HStack {
-                Image(systemName: "person")
+                Image(systemName: "number.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
                     .fontWeight(.semibold)
                     .frame(width: 30)
                 
                 TextField("Username", text: $textFieldContent).font(.title3)
                     .shadow(radius: 10)
                     .onChange(of: textFieldContent) {oldValue, newValue in
-                        if newValue.count > 15 {
+                        if newValue.count >= 15 {
                             textFieldContent = String(newValue.prefix(15))
                         }
                     }
-                
             }
             .foregroundStyle(.white)
             .padding()
             .background(Color.white.opacity(0.3))
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .padding(.horizontal, 15)
-            .padding(.top, 90)
+            .padding(.top, isKeyboardVisible ? 200 : 90)
             
             
             VStack {
@@ -86,19 +91,30 @@ struct CreateUserScreen: View {
                 } label: {
                     Text("Submit")
                         .foregroundColor(.black)
-                        .font(.system(size: 20, weight: .bold))
+                        .font(.system(size: 20, weight: .medium))
                         .padding(.vertical, 18)
                         .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(textFieldContent.count == 15 ? Color.yellow : Color.yellow.opacity(0.3))
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .padding(.horizontal, 16)
+                        .background(textFieldContent.count >= 5 ? Color.yellow : Color.yellow.opacity(0.3))
+                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
                 }
                 .disabled(textFieldContent.isEmpty || textFieldContent.count != 15)
                 .frame(height: 100)
+                .padding(.top, isKeyboardVisible ? 0 : 300)
             }
+            .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+                        withAnimation {
+                            isKeyboardVisible = true
+                        }
+                    }
+                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                        withAnimation {
+                            isKeyboardVisible = false
+                        }
+                    }
+                    .padding()
         }
-        .ignoresSafeArea(.keyboard)
+        .navigationBarBackButtonHidden(true)
         .onTapGesture {
             hiderKeyboard()
         }

@@ -9,110 +9,109 @@ struct OTPhoneVerifyCode: View {
     
     // MARK: - Body
     var body: some View {
-        ZStack {
-            IntroGradient()
-            OpacityBackgroundLogo()
-            VStack {
+        NavigationStack {
+            ZStack {
+                IntroGradient()
+                OpacityBackgroundLogo()
                 VStack {
-                    
-                    /// NavBar Group
-                    Group {
-                        HStack {
-                            Button {
-                                present.wrappedValue.dismiss()
-                            } label: {
-                                Image(systemName: "arrow.left")
-                                    .bold()
-                                    .font(.title2)
+                    VStack {
+                        
+                        /// NavBar Group
+                        Group {
+                            HStack {
+                                Button {
+                                    present.wrappedValue.dismiss()
+                                } label: {
+                                    Image(systemName: "arrow.left")
+                                        .bold()
+                                        .font(.title2)
+                                        .foregroundStyle(.white)
+                                }
+                                
+                                Spacer()
+                                
+                                Text("Verify your phone number")
+                                    .font(.title)
+                                    .fontWeight(.bold)
                                     .foregroundStyle(.white)
+                                
+                                
+                                Spacer()
                             }
+                            .padding()
                             
-                            Spacer()
-                            
-                            Text("Verify your phone number")
-                                .font(.title)
-                                .fontWeight(.bold)
+                            Text("Code sent to \(loginData.phoneNumber)")
                                 .foregroundStyle(.white)
-                            
-                            
-                            Spacer()
+                                .padding(.bottom)
+                        }
+                        Spacer(minLength: 0)
+                        
+                        /// Code Platform input
+                        HStack(spacing: 15) {
+                            ForEach(0..<6, id: \.self) { index in
+                                CodeInputView(index: index)
+                            }
                         }
                         .padding()
+                        .padding(.horizontal, 20)
                         
-                        Text("Code sent to \(loginData.phoneNumber)")
-                            .foregroundStyle(.white)
-                            .padding(.bottom)
-                    }
-                    Spacer(minLength: 0)
-                    
-                    /// Code Platform input
-                    HStack(spacing: 15) {
-                        ForEach(0..<6, id: \.self) { index in
-                            CodeInputView(index: index)
+                        Spacer(minLength: 0)
+                        
+                        /// Support Area
+                        HStack(spacing: 6) {
+                            Text("Didn't receive code?")
+                                .foregroundStyle(.white)
+                            
+                            Button {
+                                // Some action
+                            } label: {
+                                Text("Request again")
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.blue)
+                            }
+                            
+                            
                         }
-                    }
-                    .padding()
-                    .padding(.horizontal, 20)
-                    
-                    Spacer(minLength: 0)
-                    
-                    /// Support Area
-                    HStack(spacing: 6) {
-                        Text("Didn't receive code?")
-                            .foregroundStyle(.white)
                         
                         Button {
                             // Some action
                         } label: {
-                            Text("Request again")
+                            Text("Get via call")
                                 .fontWeight(.bold)
                                 .foregroundStyle(.blue)
                         }
+                        .padding(.top, 6)
                         
                         
+                        /// Verify Button
+                        NavigationLink(destination: CreateUserScreen()) {
+                            Text("Verify and Create Account")
+                                .foregroundStyle(.black)
+                                .padding(.vertical)
+                                .frame(width: UIScreen.main.bounds.width - 30)
+                                .background(allFieldsFilled() ? Color.yellow : Color.white.opacity(0.3))
+                                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                                .disabled(!allFieldsFilled())
+                        }
                     }
-                    
-                    Button {
-                        // Some action
-                    } label: {
-                        Text("Get via call")
-                            .fontWeight(.bold)
-                            .foregroundStyle(.blue)
-                    }
-                    .padding(.top, 6)
-                    
-                    
-                    /// Verify Button
-                    Button {
-                        // Some action
-                    } label: {
-                        Text("Verify and Create Account")
-                            .foregroundStyle(.black)
-                            .padding(.vertical)
-                            .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(allFieldsFilled() ? Color.yellow : Color.white.opacity(0.3))
-                            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    }
-                    .padding()
-                    .disabled(!allFieldsFilled())
+                    .background(Color(.clear))
                 }
-                .background(Color(.clear))
-            }
-            .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
-            .toolbar(.hidden)
-            .navigationBarBackButtonHidden(true)
-            .gesture(
-                            DragGesture(minimumDistance: 20, coordinateSpace: .local)
-                                .onEnded { value in
-                                    if value.translation.height > 0 {
-                                        // Скрытие клавиатуры
-                                        hideKeyboard()
+                .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
+                .toolbar(.hidden)
+                .navigationBarBackButtonHidden(true)
+                .gesture(
+                                DragGesture(minimumDistance: 20, coordinateSpace: .local)
+                                    .onEnded { value in
+                                        if value.translation.height > 0 {
+                                            // Скрытие клавиатуры
+                                            hideKeyboard()
+                                        }
                                     }
-                                }
-                        )
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    focusedField = 0
+                            )
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        focusedField = 0
+                    }
                 }
             }
         }
