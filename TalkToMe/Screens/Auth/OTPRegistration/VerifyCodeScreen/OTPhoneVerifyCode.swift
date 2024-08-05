@@ -6,11 +6,12 @@ struct OTPhoneVerifyCode: View {
     @Environment(\.presentationMode) var present
     @FocusState private var focusedField: Int?
     @State private var codeFields = ["", "", "", "", "", ""]
-
+    
     // MARK: - Body
     var body: some View {
         ZStack {
             IntroGradient()
+            OpacityBackgroundLogo()
             VStack {
                 VStack {
                     
@@ -42,7 +43,6 @@ struct OTPhoneVerifyCode: View {
                             .foregroundStyle(.white)
                             .padding(.bottom)
                     }
-                    
                     Spacer(minLength: 0)
                     
                     /// Code Platform input
@@ -66,18 +66,18 @@ struct OTPhoneVerifyCode: View {
                         } label: {
                             Text("Request again")
                                 .fontWeight(.bold)
-                                .foregroundStyle(.black)
+                                .foregroundStyle(.blue)
                         }
                         
                         
                     }
-
+                    
                     Button {
                         // Some action
                     } label: {
                         Text("Get via call")
                             .fontWeight(.bold)
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.blue)
                     }
                     .padding(.top, 6)
                     
@@ -96,20 +96,28 @@ struct OTPhoneVerifyCode: View {
                     .padding()
                     .disabled(!allFieldsFilled())
                 }
-//                .frame(height: UIScreen.main.bounds.height / 1.8)
                 .background(Color(.clear))
-                
-//                CustomNumberPad(value: $loginData.code, isVerify: true)
             }
+            .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
             .toolbar(.hidden)
             .navigationBarBackButtonHidden(true)
+            .gesture(
+                            DragGesture(minimumDistance: 20, coordinateSpace: .local)
+                                .onEnded { value in
+                                    if value.translation.height > 0 {
+                                        // Скрытие клавиатуры
+                                        hideKeyboard()
+                                    }
+                                }
+                        )
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
                     focusedField = 0
                 }
             }
         }
     }
+    
     
     // MARK: - Functions
     func allFieldsFilled() -> Bool {
@@ -133,11 +141,15 @@ struct OTPhoneVerifyCode: View {
                     .frame(height: 4)
                     .offset(y: 20)
             )
-            .onChange(of: codeFields[index]) {oldValue, newValue in
+            .onChange(of: codeFields[index]) { oldValue, newValue in
                 if newValue.count > 1 {
                     codeFields[index] = String(newValue.prefix(1))
                 }
-                if newValue.count == 1 {
+                if newValue.isEmpty {
+                    if index > 0 {
+                        focusedField = index - 1
+                    }
+                } else if newValue.count == 1 {
                     if index < 5 {
                         focusedField = index + 1
                     } else {
@@ -148,6 +160,12 @@ struct OTPhoneVerifyCode: View {
             .onTapGesture {
                 focusedField = index
             }
+    }
+}
+
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

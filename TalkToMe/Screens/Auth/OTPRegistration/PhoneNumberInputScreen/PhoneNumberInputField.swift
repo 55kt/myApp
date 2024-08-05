@@ -4,7 +4,6 @@ struct PhoneNumberInputField: View {
     // MARK: - Properties
     @Binding var selectedCountry: Country
     @Binding var phoneNumber: String
-    @State private var showAlert = false
     @State private var navigateToVerify = false
     @StateObject var loginData = OTPViewModel()
 
@@ -42,39 +41,10 @@ struct PhoneNumberInputField: View {
             }
             .padding(.horizontal)
 
-            Button(action: {
-                showAlert = true
-            }) {
-                Text("Continue")
-                    .foregroundStyle(.black)
-                    .font(.system(size: 20))
-                    .padding(.vertical, 18)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .background(phoneNumber.count == 10 ? Color.white : Color.white.opacity(0.3))
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .padding(.horizontal, 120)
-                    .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
-                    .disabled(phoneNumber.count != 10)
-            }
-            .frame(height: 44)
-            .background(Color.clear)
-            .padding(.top, 5)
-            .alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text("Confirm Number"),
-                    message: Text("Is this the correct number?\n\(selectedCountry.phoneCode) \(phoneNumber)"),
-                    primaryButton: .default(Text("Continue"), action: {
-                        // Update loginData.phoneNumber and navigate
-                        loginData.phoneNumber = "\(selectedCountry.phoneCode) \(phoneNumber)"
-                        navigateToVerify = true
-                    }),
-                    secondaryButton: .cancel(Text("Edit"))
-                )
-            }
+            PhoneInputButton(phoneNumber: $phoneNumber, selectedCountry: $selectedCountry)
+                .disabled(phoneNumber.count < 10)
 
-            NavigationLink(value: navigateToVerify) {
-                EmptyView()
-            }
+
         }
         .navigationDestination(isPresented: $navigateToVerify) {
             OTPhoneVerifyCode(loginData: loginData)
@@ -86,3 +56,5 @@ struct PhoneNumberInputField: View {
 #Preview {
     PhoneNumberInputField(selectedCountry: .constant(Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")), phoneNumber: .constant(""), loginData: OTPViewModel())
 }
+
+

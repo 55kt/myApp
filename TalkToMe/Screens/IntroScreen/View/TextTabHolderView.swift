@@ -25,7 +25,7 @@ struct TextTabHolderView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .kerning(1.1)
-                    
+                                            
                     Text(page.subTitle)
                         .bold()
                         .font(.callout)
@@ -42,6 +42,5 @@ struct TextTabHolderView: View {
         .frame(width: size.width, alignment: .leading)
         .frame(height: 150)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        .animation(.smooth(duration: 0.9, extraBounce: 0.1), value: activePage)
     }
 }
