@@ -24,7 +24,7 @@ struct OTPhoneVerifyCode: View {
                         /// Code Platform input
                         HStack(spacing: 15) {
                             ForEach(0..<6, id: \.self) { index in
-                                CodeInputView(index: index)
+                                CodeInputPlatforms(codeFields: $codeFields, index: index)
                             }
                         }
                         .padding()
@@ -33,115 +33,22 @@ struct OTPhoneVerifyCode: View {
                         Spacer(minLength: 0)
                         
                         /// Support Area
-                        HStack(spacing: 6) {
-                            Text("Didn't receive code?")
-                                .foregroundStyle(.white)
-                            
-                            Button {
-                                // Some action
-                            } label: {
-                                Text("Request again")
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(.blue)
-                            }
-                            
-                            
-                        }
-                        
-                        Button {
-                            // Some action
-                        } label: {
-                            Text("Get via call")
-                                .fontWeight(.bold)
-                                .foregroundStyle(.blue)
-                        }
-                        .padding(.top, 6)
-                        
+                        SupportArea()
                         
                         /// Verify Button
-                        NavigationLink(destination: CreateUserScreenView()) {
-                            Text("Verify and Create Account")
-                                .foregroundColor(.black)
-                                .font(.system(size: 20, weight: .medium))
-                                .padding(.vertical, 18)
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                                .background(allFieldsFilled() ? Color.yellow : Color.white.opacity(0.3))
-                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                                .disabled(!allFieldsFilled())
-                                .padding(.horizontal, 20)
-                        }
+                        VerifyButton(boolPlaceholder: allFieldsFilled())
                     }
                     .background(Color(.clear))
                 }
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
                 .toolbar(.hidden)
                 .navigationBarBackButtonHidden(true)
-                .gesture(
-                                DragGesture(minimumDistance: 20, coordinateSpace: .local)
-                                    .onEnded { value in
-                                        if value.translation.height > 0 {
-                                            // Скрытие клавиатуры
-                                            hideKeyboard()
-                                        }
-                                    }
-                            )
-                .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        focusedField = 0
-                    }
-                }
             }
         }
     }
-    
-    
     // MARK: - Functions
     func allFieldsFilled() -> Bool {
         return !codeFields.contains { $0.isEmpty }
-    }
-    
-    // MARK: - CodeInputView
-    @ViewBuilder
-    func CodeInputView(index: Int) -> some View {
-        TextField("", text: $codeFields[index])
-            .foregroundStyle(.white)
-            .fontWeight(.bold)
-            .font(.title2)
-            .frame(width: 45, height: 45)
-            .multilineTextAlignment(.center)
-            .keyboardType(.numberPad)
-            .focused($focusedField, equals: index)
-            .background(
-                Capsule()
-                    .fill(Color.white.opacity(0.8))
-                    .frame(height: 4)
-                    .offset(y: 20)
-            )
-            .onChange(of: codeFields[index]) { oldValue, newValue in
-                if newValue.count > 1 {
-                    codeFields[index] = String(newValue.prefix(1))
-                }
-                if newValue.isEmpty {
-                    if index > 0 {
-                        focusedField = index - 1
-                    }
-                } else if newValue.count == 1 {
-                    if index < 5 {
-                        focusedField = index + 1
-                    } else {
-                        focusedField = nil
-                    }
-                }
-            }
-            .onTapGesture {
-                focusedField = index
-            }
-    }
-}
-
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
