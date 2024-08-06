@@ -12,7 +12,7 @@ struct ContinueButtonView: View {
 
     var body: some View {
         if activePage == .page4 {
-            NavigationLink(destination: OTPPhoneNumberInput()) {
+            NavigationLink(destination: OTPPhoneNumberInputView()) {
                 buttonContent
             }
         } else {
@@ -26,13 +26,12 @@ struct ContinueButtonView: View {
 
     private var buttonContent: some View {
         Text(activePage == .page4 ? "Login to ChatMe App" : "Continue")
-            .font(.title3)
-            .foregroundStyle(.black.opacity(0.8))
-            .padding(.vertical, 15)
-            .frame(maxWidth: activePage == .page1 ? 220 : 340, maxHeight: 70)
-            .background(.yellow, in: .capsule)
-            .padding(.bottom, 15)
-            .transition(.move(edge: .bottom).combined(with: .opacity))
-            .animation(.easeOut(duration: 0.5), value: activePage)
+            .foregroundColor(.black)
+            .font(.system(size: 20, weight: .medium))
+            .padding(.vertical, 18)
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .background(.yellow)
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .padding()
     }
 }

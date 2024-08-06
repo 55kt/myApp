@@ -84,14 +84,16 @@ struct OTPhoneVerifyCode: View {
                         
                         
                         /// Verify Button
-                        NavigationLink(destination: CreateUserScreen()) {
+                        NavigationLink(destination: CreateUserScreenView()) {
                             Text("Verify and Create Account")
-                                .foregroundStyle(.black)
-                                .padding(.vertical)
-                                .frame(width: UIScreen.main.bounds.width - 30)
+                                .foregroundColor(.black)
+                                .font(.system(size: 20, weight: .medium))
+                                .padding(.vertical, 18)
+                                .frame(minWidth: 0, maxWidth: .infinity)
                                 .background(allFieldsFilled() ? Color.yellow : Color.white.opacity(0.3))
-                                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                 .disabled(!allFieldsFilled())
+                                .padding(.horizontal, 20)
                         }
                     }
                     .background(Color(.clear))

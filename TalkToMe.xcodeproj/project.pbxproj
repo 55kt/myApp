@@ -19,7 +19,7 @@
 		4B74F42C2C529E90008C8393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42B2C529E90008C8393 /* Assets.xcassets */; };
 		4B74F42F2C529E90008C8393 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */; };
 		4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */; };
-		4B74F4492C556131008C8393 /* OTPPhoneNumberInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4482C556131008C8393 /* OTPPhoneNumberInput.swift */; };
+		4B74F4492C556131008C8393 /* OTPPhoneNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4482C556131008C8393 /* OTPPhoneNumberInputView.swift */; };
 		4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F44B2C556812008C8393 /* OTPViewModel.swift */; };
 		4B74F4512C565402008C8393 /* OTPhoneVerifyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */; };
 		4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4552C56910F008C8393 /* IntroGradient.swift */; };
@@ -32,10 +32,14 @@
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
 		4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D1B2C5E7B3000BB41DF /* Countries.swift */; };
 		4BC70D222C5FCBE400BB41DF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */; };
-		4BC70D252C5FCF3700BB41DF /* PhoneInputButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* PhoneInputButton.swift */; };
-		4BC70D272C5FD7F100BB41DF /* createCustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D262C5FD7F000BB41DF /* createCustomAlert.swift */; };
-		4BC70D2B2C610E1100BB41DF /* CreateUserScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreen.swift */; };
+		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
+		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
+		4BC70D2F2C62572500BB41DF /* NavigationTextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2E2C62572500BB41DF /* NavigationTextArea.swift */; };
+		4BC70D312C6257B600BB41DF /* UserAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D302C6257B600BB41DF /* UserAvatar.swift */; };
+		4BC70D332C6258B300BB41DF /* UsernameField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D322C6258B300BB41DF /* UsernameField.swift */; };
+		4BC70D352C625A7100BB41DF /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D342C625A7100BB41DF /* SubmitButton.swift */; };
+		4BC70D372C625B1800BB41DF /* KeyboardHider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D362C625B1800BB41DF /* KeyboardHider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +56,7 @@
 		4B74F42B2C529E90008C8393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B74F4462C541234008C8393 /* KeyboardDismissModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDismissModifier.swift; sourceTree = "<group>"; };
-		4B74F4482C556131008C8393 /* OTPPhoneNumberInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPhoneNumberInput.swift; sourceTree = "<group>"; };
+		4B74F4482C556131008C8393 /* OTPPhoneNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPhoneNumberInputView.swift; sourceTree = "<group>"; };
 		4B74F44B2C556812008C8393 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		4B74F4502C565402008C8393 /* OTPhoneVerifyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPhoneVerifyCode.swift; sourceTree = "<group>"; };
 		4B74F4552C56910F008C8393 /* IntroGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroGradient.swift; sourceTree = "<group>"; };
@@ -66,10 +70,14 @@
 		4BC70D1B2C5E7B3000BB41DF /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4BC70D242C5FCF3700BB41DF /* PhoneInputButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputButton.swift; sourceTree = "<group>"; };
-		4BC70D262C5FD7F000BB41DF /* createCustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createCustomAlert.swift; sourceTree = "<group>"; };
-		4BC70D2A2C610E1100BB41DF /* CreateUserScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserScreen.swift; sourceTree = "<group>"; };
+		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
+		4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserScreenView.swift; sourceTree = "<group>"; };
 		4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpacityBackgroundLogo.swift; sourceTree = "<group>"; };
+		4BC70D2E2C62572500BB41DF /* NavigationTextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTextArea.swift; sourceTree = "<group>"; };
+		4BC70D302C6257B600BB41DF /* UserAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatar.swift; sourceTree = "<group>"; };
+		4BC70D322C6258B300BB41DF /* UsernameField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameField.swift; sourceTree = "<group>"; };
+		4BC70D342C625A7100BB41DF /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		4BC70D362C625B1800BB41DF /* KeyboardHider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */,
+				4BC70D362C625B1800BB41DF /* KeyboardHider.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -95,12 +104,11 @@
 		4B382FFC2C5D5B020094FA11 /* PhoneNumberInputScreen */ = {
 			isa = PBXGroup;
 			children = (
-				4B74F4482C556131008C8393 /* OTPPhoneNumberInput.swift */,
+				4B74F4482C556131008C8393 /* OTPPhoneNumberInputView.swift */,
 				4B382FFD2C5D64750094FA11 /* NavPlaceHolder.swift */,
 				4B382FFF2C5D65260094FA11 /* PhoneNumberInputField.swift */,
-				4BC70D242C5FCF3700BB41DF /* PhoneInputButton.swift */,
+				4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */,
 				4BC70D1F2C5FC93D00BB41DF /* CountryPicker */,
-				4BC70D262C5FD7F000BB41DF /* createCustomAlert.swift */,
 			);
 			path = PhoneNumberInputScreen;
 			sourceTree = "<group>";
@@ -158,8 +166,8 @@
 		4B74F43E2C52C8EC008C8393 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				4BC70D292C610DE300BB41DF /* CreateNewUser */,
 				4B74F4572C56921E008C8393 /* OTPRegistration */,
+				4BC70D292C610DE300BB41DF /* CreateNewUser */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -260,7 +268,11 @@
 		4BC70D292C610DE300BB41DF /* CreateNewUser */ = {
 			isa = PBXGroup;
 			children = (
-				4BC70D2A2C610E1100BB41DF /* CreateUserScreen.swift */,
+				4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */,
+				4BC70D2E2C62572500BB41DF /* NavigationTextArea.swift */,
+				4BC70D302C6257B600BB41DF /* UserAvatar.swift */,
+				4BC70D322C6258B300BB41DF /* UsernameField.swift */,
+				4BC70D342C625A7100BB41DF /* SubmitButton.swift */,
 			);
 			path = CreateNewUser;
 			sourceTree = "<group>";
@@ -346,11 +358,12 @@
 				4B382FFE2C5D64750094FA11 /* NavPlaceHolder.swift in Sources */,
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
 				4B74F4672C57EF73008C8393 /* Page.swift in Sources */,
-				4BC70D272C5FD7F100BB41DF /* createCustomAlert.swift in Sources */,
 				4B382FF92C5D30C00094FA11 /* RoundedCorner.swift in Sources */,
+				4BC70D312C6257B600BB41DF /* UserAvatar.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
 				4B382FFB2C5D504B0094FA11 /* KeyboardAwareModifier.swift in Sources */,
 				4B382FF02C5C09E40094FA11 /* Country.swift in Sources */,
+				4BC70D2F2C62572500BB41DF /* NavigationTextArea.swift in Sources */,
 				4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
@@ -358,11 +371,14 @@
 				4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */,
 				4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */,
 				4B74F46C2C57F8DC008C8393 /* MorphingSymbolView.swift in Sources */,
-				4BC70D252C5FCF3700BB41DF /* PhoneInputButton.swift in Sources */,
-				4B74F4492C556131008C8393 /* OTPPhoneNumberInput.swift in Sources */,
-				4BC70D2B2C610E1100BB41DF /* CreateUserScreen.swift in Sources */,
+				4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */,
+				4B74F4492C556131008C8393 /* OTPPhoneNumberInputView.swift in Sources */,
+				4BC70D332C6258B300BB41DF /* UsernameField.swift in Sources */,
+				4BC70D352C625A7100BB41DF /* SubmitButton.swift in Sources */,
+				4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */,
 				4B3830022C5D65CE0094FA11 /* CountryPicker.swift in Sources */,
 				4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */,
+				4BC70D372C625B1800BB41DF /* KeyboardHider.swift in Sources */,
 				4B74F4692C57F7BB008C8393 /* IntroView.swift in Sources */,
 				4B74F4472C541234008C8393 /* KeyboardDismissModifier.swift in Sources */,
 			);

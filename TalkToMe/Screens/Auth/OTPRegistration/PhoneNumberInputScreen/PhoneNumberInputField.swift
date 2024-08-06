@@ -41,20 +41,14 @@ struct PhoneNumberInputField: View {
             }
             .padding(.horizontal)
 
-            PhoneInputButton(phoneNumber: $phoneNumber, selectedCountry: $selectedCountry)
-                .disabled(phoneNumber.count < 10)
+//            PhoneInputButton(phoneNumber: $phoneNumber, selectedCountry: $selectedCountry)
+//                .disabled(phoneNumber.count < 10)
 
 
         }
-        .navigationDestination(isPresented: $navigateToVerify) {
-            OTPhoneVerifyCode(loginData: loginData)
-        }
+//        .navigationDestination(isPresented: $navigateToVerify) {
+//            OTPhoneVerifyCode(loginData: loginData)
+//        }
     }
 }
-
-// MARK: - Previews
-#Preview {
-    PhoneNumberInputField(selectedCountry: .constant(Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")), phoneNumber: .constant(""), loginData: OTPViewModel())
-}
-
 

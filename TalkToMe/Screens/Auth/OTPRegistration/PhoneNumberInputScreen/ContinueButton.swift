@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct  PhoneInputButton: View {
+struct  ContinueButton: View {
     // MARK: - Properties
     @Binding var phoneNumber: String
     @Binding var selectedCountry: Country
@@ -18,20 +18,17 @@ struct  PhoneInputButton: View {
     
     // MARK: - Body
     var body: some View {
-        Button(action: {
-            showAlert = true
-        }) {
+        NavigationLink(destination: OTPhoneVerifyCode(loginData: OTPViewModel()), label: {
             Text("Continue")
                 .foregroundStyle(.black)
                 .font(.system(size: 20))
                 .padding(.vertical, 18)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .background(phoneNumber.count >= 10 ? Color.yellow : Color.yellow.opacity(0.3))
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .padding(.horizontal, 16)
                 .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
-                
-        }
+        })
         .frame(height: 44)
         .background(Color.clear)
         .padding(.top, 5)
