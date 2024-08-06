@@ -9,13 +9,14 @@ import SwiftUI
 
 struct CreateUserScreenView: View {
     // MARK: - Properties
-    @State private var keyboardHeight: CGFloat = 0
     @State private var textFieldContent: String = ""
     @State private var isKeyboardVisible: Bool = false
+    @FocusState var isFocus: Bool
     
     // MARK: - Body
     var body: some View {
         ZStack {
+            
             // Background elements
             IntroGradient()
             
@@ -29,15 +30,15 @@ struct CreateUserScreenView: View {
             
             // Username TextField
             UsernameField(textPlaceholder: $textFieldContent, boolPlaceholder: $isKeyboardVisible)
+                .focused($isFocus)
             
             // Submit Button
             SubmitButton(textPlaceholder: $textFieldContent, boolPlaceholder: $isKeyboardVisible)
         }
         .navigationBarBackButtonHidden(true)
         .onTapGesture {
-            hiderKeyboard()
+            isFocus = false
         }
-        .animation(.easeOut(duration: 0.3), value: keyboardHeight)
     }
 }
 

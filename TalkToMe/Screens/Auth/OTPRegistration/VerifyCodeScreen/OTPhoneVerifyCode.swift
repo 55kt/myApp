@@ -2,10 +2,10 @@ import SwiftUI
 
 struct OTPhoneVerifyCode: View {
     // MARK: - Properties
-    @StateObject var loginData: OTPViewModel
-    @Environment(\.presentationMode) var present
     @FocusState private var focusedField: Int?
     @State private var codeFields = ["", "", "", "", "", ""]
+    
+    @ObservedObject var loginData: OTPViewModel
     
     // MARK: - Body
     var body: some View {
@@ -16,34 +16,9 @@ struct OTPhoneVerifyCode: View {
                 VStack {
                     VStack {
                         
-                        /// NavBar Group
-                        Group {
-                            HStack {
-                                Button {
-                                    present.wrappedValue.dismiss()
-                                } label: {
-                                    Image(systemName: "arrow.left")
-                                        .bold()
-                                        .font(.title2)
-                                        .foregroundStyle(.white)
-                                }
-                                
-                                Spacer()
-                                
-                                Text("Verify your phone number")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                    .foregroundStyle(.white)
-                                
-                                
-                                Spacer()
-                            }
-                            .padding()
-                            
-                            Text("Code sent to \(loginData.phoneNumber)")
-                                .foregroundStyle(.white)
-                                .padding(.bottom)
-                        }
+                        /// NavBar Text & Phone number view
+                        NavBarElements(phoneNumberPlaceholder: loginData.phoneNumber)
+                        
                         Spacer(minLength: 0)
                         
                         /// Code Platform input
