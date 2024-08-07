@@ -18,10 +18,8 @@ struct SupportArea: View {
             } label: {
                 Text("Request again")
                     .fontWeight(.bold)
-                    .foregroundStyle(.blue)
+                    .foregroundStyle(Color.mBlueColor)
             }
-            
-            
         }
         
         Button {
@@ -29,7 +27,7 @@ struct SupportArea: View {
         } label: {
             Text("Get via call")
                 .fontWeight(.bold)
-                .foregroundStyle(.blue)
+                .foregroundStyle(Color.mBlueColor)
         }
         .padding(.top, 6)
     }

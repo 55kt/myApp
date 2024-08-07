@@ -1,21 +1,9 @@
-//
-//  CodeInputPlatforms.swift
-//  TalkToMe
-//
-//  Created by Vlad on 6/8/24.
-//
-
 import SwiftUI
 
 struct CodeInputPlatforms: View {
     @Binding var codeFields: [String]
-    @FocusState private var focusedField: Int?
+    @FocusState.Binding var focusedField: Int?
     let index: Int
-    
-    init(codeFields: Binding<[String]>, index: Int) {
-            self._codeFields = codeFields
-            self.index = index
-        }
     
     var body: some View {
         TextField("", text: $codeFields[index])
@@ -32,23 +20,29 @@ struct CodeInputPlatforms: View {
                     .frame(height: 4)
                     .offset(y: 20)
             )
-            .onChange(of: codeFields[index]) { (oldValue: String, newValue: String) in
+            .onChange(of: codeFields[index]) {oldValue, newValue in
                 if newValue.count > 1 {
+                    // Limit input to one character
                     codeFields[index] = String(newValue.prefix(1))
                 }
+                
                 if newValue.isEmpty {
+                    // Move focus to previous field if deleting
                     if index > 0 {
                         focusedField = index - 1
                     }
-                } else if newValue.count == 1 {
+                } else {
+                    // Move focus to next field after input
                     if index < 5 {
                         focusedField = index + 1
                     } else {
+                        // Dismiss the keyboard when done
                         focusedField = nil
                     }
                 }
             }
             .onTapGesture {
+                // Set focus when tapping on a field
                 focusedField = index
             }
     }

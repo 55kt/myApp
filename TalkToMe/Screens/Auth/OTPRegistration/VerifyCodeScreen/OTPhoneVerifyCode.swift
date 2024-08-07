@@ -24,7 +24,7 @@ struct OTPhoneVerifyCode: View {
                         /// Code Platform input
                         HStack(spacing: 15) {
                             ForEach(0..<6, id: \.self) { index in
-                                CodeInputPlatforms(codeFields: $codeFields, index: index)
+                                CodeInputPlatforms(codeFields: $codeFields, focusedField: $focusedField, index: index)
                             }
                         }
                         .padding()

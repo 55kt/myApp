@@ -41,6 +41,7 @@
 		4BC70D3B2C629B3300BB41DF /* SupportArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D3A2C629B3300BB41DF /* SupportArea.swift */; };
 		4BC70D3D2C629C1F00BB41DF /* VerifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D3C2C629C1F00BB41DF /* VerifyButton.swift */; };
 		4BC70D3F2C629F4200BB41DF /* CodeInputPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D3E2C629F4200BB41DF /* CodeInputPlatforms.swift */; };
+		4BC70D412C62AE9D00BB41DF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D402C62AE9D00BB41DF /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		4BC70D3A2C629B3300BB41DF /* SupportArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportArea.swift; sourceTree = "<group>"; };
 		4BC70D3C2C629C1F00BB41DF /* VerifyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyButton.swift; sourceTree = "<group>"; };
 		4BC70D3E2C629F4200BB41DF /* CodeInputPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputPlatforms.swift; sourceTree = "<group>"; };
+		4BC70D402C62AE9D00BB41DF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */,
+				4BC70D402C62AE9D00BB41DF /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				4BC70D392C626F4400BB41DF /* NavBarElements.swift in Sources */,
 				4BC70D312C6257B600BB41DF /* UserAvatar.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
+				4BC70D412C62AE9D00BB41DF /* ColorExtension.swift in Sources */,
 				4B382FF02C5C09E40094FA11 /* Country.swift in Sources */,
 				4BC70D3F2C629F4200BB41DF /* CodeInputPlatforms.swift in Sources */,
 				4BC70D2F2C62572500BB41DF /* NavigationTextArea.swift in Sources */,
