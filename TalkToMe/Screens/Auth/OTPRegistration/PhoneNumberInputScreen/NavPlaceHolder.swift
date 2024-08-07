@@ -1,10 +1,3 @@
-//
-//  NavPlaceHolder.swift
-//  TalkToMe
-//
-//  Created by Vlad on 2/8/24.
-//
-
 import SwiftUI
 
 struct NavPlaceHolder: View {

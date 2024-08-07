@@ -1,10 +1,3 @@
-//
-//  CreateUserScreen.swift
-//  TalkToMe
-//
-//  Created by Vlad on 5/8/24.
-//
-
 import SwiftUI
 
 struct CreateUserScreenView: View {

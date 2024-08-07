@@ -1,5 +1,3 @@
-// CornerRadiusExtension
-
 import Foundation
 import SwiftUI
 

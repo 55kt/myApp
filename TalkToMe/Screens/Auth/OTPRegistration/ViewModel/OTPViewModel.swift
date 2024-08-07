@@ -1,10 +1,3 @@
-//
-//  OTPLoginViewModel.swift
-//  TalkToMe
-//
-//  Created by Vlad on 27/7/24.
-//
-
 import SwiftUI
 
 class OTPViewModel: ObservableObject {

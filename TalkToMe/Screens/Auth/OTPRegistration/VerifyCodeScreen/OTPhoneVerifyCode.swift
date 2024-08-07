@@ -21,6 +21,7 @@ struct OTPhoneVerifyCode: View {
                         
                         Spacer(minLength: 0)
                         
+                        
                         /// Code Platform input
                         HStack(spacing: 15) {
                             ForEach(0..<6, id: \.self) { index in
@@ -37,6 +38,7 @@ struct OTPhoneVerifyCode: View {
                         
                         /// Verify Button
                         VerifyButton(boolPlaceholder: allFieldsFilled())
+                            .disabled(!allFieldsFilled())
                     }
                     .background(Color(.clear))
                 }

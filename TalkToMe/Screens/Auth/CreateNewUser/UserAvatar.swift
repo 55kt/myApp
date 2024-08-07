@@ -1,10 +1,3 @@
-//
-//  UserAvatar.swift
-//  TalkToMe
-//
-//  Created by Vlad on 6/8/24.
-//
-
 import SwiftUI
 
 struct UserAvatar: View {
@@ -28,6 +21,6 @@ struct UserAvatar: View {
                     .frame(width: boolPlaceholder ? 180 : 100, height: boolPlaceholder ? 180 : 100)
             }
         }
-        .padding(.bottom, boolPlaceholder ? 200 : 160)
+        .padding(.bottom, boolPlaceholder ? 200 : 220)
     }
 }

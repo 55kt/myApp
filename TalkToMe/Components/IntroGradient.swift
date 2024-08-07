@@ -1,10 +1,3 @@
-//
-//  GradientBackground.swift
-//  TalkToMe
-//
-//  Created by Vlad on 28/7/24.
-//
-
 import SwiftUI
 
 struct IntroGradient: View {

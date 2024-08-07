@@ -1,10 +1,3 @@
-//
-//  HeaderView.swift
-//  TalkToMe
-//
-//  Created by Vlad on 31/7/24.
-//
-
 import SwiftUI
 
 struct HeaderView: View {

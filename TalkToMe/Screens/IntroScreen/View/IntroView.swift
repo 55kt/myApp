@@ -1,10 +1,3 @@
-//
-//  IntroView.swift
-//  TalkToMe
-//
-//  Created by Vlad on 29/7/24.
-//
-
 import SwiftUI
 
 struct IntroView: View {

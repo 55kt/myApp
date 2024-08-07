@@ -1,10 +1,3 @@
-//
-//  VerifyButton.swift
-//  TalkToMe
-//
-//  Created by Vlad on 6/8/24.
-//
-
 import SwiftUI
 
 struct VerifyButton: View {
