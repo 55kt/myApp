@@ -16,11 +16,12 @@ struct CreateUserScreenView: View {
             if !isKeyboardVisible {
                 // Nav text area
                 NavigationTextArea()
+                
+                UserAvatar()
+            } else {
+                TappedFieldText()
             }
-            
-            // Avatar Area
-            UserAvatar(boolPlaceholder: $isKeyboardVisible)
-            
+
             // Username TextField
             UsernameField(textPlaceholder: $textFieldContent, boolPlaceholder: $isKeyboardVisible)
                 .focused($isFocus)

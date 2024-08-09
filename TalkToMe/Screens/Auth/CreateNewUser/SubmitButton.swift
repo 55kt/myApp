@@ -14,7 +14,7 @@ struct SubmitButton: View {
                 Text("Submit")
                     .foregroundColor(.black)
                     .font(.system(size: 20, weight: .medium))
-                    .padding(.vertical, 18)
+                    .padding(.vertical, 19)
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .background(textPlaceholder.count >= 5 ? Color.yellow : Color.yellow.opacity(0.3))
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))

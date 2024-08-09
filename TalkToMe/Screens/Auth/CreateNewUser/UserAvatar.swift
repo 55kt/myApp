@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct UserAvatar: View {
-    @Binding var boolPlaceholder: Bool
     
     var body: some View {
         VStack {
@@ -9,7 +8,7 @@ struct UserAvatar: View {
                 Circle()
                     .padding()
                     .scaledToFit()
-                    .frame(width: boolPlaceholder ? 300 : 190, height: boolPlaceholder ? 300 : 190)
+                    .frame(width: 180, height: 180)
                     .foregroundStyle(.white)
                     .opacity(0.5)
                     .shadow(radius: 10)
@@ -18,9 +17,9 @@ struct UserAvatar: View {
                 Image(systemName: "person.fill")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: boolPlaceholder ? 180 : 100, height: boolPlaceholder ? 180 : 100)
+                    .frame(width: 100, height: 100)
             }
         }
-        .padding(.bottom, boolPlaceholder ? 200 : 220)
+        .padding(.bottom, 220)
     }
 }

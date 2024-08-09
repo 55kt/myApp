@@ -24,7 +24,7 @@ struct UsernameField: View {
         .padding()
         .background(Color.white.opacity(0.3))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-        .padding(.horizontal, 15)
-        .padding(.top, boolPlaceholder ? 200 : 90)
+        .padding(.horizontal, 16)
+        .padding(.top, boolPlaceholder ? 180 : 50)
     }
 }
