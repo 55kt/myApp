@@ -14,11 +14,7 @@ struct UsernameField: View {
             
             TextField("Username", text: $textPlaceholder).font(.title3)
                 .shadow(radius: 10)
-                .onChange(of: textPlaceholder) {oldValue, newValue in
-                    if newValue.count >= 15 {
-                        textPlaceholder = String(newValue.prefix(15))
-                    }
-                }
+                
         }
         .foregroundStyle(.white)
         .padding()
