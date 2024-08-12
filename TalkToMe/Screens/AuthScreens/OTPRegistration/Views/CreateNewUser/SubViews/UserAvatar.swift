@@ -17,7 +17,7 @@ struct UserAvatar: View {
                             .clipShape(Circle())
                             .shadow(radius: 10)
                     } else {
-                        defaultAvatar() // Вызов метода для отображения дефолтного аватара
+                        defaultAvatar()
                     }
                 }
             }
@@ -34,7 +34,6 @@ struct UserAvatar: View {
         }
     }
     
-    // Метод для отображения дефолтного аватара
     func defaultAvatar() -> some View {
         ZStack {
             Circle()
