@@ -1,15 +1,8 @@
-//
-//  CountryPickerView.swift
-//  TalkToMe
-//
-//  Created by Vlad on 1/8/24.
-//
-
 import SwiftUI
 
-struct CountryPickerView: View {
+struct CountryPickerSearchView: View {
     // MARK: - Properties
-    @Binding var selectedCountry: Country
+    @Binding var selectedCountry: CountryPickerViewModel
     @Environment(\.presentationMode) var presentationMode
     @State private var searchText = ""
     
@@ -41,15 +34,19 @@ struct CountryPickerView: View {
     }
 
     // MARK: - Methods
-    var filteredCountries: [Country] {
+    var filteredCountries: [CountryPickerViewModel] {
         if searchText.isEmpty {
-            return Country.allCountries
+            return CountryPickerViewModel.allCountries
         } else {
-            return Country.allCountries.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            return CountryPickerViewModel.allCountries.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
 
-    var filteredCountriesGrouped: [String: [Country]] {
+    var filteredCountriesGrouped: [String: [CountryPickerViewModel]] {
         Dictionary(grouping: filteredCountries, by: { String($0.name.prefix(1)).uppercased() })
     }
+}
+
+#Preview {
+    CountryPickerSearchView(selectedCountry: .constant(CountryPickerViewModel.allCountries[0]))
 }

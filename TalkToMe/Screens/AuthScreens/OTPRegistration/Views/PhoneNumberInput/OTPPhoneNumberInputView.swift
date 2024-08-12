@@ -2,7 +2,7 @@ import SwiftUI
 
 struct OTPPhoneNumberInputView: View {
     // MARK: - Properties
-    @State private var selectedCountry: Country = Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")
+    @State private var selectedCountry: CountryPickerViewModel = CountryPickerViewModel(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")
     @State private var phoneNumber: String = ""
     @FocusState private var isFocus: Bool
     
@@ -19,7 +19,7 @@ struct OTPPhoneNumberInputView: View {
                     NavPlaceHolder()
                     
                     // Country Area
-                    CountryPicker(selectedCountry: $selectedCountry)
+                    CountryPickerView(selectedCountry: $selectedCountry)
                     
                     // Phone Number Field
                     PhoneNumberInputField(selectedCountry: $selectedCountry, phoneNumber: $phoneNumber, loginData: loginData)

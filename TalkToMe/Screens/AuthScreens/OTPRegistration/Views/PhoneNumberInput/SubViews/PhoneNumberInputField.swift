@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PhoneNumberInputField: View {
     // MARK: - Properties
-    @Binding var selectedCountry: Country
+    @Binding var selectedCountry: CountryPickerViewModel
     @Binding var phoneNumber: String
     @State private var navigateToVerify = false
     @StateObject var loginData = OTPViewModel()

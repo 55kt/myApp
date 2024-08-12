@@ -1,15 +1,8 @@
-//
-//  CountryPicker.swift
-//  TalkToMe
-//
-//  Created by Vlad on 2/8/24.
-//
-
 import SwiftUI
 
-struct CountryPicker: View {
+struct CountryPickerView: View {
     // MARK: - Properties
-    @Binding var selectedCountry: Country
+    @Binding var selectedCountry: CountryPickerViewModel
     @State private var isCountryPickerPresented: Bool = false
 
     // MARK: - Body
@@ -33,7 +26,7 @@ struct CountryPicker: View {
         }
         .padding(.horizontal)
         .sheet(isPresented: $isCountryPickerPresented) {
-            CountryPickerView(selectedCountry: $selectedCountry)
+            CountryPickerSearchView(selectedCountry: $selectedCountry)
         }
         // Border Line
         Rectangle()
@@ -45,7 +38,6 @@ struct CountryPicker: View {
     }
 }
 
-// MARK: - Preview
 #Preview {
-    CountryPicker(selectedCountry: .constant(Country(name: "Antigua and Barbuda", isoCode: "AG", phoneCode: "+1268")))
+    CountryPickerView(selectedCountry: .constant(CountryPickerViewModel.allCountries[0]))
 }

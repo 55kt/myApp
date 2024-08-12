@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B382FF02C5C09E40094FA11 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* Country.swift */; };
-		4B382FF22C5C0A050094FA11 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */; };
+		4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */; };
+		4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */; };
 		4B382FF92C5D30C00094FA11 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */; };
 		4B382FFE2C5D64750094FA11 /* NavPlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FFD2C5D64750094FA11 /* NavPlaceHolder.swift */; };
 		4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FFF2C5D65260094FA11 /* PhoneNumberInputField.swift */; };
-		4B3830022C5D65CE0094FA11 /* CountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3830012C5D65CE0094FA11 /* CountryPicker.swift */; };
+		4B3830022C5D65CE0094FA11 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3830012C5D65CE0094FA11 /* CountryPickerView.swift */; };
 		4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */; };
 		4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4292C529E8F008C8393 /* MainTabView.swift */; };
 		4B74F42C2C529E90008C8393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42B2C529E90008C8393 /* Assets.xcassets */; };
@@ -28,7 +28,6 @@
 		4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */; };
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
-		4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D1B2C5E7B3000BB41DF /* Countries.swift */; };
 		4BC70D222C5FCBE400BB41DF /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
@@ -46,12 +45,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B382FEF2C5C09E40094FA11 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
+		4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
+		4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerSearchView.swift; sourceTree = "<group>"; };
 		4B382FF82C5D30C00094FA11 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		4B382FFD2C5D64750094FA11 /* NavPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPlaceHolder.swift; sourceTree = "<group>"; };
 		4B382FFF2C5D65260094FA11 /* PhoneNumberInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberInputField.swift; sourceTree = "<group>"; };
-		4B3830012C5D65CE0094FA11 /* CountryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPicker.swift; sourceTree = "<group>"; };
+		4B3830012C5D65CE0094FA11 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
 		4B74F4242C529E8F008C8393 /* TalkToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToMeApp.swift; sourceTree = "<group>"; };
 		4B74F4292C529E8F008C8393 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -68,7 +67,6 @@
 		4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonView.swift; sourceTree = "<group>"; };
 		4B74F4722C5AA5DA008C8393 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		4BC70D1B2C5E7B3000BB41DF /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -220,10 +218,8 @@
 		4BC70D1F2C5FC93D00BB41DF /* CountryPicker */ = {
 			isa = PBXGroup;
 			children = (
-				4B3830012C5D65CE0094FA11 /* CountryPicker.swift */,
-				4B382FF12C5C0A050094FA11 /* CountryPickerView.swift */,
-				4BC70D1B2C5E7B3000BB41DF /* Countries.swift */,
-				4B382FEF2C5C09E40094FA11 /* Country.swift */,
+				4BF626302C6A468700FF77B9 /* Views */,
+				4BF626312C6A469E00FF77B9 /* ViewModel */,
 			);
 			path = CountryPicker;
 			sourceTree = "<group>";
@@ -342,6 +338,23 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		4BF626302C6A468700FF77B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B3830012C5D65CE0094FA11 /* CountryPickerView.swift */,
+				4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4BF626312C6A469E00FF77B9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -428,16 +441,15 @@
 				4BC70D312C6257B600BB41DF /* UserAvatar.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
 				4BC70D412C62AE9D00BB41DF /* ColorExtension.swift in Sources */,
-				4B382FF02C5C09E40094FA11 /* Country.swift in Sources */,
+				4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */,
 				4BF626242C669C5500FF77B9 /* TappedFieldTextChange.swift in Sources */,
 				4BC70D3F2C629F4200BB41DF /* CodeInputPlatforms.swift in Sources */,
 				4BC70D2F2C62572500BB41DF /* NavigationTextArea.swift in Sources */,
-				4BC70D1C2C5E7B3000BB41DF /* Countries.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4BC70D3D2C629C1F00BB41DF /* VerifyButton.swift in Sources */,
 				4BC70D3B2C629B3300BB41DF /* SupportArea.swift in Sources */,
-				4B382FF22C5C0A050094FA11 /* CountryPickerView.swift in Sources */,
+				4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */,
 				4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */,
 				4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */,
 				4B74F46C2C57F8DC008C8393 /* MorphingSymbolView.swift in Sources */,
@@ -446,7 +458,7 @@
 				4BC70D332C6258B300BB41DF /* UsernameField.swift in Sources */,
 				4BC70D352C625A7100BB41DF /* SubmitButton.swift in Sources */,
 				4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */,
-				4B3830022C5D65CE0094FA11 /* CountryPicker.swift in Sources */,
+				4B3830022C5D65CE0094FA11 /* CountryPickerView.swift in Sources */,
 				4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */,
 				4B74F4692C57F7BB008C8393 /* IntroView.swift in Sources */,
 			);

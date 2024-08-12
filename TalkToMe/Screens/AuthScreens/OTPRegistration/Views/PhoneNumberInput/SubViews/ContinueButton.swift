@@ -3,7 +3,7 @@ import SwiftUI
 struct ContinueButton: View {
     // MARK: - Properties
     @Binding var phoneNumber: String
-    @Binding var selectedCountry: Country
+    @Binding var selectedCountry: CountryPickerViewModel
     @State private var showAlert = false
     @State private var navigateToVerify = false
     
