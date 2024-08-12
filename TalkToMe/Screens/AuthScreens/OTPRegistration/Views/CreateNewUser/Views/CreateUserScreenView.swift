@@ -20,7 +20,7 @@ struct CreateUserScreenView: View {
                 NavigationTextArea()
                 UserAvatar()
             } else {
-                TappedFieldText()
+                TappedFieldTextChange()
             }
             
             VStack {
@@ -57,9 +57,6 @@ struct CreateUserScreenView: View {
             .padding(.top, 20)
         }
         .navigationBarBackButtonHidden(true)
-        .onTapGesture {
-            isFocus = false
-        }
     }
 }
 

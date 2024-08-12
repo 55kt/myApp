@@ -1,10 +1,3 @@
-//
-//  Page.swift
-//  TalkToMe
-//
-//  Created by Vlad on 29/7/24.
-//
-
 import SwiftUI
 
 enum Page: String, CaseIterable {

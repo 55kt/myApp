@@ -1,13 +1,6 @@
-//
-//  TappedFieldText.swift
-//  TalkToMe
-//
-//  Created by Vlad on 9/8/24.
-//
-
 import SwiftUI
 
-struct TappedFieldText: View {
+struct TappedFieldTextChange: View {
     var body: some View {
         ZStack {
             IntroGradient()
@@ -34,5 +27,5 @@ struct TappedFieldText: View {
 }
 
 #Preview {
-    TappedFieldText()
+    TappedFieldTextChange()
 }

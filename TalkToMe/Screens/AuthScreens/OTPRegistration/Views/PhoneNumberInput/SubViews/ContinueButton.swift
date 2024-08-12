@@ -42,7 +42,7 @@ struct ContinueButton: View {
                 )
             }
             .navigationDestination(isPresented: $navigateToVerify) {
-                OTPhoneVerifyCode(loginData: loginData)
+                OTPPhoneVerifyCodeView(loginData: loginData)
             }
         }
     }

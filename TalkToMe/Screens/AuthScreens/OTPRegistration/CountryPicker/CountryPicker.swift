@@ -37,8 +37,8 @@ struct CountryPicker: View {
         }
         // Border Line
         Rectangle()
-            .frame(height: 2)
             .foregroundColor(.white)
+            .frame(height: 2)
             .opacity(0.6)
             .padding(.horizontal)
             .padding(.vertical, -15)

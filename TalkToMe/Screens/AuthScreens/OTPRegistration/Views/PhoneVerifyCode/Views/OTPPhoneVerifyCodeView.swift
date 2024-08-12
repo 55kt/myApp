@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct OTPhoneVerifyCode: View {
+struct OTPPhoneVerifyCodeView: View {
     // MARK: - Properties
     @FocusState private var focusedField: Int?
     @State private var codeFields = ["", "", "", "", "", ""]
@@ -56,5 +56,5 @@ struct OTPhoneVerifyCode: View {
 
 //// MARK: - Preview
 #Preview {
-    OTPhoneVerifyCode(loginData: OTPViewModel())
+    OTPPhoneVerifyCodeView(loginData: OTPViewModel())
 }
