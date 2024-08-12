@@ -13,7 +13,7 @@ struct TappedFieldTextChange: View {
                                 
                 Text("Be careful if you want to change your nickname in the future; this operation will only be available for a fee.")
                     .font(.headline)
-                    .foregroundStyle(.yellow.opacity(0.9))
+                    .foregroundStyle(.white.opacity(0.9))
                     .padding(2)
                     .padding(.top, 13)
                 Spacer()

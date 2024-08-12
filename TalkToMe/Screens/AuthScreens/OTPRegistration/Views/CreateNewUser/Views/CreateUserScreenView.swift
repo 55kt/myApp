@@ -26,15 +26,11 @@ struct CreateUserScreenView: View {
             VStack {
                 if showMessage {
                     if usernameExists == true {
-                        Text("Username already exists")
-                            .font(.title)
-                            .foregroundColor(.yellow)
-                            .bold()
-                            .transition(.opacity)
-                            .padding(.bottom, 10)
+                        existText()
                     }
                 }
             }
+            .padding(.bottom, 10)
 
             // Username TextField
             UsernameField(textPlaceholder: $textFieldContent, boolPlaceholder: $isKeyboardVisible)
@@ -57,6 +53,15 @@ struct CreateUserScreenView: View {
             .padding(.top, 20)
         }
         .navigationBarBackButtonHidden(true)
+    }
+    
+    func existText() -> some View {
+        Text("Username already exists")
+            .font(.title)
+            .foregroundColor(.white)
+            .bold()
+            .transition(.opacity)
+            .padding(.bottom, 10)
     }
 }
 

@@ -18,6 +18,8 @@ struct UserAvatar: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
+                    .foregroundStyle(.white)
+
             }
         }
         .padding(.bottom, 220)
