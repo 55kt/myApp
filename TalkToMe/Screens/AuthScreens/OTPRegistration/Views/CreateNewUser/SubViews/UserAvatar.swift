@@ -2,35 +2,32 @@ import SwiftUI
 import PhotosUI
 
 struct UserAvatar: View {
+    @State private var showPicker: Bool = false
+    @State private var croppedImage: UIImage?
     @State private var userAvatar: UIImage?
     @State private var photosPickerItem: PhotosPickerItem?
     
     var body: some View {
-        VStack {
-            ZStack {
-                PhotosPicker(selection: $photosPickerItem, matching: .images) {
-                    if let userAvatar = userAvatar {
-                        Image(uiImage: userAvatar)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 150, height: 150)
-                            .clipShape(Circle())
-                            .shadow(radius: 10)
-                    } else {
+        NavigationStack {
+            VStack {
+                if let croppedImage {
+                    Image(uiImage: croppedImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .padding()
+                        .frame(width: 180, height: 180)
+                        .foregroundStyle(.white)
+                        .shadow(radius: 10)
+                } else {
+                    Button {
+                        showPicker.toggle()
+                    } label: {
                         defaultAvatar()
                     }
+                    .cropImagePicker(options: [.circle], show: $showPicker, croppedImage: $croppedImage)
                 }
             }
-        }
-        .padding(.bottom, 220)
-        .onChange(of: photosPickerItem) { _, _ in
-            Task {
-                if let photosPickerItem, let data = try? await photosPickerItem.loadTransferable(type: Data.self) {
-                    if let image = UIImage(data: data) {
-                        userAvatar = image
-                    }
-                }
-            }
+            .padding(.bottom, 200)
         }
     }
     
@@ -52,3 +49,5 @@ struct UserAvatar: View {
         }
     }
 }
+
+

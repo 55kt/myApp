@@ -101,15 +101,15 @@ struct CropView: View {
     var body: some View {
         NavigationStack {
             imageView()
-                .navigationTitle("Crop View")
+                .navigationTitle("Crop Your Avatar")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarBackground(Color.black, for: .navigationBar)
+//                .toolbarBackground(Color.black, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background {
-                    Color.black
-                        .ignoresSafeArea()
+                    IntroGradient()
+                        .blur(radius: 10)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
