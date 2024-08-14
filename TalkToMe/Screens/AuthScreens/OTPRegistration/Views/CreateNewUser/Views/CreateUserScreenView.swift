@@ -8,6 +8,7 @@ struct CreateUserScreenView: View {
     @State private var showMessage: Bool = false
     @FocusState private var isFocus: Bool
     @State private var buttonText: String = "Create New User"
+    @State private var croppedImage: UIImage?
     
     // MARK: - Body
     var body: some View {
@@ -18,7 +19,7 @@ struct CreateUserScreenView: View {
             if !isKeyboardVisible {
                 // Nav text area
                 NavigationTextArea()
-                UserAvatar()
+                UserAvatar(croppedImage: $croppedImage)
             } else {
                 TappedFieldTextChange()
             }

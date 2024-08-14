@@ -234,22 +234,22 @@ struct CropView: View {
         .frame(cropSize)
         .cornerRadius(crop == .circle ? cropSize.height / 2 : 0)
     }
-    
+
     /// - Grids
     @ViewBuilder
     func Grids() -> some View {
         ZStack {
             HStack {
-                ForEach(1...5,id: \.self) { _ in
+                ForEach(1...5, id: \.self) { _ in
                     Rectangle()
                         .fill(.white.opacity(0.7))
                         .frame(width: 1)
                         .frame(maxWidth: .infinity)
                 }
             }
-            
+
             VStack {
-                ForEach(1...8,id: \.self) { _ in
+                ForEach(1...8, id: \.self) { _ in
                     Rectangle()
                         .fill(.white.opacity(0.7))
                         .frame(height: 1)

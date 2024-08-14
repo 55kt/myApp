@@ -1,26 +1,24 @@
 import SwiftUI
 
-// MARK: - Crop config
-
 enum Crop: Equatable {
     case circle
-    case custom(CGSize)
-    
+    case camera
+
     func name() -> String {
         switch self {
         case .circle:
             return "circle"
-        case let .custom(cGSize):
-            return "Custom \(Int(cGSize.width))X\(Int(cGSize.width))"
+        case .camera: 
+            return "Take a Photo"
         }
     }
-    
+
     func size() -> CGSize {
         switch self {
         case .circle:
             return .init(width: 350, height: 350)
-        case let .custom(cGSize):
-            return cGSize
+        case .camera:
+            return .init(width: 350, height: 350)
         }
     }
 }
