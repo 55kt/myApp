@@ -33,6 +33,7 @@ struct CameraView: UIViewControllerRepresentable {
         picker.delegate = context.coordinator
         picker.sourceType = .camera
         picker.allowsEditing = false
+        picker.modalPresentationStyle = .fullScreen
         return picker
     }
     

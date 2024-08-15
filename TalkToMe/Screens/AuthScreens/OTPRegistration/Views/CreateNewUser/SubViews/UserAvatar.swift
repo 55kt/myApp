@@ -4,33 +4,38 @@ import PhotosUI
 struct UserAvatar: View {
     @State private var showConfirmationDialog: Bool = false
     @State private var showCamera: Bool = false
-    @State private var showPhotoLibrary: Bool = false
     @State private var temporaryImage: UIImage?
     @State private var showCropView: Bool = false
     @Binding var croppedImage: UIImage?
     @State private var photosPickerItem: PhotosPickerItem?
+    @State private var isShowingPhotoPicker: Bool = false
+    @State private var userAvatar: UIImage?
 
     var body: some View {
         NavigationStack {
             VStack {
-                if let croppedImage {
-                    Image(uiImage: croppedImage)
+                if let avatar = userAvatar ?? croppedImage {
+                    Image(uiImage: avatar)
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .padding()
+                        .aspectRatio(contentMode: .fill)
                         .frame(width: 180, height: 180)
+                        .clipShape(Circle())
                         .foregroundStyle(.white)
                         .shadow(radius: 10)
                         .onTapGesture {
                             showConfirmationDialog.toggle()
                         }
                         .confirmationDialog("Select an option", isPresented: $showConfirmationDialog) {
-                            Button("Take a photo from library") {
-                                resetTemporaryData() // Сбрасываем временные данные
-                                showPhotoLibrary = true
+                            Button("Crop your photo") {
+                                croppedImage = avatar
+                                showCropView = true
+                            }
+                            Button("Take a new photo from library") {
+                                resetTemporaryData()
+                                isShowingPhotoPicker = true
                             }
                             Button("Open Camera") {
-                                resetTemporaryData() // Сбрасываем временные данные
+                                resetTemporaryData()
                                 showCamera = true
                             }
                             Button("Cancel", role: .cancel) {}
@@ -43,11 +48,11 @@ struct UserAvatar: View {
                     }
                     .confirmationDialog("Select an option", isPresented: $showConfirmationDialog) {
                         Button("Take a photo from library") {
-                            resetTemporaryData() // Сбрасываем временные данные
-                            showPhotoLibrary = true
+                            resetTemporaryData()
+                            isShowingPhotoPicker = true
                         }
                         Button("Open Camera") {
-                            resetTemporaryData() // Сбрасываем временные данные
+                            resetTemporaryData()
                             showCamera = true
                         }
                         Button("Cancel", role: .cancel) {}
@@ -55,37 +60,43 @@ struct UserAvatar: View {
                 }
             }
             .padding(.bottom, 200)
-            .sheet(isPresented: $showCamera) {
+            .fullScreenCover(isPresented: $showCamera) {
                 CameraView(image: $temporaryImage)
+                    .edgesIgnoringSafeArea(.all)
                     .onDisappear {
                         if let image = temporaryImage {
+                            userAvatar = image
                             croppedImage = image
-                            showCropView = true // Показываем CropView только после съемки с камеры
                         }
                     }
             }
-            .sheet(isPresented: $showPhotoLibrary) {
-                showPhotoLibrary = true
-                    .onDisappear {
-                        if let image = temporaryImage {
+            .photosPicker(isPresented: $isShowingPhotoPicker, selection: $photosPickerItem, matching: .images)
+            .onChange(of: photosPickerItem) { _ , newValue in
+                if let newValue {
+                    Task {
+                        if let imageData = try? await newValue.loadTransferable(type: Data.self),
+                           let image = UIImage(data: imageData) {
+                            userAvatar = image
                             croppedImage = image
-                            showCropView = true // Показываем CropView только после выбора из библиотеки
                         }
+                        isShowingPhotoPicker = false
                     }
+                }
             }
             .fullScreenCover(isPresented: $showCropView) {
                 if let image = croppedImage {
                     CropView(crop: .circle, image: image) { cropped, status in
                         if let cropped = cropped {
                             self.croppedImage = cropped
+                            self.userAvatar = cropped
                         }
-                        showCropView = false // Закрываем CropView после завершения обрезки
+                        showCropView = false 
                     }
                 }
             }
         }
     }
-    
+
     func defaultAvatar() -> some View {
         ZStack {
             Circle()
@@ -95,7 +106,7 @@ struct UserAvatar: View {
                 .foregroundStyle(.white)
                 .opacity(0.5)
                 .shadow(radius: 10)
-            
+
             Image(systemName: "person.fill")
                 .resizable()
                 .scaledToFit()
@@ -103,7 +114,7 @@ struct UserAvatar: View {
                 .foregroundStyle(.white)
         }
     }
-    
+
     private func resetTemporaryData() {
         temporaryImage = nil
         showCropView = false
