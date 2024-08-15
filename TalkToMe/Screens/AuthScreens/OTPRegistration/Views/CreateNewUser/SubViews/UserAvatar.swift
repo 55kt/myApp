@@ -25,6 +25,8 @@ struct UserAvatar: View {
                         .onTapGesture {
                             showConfirmationDialog.toggle()
                         }
+                    
+                        // Bottom Confirmation Dialog When Avatar is selected
                         .confirmationDialog("Select an option", isPresented: $showConfirmationDialog) {
                             Button("Crop your photo") {
                                 croppedImage = avatar
@@ -46,6 +48,8 @@ struct UserAvatar: View {
                     } label: {
                         defaultAvatar()
                     }
+                    
+                    // Bottom Confirmation Dialog When Avatar is not selected
                     .confirmationDialog("Select an option", isPresented: $showConfirmationDialog) {
                         Button("Take a photo from library") {
                             resetTemporaryData()
@@ -60,6 +64,8 @@ struct UserAvatar: View {
                 }
             }
             .padding(.bottom, 200)
+            
+            // Open Camera
             .fullScreenCover(isPresented: $showCamera) {
                 CameraView(image: $temporaryImage)
                     .edgesIgnoringSafeArea(.all)
@@ -70,6 +76,8 @@ struct UserAvatar: View {
                         }
                     }
             }
+            
+            // Open Photo Library
             .photosPicker(isPresented: $isShowingPhotoPicker, selection: $photosPickerItem, matching: .images)
             .onChange(of: photosPickerItem) { _ , newValue in
                 if let newValue {
@@ -83,15 +91,22 @@ struct UserAvatar: View {
                     }
                 }
             }
+            
+            // Crop Image
             .fullScreenCover(isPresented: $showCropView) {
                 if let image = croppedImage {
-                    CropView(crop: .circle, image: image) { cropped, status in
-                        if let cropped = cropped {
-                            self.croppedImage = cropped
-                            self.userAvatar = cropped
-                        }
-                        showCropView = false 
-                    }
+                    CropView(
+                        image: image,
+                        onCrop: { cropped, status in
+                            if let cropped = cropped {
+                                self.croppedImage = cropped
+                                self.userAvatar = cropped
+                            }
+                            showCropView = false
+                        },
+                        cropSize: CGSize(width: 350, height: 350),
+                        isCircle: true
+                    )
                 }
             }
         }

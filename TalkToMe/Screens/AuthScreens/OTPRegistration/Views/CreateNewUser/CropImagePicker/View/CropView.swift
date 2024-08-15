@@ -1,91 +1,11 @@
 import SwiftUI
 import PhotosUI
 
-// MARK: - Extensions
-extension View {
-    @ViewBuilder
-    func cropImagePicker(options: [Crop], show: Binding<Bool>, croppedImage: Binding<UIImage?>) -> some View {
-        CustomImagePicker(options: options, show: show, croppedImage: croppedImage) {
-            self
-        }
-    }
-    
-    /// For making at easey and simple to use
-    @ViewBuilder
-    func frame(_ size: CGSize) -> some View {
-        self
-            .frame(width: size.width, height: size.height)
-    }
-}
-/// - Haptic Feedback
-func haptic(_ style: UIImpactFeedbackGenerator.FeedbackStyle) {
-    UIImpactFeedbackGenerator(style: style).impactOccurred()
-}
-
-
-fileprivate struct CustomImagePicker<Content: View>: View {
-    // MARK: - Properties
-    var content: Content
-    var options: [Crop]
-    @Binding var show: Bool
-    @Binding var croppedImage: UIImage?
-    
-    init(options: [Crop],show: Binding<Bool>,croppedImage: Binding<UIImage?>,@ViewBuilder content: @escaping () -> Content) {
-        self.content = content()
-        self._show = show
-        self._croppedImage = croppedImage
-        self.options = options
-    }
-    /// View Properties
-    @State private var photosItem: PhotosPickerItem?
-    @State private var selectedImage: UIImage?
-    @State private var showDialog: Bool = false
-    @State private var selectedCropType: Crop = .circle
-    @State private var showCropView: Bool = false
-    
-    var body: some View {
-        content
-            .photosPicker(isPresented: $show, selection: $photosItem)
-            .onChange(of: photosItem) { oldValue, newValue in
-                /// - Extracting UIImage from photos item
-                if let newValue {
-                    Task {
-                        if let imageData = try? await newValue.loadTransferable(type: Data.self),
-                           let image = UIImage(data: imageData) {
-                            await MainActor.run(body: {
-                                selectedImage = image
-                                showDialog.toggle()
-                            })
-                        }
-                    }
-                }
-            }
-            .confirmationDialog("", isPresented: $showDialog) {
-                /// Displaying all the options
-                ForEach(options.indices,id: \.self) { index in
-                    Button(options[index].name()) {
-                        selectedCropType = options[index]
-                        showCropView.toggle()
-                    }
-                }
-            }
-            .fullScreenCover(isPresented: $showCropView) {
-                /// When Exited Clearing the old Selected Image
-                selectedImage = nil
-            } content: {
-                CropView(crop: selectedCropType, image: selectedImage) { croppedImage, status in
-                    if let croppedImage {
-                        self.croppedImage = croppedImage
-                    }
-                }
-            }
-    }
-}
-
 struct CropView: View {
-    var crop: Crop
     var image: UIImage?
     var onCrop: (UIImage?, Bool) -> ()
+    var cropSize: CGSize
+    var isCircle: Bool
     
     /// - View Properties
     @Environment(\.dismiss) private var dismiss
@@ -97,14 +17,13 @@ struct CropView: View {
     @State private var lastStoredOffset: CGSize = .zero
     @GestureState private var isInteracting: Bool = false
     
-    
     var body: some View {
         NavigationStack {
             imageView()
                 .navigationTitle("Crop Your Avatar")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbarBackground(.visible, for: .navigationBar)
-//                .toolbarBackground(Color.black, for: .navigationBar)
+                .toolbarBackground(Color.clear, for: .navigationBar)
                 .toolbarColorScheme(.dark, for: .navigationBar)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background {
@@ -115,7 +34,7 @@ struct CropView: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             let render = ImageRenderer(content: imageView(true))
-                            render.proposedSize = .init(crop.size())
+                            render.proposedSize = .init(cropSize)
                             if let image = render.uiImage {
                                 onCrop(image, true)
                             } else {
@@ -145,7 +64,6 @@ struct CropView: View {
     /// Image View
     @ViewBuilder
     func imageView(_ hideGrids: Bool = false) -> some View {
-        let cropSize = crop.size()
         GeometryReader {
             let size = $0.size
             
@@ -232,7 +150,7 @@ struct CropView: View {
                 })
         )
         .frame(cropSize)
-        .cornerRadius(crop == .circle ? cropSize.height / 2 : 0)
+        .cornerRadius(isCircle ? cropSize.height / 2 : 0)
     }
 
     /// - Grids
@@ -261,7 +179,10 @@ struct CropView: View {
 }
 
 #Preview {
-    CropView(crop: .circle, image: UIImage(named: "woman")) { _, _ in
-        
-    }
+    CropView(
+        image: UIImage(named: "woman"),
+        onCrop: { _, _ in },
+        cropSize: CGSize(width: 350, height: 350),
+        isCircle: true
+    )
 }

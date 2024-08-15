@@ -68,5 +68,7 @@ struct CreateUserScreenView: View {
 
 // MARK: - Preview
 #Preview {
-    CreateUserScreenView()
+    NavigationStack {
+        CreateUserScreenView()
+    }
 }

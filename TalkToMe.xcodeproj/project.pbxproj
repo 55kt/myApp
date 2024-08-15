@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B366BBE2C6D2397001D5D63 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B366BBD2C6D2397001D5D63 /* TestView.swift */; };
 		4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B366BBF2C6D2872001D5D63 /* CameraView.swift */; };
 		4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */; };
@@ -43,13 +42,12 @@
 		4BC70D3D2C629C1F00BB41DF /* VerifyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D3C2C629C1F00BB41DF /* VerifyButton.swift */; };
 		4BC70D3F2C629F4200BB41DF /* CodeInputPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D3E2C629F4200BB41DF /* CodeInputPlatforms.swift */; };
 		4BC70D412C62AE9D00BB41DF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D402C62AE9D00BB41DF /* ColorExtension.swift */; };
+		4BF094172C6E559E000E305F /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094162C6E559E000E305F /* CropView.swift */; };
+		4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094182C6E585E000E305F /* PickerExtensions.swift */; };
 		4BF626242C669C5500FF77B9 /* TappedFieldTextChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF626232C669C5500FF77B9 /* TappedFieldTextChange.swift */; };
-		4BF6263A2C6A636400FF77B9 /* Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF626392C6A636400FF77B9 /* Crop.swift */; };
-		4BF6263C2C6A673600FF77B9 /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF6263B2C6A673600FF77B9 /* CustomImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B366BBD2C6D2397001D5D63 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		4B366BBF2C6D2872001D5D63 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
 		4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerSearchView.swift; sourceTree = "<group>"; };
@@ -87,9 +85,9 @@
 		4BC70D3C2C629C1F00BB41DF /* VerifyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyButton.swift; sourceTree = "<group>"; };
 		4BC70D3E2C629F4200BB41DF /* CodeInputPlatforms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputPlatforms.swift; sourceTree = "<group>"; };
 		4BC70D402C62AE9D00BB41DF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		4BF094162C6E559E000E305F /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
+		4BF094182C6E585E000E305F /* PickerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerExtensions.swift; sourceTree = "<group>"; };
 		4BF626232C669C5500FF77B9 /* TappedFieldTextChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedFieldTextChange.swift; sourceTree = "<group>"; };
-		4BF626392C6A636400FF77B9 /* Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crop.swift; sourceTree = "<group>"; };
-		4BF6263B2C6A673600FF77B9 /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,9 +241,9 @@
 		4BC70D292C610DE300BB41DF /* CreateNewUser */ = {
 			isa = PBXGroup;
 			children = (
-				4BF626342C6A62FD00FF77B9 /* CropImagePicker */,
 				4BF6262D2C6A3D4700FF77B9 /* Views */,
 				4BF6262C2C6A3D4000FF77B9 /* SubViews */,
+				4BF626342C6A62FD00FF77B9 /* CropImagePicker */,
 			);
 			path = CreateNewUser;
 			sourceTree = "<group>";
@@ -323,7 +321,6 @@
 				4BC70D322C6258B300BB41DF /* UsernameField.swift */,
 				4BC70D342C625A7100BB41DF /* SubmitButton.swift */,
 				4BF626232C669C5500FF77B9 /* TappedFieldTextChange.swift */,
-				4B366BBF2C6D2872001D5D63 /* CameraView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -369,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				4BF626352C6A630300FF77B9 /* View */,
+				4BF094182C6E585E000E305F /* PickerExtensions.swift */,
 			);
 			path = CropImagePicker;
 			sourceTree = "<group>";
@@ -376,9 +374,8 @@
 		4BF626352C6A630300FF77B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4BF6263B2C6A673600FF77B9 /* CustomImagePicker.swift */,
-				4BF626392C6A636400FF77B9 /* Crop.swift */,
-				4B366BBD2C6D2397001D5D63 /* TestView.swift */,
+				4BF094162C6E559E000E305F /* CropView.swift */,
+				4B366BBF2C6D2872001D5D63 /* CameraView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -458,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B74F4512C565402008C8393 /* OTPPhoneVerifyCodeView.swift in Sources */,
+				4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */,
 				4B74F46F2C5AA40B008C8393 /* TextTabHolderView.swift in Sources */,
 				4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */,
 				4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */,
@@ -472,14 +470,11 @@
 				4BC70D412C62AE9D00BB41DF /* ColorExtension.swift in Sources */,
 				4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */,
 				4BF626242C669C5500FF77B9 /* TappedFieldTextChange.swift in Sources */,
-				4BF6263C2C6A673600FF77B9 /* CustomImagePicker.swift in Sources */,
 				4BC70D3F2C629F4200BB41DF /* CodeInputPlatforms.swift in Sources */,
-				4BF6263A2C6A636400FF77B9 /* Crop.swift in Sources */,
 				4BC70D2F2C62572500BB41DF /* NavigationTextArea.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4BC70D3D2C629C1F00BB41DF /* VerifyButton.swift in Sources */,
-				4B366BBE2C6D2397001D5D63 /* TestView.swift in Sources */,
 				4BC70D3B2C629B3300BB41DF /* SupportArea.swift in Sources */,
 				4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */,
 				4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */,
@@ -490,6 +485,7 @@
 				4BC70D332C6258B300BB41DF /* UsernameField.swift in Sources */,
 				4BC70D352C625A7100BB41DF /* SubmitButton.swift in Sources */,
 				4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */,
+				4BF094172C6E559E000E305F /* CropView.swift in Sources */,
 				4B3830022C5D65CE0094FA11 /* CountryPickerView.swift in Sources */,
 				4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */,
 				4B74F4692C57F7BB008C8393 /* IntroView.swift in Sources */,
