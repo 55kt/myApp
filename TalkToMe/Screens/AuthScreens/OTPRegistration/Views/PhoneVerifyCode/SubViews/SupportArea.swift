@@ -14,15 +14,6 @@ struct SupportArea: View {
                     .foregroundStyle(Color.mBlueColor)
             }
         }
-        
-        Button {
-            // Some action
-        } label: {
-            Text("Get via call")
-                .fontWeight(.bold)
-                .foregroundStyle(Color.mBlueColor)
-        }
-        .padding(.top, 6)
     }
 }
 

@@ -31,10 +31,22 @@ struct OTPPhoneVerifyCodeView: View {
                         .padding()
                         .padding(.horizontal, 20)
                         
+                        TimerView(
+                                                    onTimerEnd: {
+                                                        // Действие при окончании таймера
+                                                        print("Timer ended")
+                                                    },
+                                                    onResendCode: {
+                                                        // Действие при повторной отправке кода
+                                                        print("Code resent")
+                                                    }
+                                                )
+                                                .padding(.top, 20)
+                        
                         Spacer(minLength: 0)
                         
                         /// Support Area
-                        SupportArea()
+//                        SupportArea()
                         
                         /// Verify Button
                         VerifyButton(boolPlaceholder: allFieldsFilled())
