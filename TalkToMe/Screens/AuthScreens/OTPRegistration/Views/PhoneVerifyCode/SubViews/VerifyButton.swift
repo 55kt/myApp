@@ -14,6 +14,7 @@ struct VerifyButton: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .disabled(!boolPlaceholder)
                 .padding(.horizontal, 20)
+                .padding(.bottom, 20)
         }
     }
 }

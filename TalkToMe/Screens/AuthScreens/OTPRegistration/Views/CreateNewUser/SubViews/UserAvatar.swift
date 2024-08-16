@@ -18,7 +18,7 @@ struct UserAvatar: View {
                     Image(uiImage: avatar)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 180, height: 180)
+                        .frame(width: 150, height: 150)
                         .clipShape(Circle())
                         .foregroundStyle(.white)
                         .shadow(radius: 10)
@@ -26,7 +26,7 @@ struct UserAvatar: View {
                             showConfirmationDialog.toggle()
                         }
                     
-                        // Bottom Confirmation Dialog When Avatar is selected
+                    // Bottom Confirmation Dialog When Avatar is selected
                         .confirmationDialog("Select an option", isPresented: $showConfirmationDialog) {
                             Button("Crop your photo") {
                                 croppedImage = avatar

@@ -11,7 +11,7 @@ struct NavPlaceHolder: View {
             
             Image(systemName: "platter.filled.top.and.arrow.up.iphone")
                 .resizable()
-                .frame(width: 100, height: 160)
+                .frame(width: 80, height: 130)
                 .foregroundStyle(.white)
             
             
