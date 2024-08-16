@@ -9,16 +9,17 @@ struct SubmitButton: View {
     @Binding var showMessage: Bool
     @FocusState.Binding var isFocus: Bool
     @Binding var buttonText: String
-    @Binding var showFinalScreen: Bool // Для управления переходом на финальный экран
-    @Binding var errorMessage: String? // Сообщение об ошибке
+    @Binding var showFinalScreen: Bool
+    @Binding var errorMessage: String?
 
     // MARK: - Body
     var body: some View {
         VStack {
             Spacer()
             
+            // Button to create new user
             Button {
-                validateAndProceed() // Проверка перед переходом или сброс в исходное состояние
+                validateAndProceed() // Function to check if username is valid
             } label: {
                 Text(buttonText)
                     .foregroundColor(.black)
@@ -35,16 +36,22 @@ struct SubmitButton: View {
             .padding(.top, boolPlaceholder ? 0 : 300)
             .animation(.spring(response: 0.4, dampingFraction: 0.5, blendDuration: 0.5), value: textPlaceholder)
         }
+        
+        // Change button text on focus
         .onChange(of: isFocus) { oldValue, newValue in
             withAnimation(.easeInOut(duration: 0.2)) {
                 buttonText = newValue ? "Submit User Nickname" : "Create New User"
             }
         }
+
+        // Show error message
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
             withAnimation {
                 boolPlaceholder = true
             }
         }
+        
+        // Hide error message
         .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
             withAnimation {
                 boolPlaceholder = false
@@ -53,24 +60,27 @@ struct SubmitButton: View {
         .padding()
     }
     
+    // MARK: - Methods
+    
+    // Function to check if username is valid
     private var isUsernameValid: Bool {
         return !textPlaceholder.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
+    // Function to validate and proceed
     private func validateAndProceed() {
         if textPlaceholder.isEmpty {
             errorMessage = "Please enter some nickname"
             showMessageWithHideDelay()
         } else if buttonText == "Create New User" {
-            // Если текст кнопки "Create New User" и поле заполнено, переходим на финальный экран
             showMessage = false
             showFinalScreen = true
         } else if buttonText == "Submit User Nickname" {
-            // Если текст кнопки "Submit User Nickname", проверяем существование никнейма
             checkUsernameAvailability(username: textPlaceholder)
         }
     }
     
+    // Function to check if username exists
     private func checkUsernameAvailability(username: String) {
         let existingUsernames = ["testuser", "example", "username"]
         showMessage = false
@@ -81,12 +91,12 @@ struct SubmitButton: View {
                 showMessageWithHideDelay()
                 errorMessage = "Username already exists."
             } else {
-                // Никнейм не существует, возвращаем кнопку в исходное состояние
                 resetButtonState()
             }
         }
     }
     
+    // Function to show message
     private func showMessageWithHideDelay() {
         showMessage = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -96,6 +106,7 @@ struct SubmitButton: View {
         }
     }
     
+    // Function to reset button
     private func resetButtonState() {
         withAnimation {
             isFocus = false

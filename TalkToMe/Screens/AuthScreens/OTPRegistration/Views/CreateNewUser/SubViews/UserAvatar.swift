@@ -14,6 +14,7 @@ struct UserAvatar: View {
     var body: some View {
         NavigationStack {
             VStack {
+                // Top Confirmation Dialog
                 if let avatar = userAvatar ?? croppedImage {
                     Image(uiImage: avatar)
                         .resizable()

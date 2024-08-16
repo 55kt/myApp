@@ -11,36 +11,36 @@ struct FinalScreenView: View {
                 IntroGradient()
                 
                 if showMainView {
-                    TestView() // Замените на ваше главное представление
+                    TestView()
                 } else {
                     VStack(spacing: 0) {
                         Text("Done")
-                            .font(.system(size: geometry.size.width * 0.3)) // Размер текста зависит от ширины экрана
+                            .font(.system(size: geometry.size.width * 0.3)) // Size for the first text
                             .fontWeight(.bold)
                             .foregroundStyle(.white)
                         
                         Text("Good Chatting")
-                            .font(.system(size: geometry.size.width * 0.05)) // Меньший размер для второго текста
+                            .font(.system(size: geometry.size.width * 0.05)) // Size for the second text
                             .foregroundStyle(.white)
-                            .padding(.top, -20) // Сдвиг текста вверх для более плотного расположения строк
+                            .padding(.top, -20) // Offset for the second text
                     }
                     .scaleEffect(textScale)
                     .opacity(textOpacity)
                     .onAppear {
-                        withAnimation(.easeOut(duration: 4.0)) { // Увеличиваем продолжительность анимации для плавного ухода текста
+                        withAnimation(.easeOut(duration: 4.0)) { // Animation for the text
                             textScale = 0.9
                             textOpacity = 0.0
                         }
 
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { // Переход на TestView после завершения анимации
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) { // Delay for 4 seconds
                             showMainView = true
                         }
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center) // Центрируем текст по экрану
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center) // Garanty that the text is centered
                     .padding()
                 }
             }
-            .frame(width: geometry.size.width, height: geometry.size.height) // Гарантируем использование размеров экрана
+            .frame(width: geometry.size.width, height: geometry.size.height) // Garanty that the screen is full
         }
     }
 }

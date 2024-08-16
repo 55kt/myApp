@@ -27,6 +27,7 @@ struct CreateUserScreenView: View {
             }
             
             VStack {
+                // Error message area
                 if showMessage, let errorMessage = errorMessage {
                     Text(errorMessage)
                         .font(.title)
@@ -55,14 +56,14 @@ struct CreateUserScreenView: View {
                 showMessage: $showMessage,
                 isFocus: $isFocus,
                 buttonText: $buttonText,
-                showFinalScreen: $showFinalScreen, // Добавляем привязку для перехода
-                errorMessage: $errorMessage // Добавляем привязку для сообщения об ошибке
+                showFinalScreen: $showFinalScreen,
+                errorMessage: $errorMessage
             )
             .padding(.top, 20)
         }
         .navigationBarBackButtonHidden(true)
         .fullScreenCover(isPresented: $showFinalScreen) {
-            FinalScreenView() // Переход на финальный экран
+            FinalScreenView()
         }
     }
 }
