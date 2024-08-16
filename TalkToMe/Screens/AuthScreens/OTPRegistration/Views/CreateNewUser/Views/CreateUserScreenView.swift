@@ -34,9 +34,6 @@ struct CreateUserScreenView: View {
                         .bold()
                         .transition(.opacity)
                         .padding(.bottom, 10)
-                    if usernameExists == true {
-                        existText()
-                    }
                 }
             }
             .padding(.bottom, 10)
@@ -67,15 +64,6 @@ struct CreateUserScreenView: View {
         .fullScreenCover(isPresented: $showFinalScreen) {
             FinalScreenView() // Переход на финальный экран
         }
-    }
-    
-    func existText() -> some View {
-        Text("Username already exists")
-            .font(.title)
-            .foregroundColor(.white)
-            .bold()
-            .transition(.opacity)
-            .padding(.bottom, 10)
     }
 }
 
