@@ -9,7 +9,9 @@ struct CreateUserScreenView: View {
     @FocusState private var isFocus: Bool
     @State private var buttonText: String = "Create New User"
     @State private var croppedImage: UIImage?
-    
+    @State private var showFinalScreen: Bool = false
+    @State private var errorMessage: String?
+
     // MARK: - Body
     var body: some View {
         ZStack {
@@ -25,7 +27,13 @@ struct CreateUserScreenView: View {
             }
             
             VStack {
-                if showMessage {
+                if showMessage, let errorMessage = errorMessage {
+                    Text(errorMessage)
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .bold()
+                        .transition(.opacity)
+                        .padding(.bottom, 10)
                     if usernameExists == true {
                         existText()
                     }
@@ -49,11 +57,16 @@ struct CreateUserScreenView: View {
                 usernameExists: $usernameExists,
                 showMessage: $showMessage,
                 isFocus: $isFocus,
-                buttonText: $buttonText
+                buttonText: $buttonText,
+                showFinalScreen: $showFinalScreen, // Добавляем привязку для перехода
+                errorMessage: $errorMessage // Добавляем привязку для сообщения об ошибке
             )
             .padding(.top, 20)
         }
         .navigationBarBackButtonHidden(true)
+        .fullScreenCover(isPresented: $showFinalScreen) {
+            FinalScreenView() // Переход на финальный экран
+        }
     }
     
     func existText() -> some View {

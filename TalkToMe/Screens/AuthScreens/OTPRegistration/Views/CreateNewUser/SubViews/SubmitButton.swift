@@ -9,6 +9,8 @@ struct SubmitButton: View {
     @Binding var showMessage: Bool
     @FocusState.Binding var isFocus: Bool
     @Binding var buttonText: String
+    @Binding var showFinalScreen: Bool // Для управления переходом на финальный экран
+    @Binding var errorMessage: String? // Сообщение об ошибке
 
     // MARK: - Body
     var body: some View {
@@ -16,7 +18,7 @@ struct SubmitButton: View {
             Spacer()
             
             Button {
-                checkUsernameAvailability(username: textPlaceholder)
+                validateAndProceed() // Проверка перед переходом или сброс в исходное состояние
             } label: {
                 Text(buttonText)
                     .foregroundColor(.black)
@@ -33,7 +35,7 @@ struct SubmitButton: View {
             .padding(.top, boolPlaceholder ? 0 : 300)
             .animation(.spring(response: 0.4, dampingFraction: 0.5, blendDuration: 0.5), value: textPlaceholder)
         }
-        .onChange(of: isFocus) {oldValue, newValue in
+        .onChange(of: isFocus) { oldValue, newValue in
             withAnimation(.easeInOut(duration: 0.2)) {
                 buttonText = newValue ? "Submit User Nickname" : "Create New User"
             }
@@ -55,30 +57,49 @@ struct SubmitButton: View {
         return !textPlaceholder.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
+    private func validateAndProceed() {
+        if textPlaceholder.isEmpty {
+            errorMessage = "Please enter some nickname"
+            showMessageWithHideDelay()
+        } else if buttonText == "Create New User" {
+            // Если текст кнопки "Create New User" и поле заполнено, переходим на финальный экран
+            showMessage = false
+            showFinalScreen = true
+        } else if buttonText == "Submit User Nickname" {
+            // Если текст кнопки "Submit User Nickname", проверяем существование никнейма
+            checkUsernameAvailability(username: textPlaceholder)
+        }
+    }
+    
     private func checkUsernameAvailability(username: String) {
         let existingUsernames = ["testuser", "example", "username"]
         showMessage = false
         
         withAnimation {
             usernameExists = existingUsernames.contains(username.lowercased())
-            showMessage = true
-        }
-        
-        if let usernameExists = usernameExists {
-            if usernameExists {
-                showMessage = true
+            if usernameExists == true {
+                showMessageWithHideDelay()
+                errorMessage = "Username already exists."
             } else {
-                // Nickname is available, reset focus and return to original state
-                isFocus = false
-                buttonText = "Create New User"
+                // Никнейм не существует, возвращаем кнопку в исходное состояние
+                resetButtonState()
             }
         }
-        
+    }
+    
+    private func showMessageWithHideDelay() {
+        showMessage = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             withAnimation {
                 showMessage = false
-                print("Message should start disappearing")
             }
+        }
+    }
+    
+    private func resetButtonState() {
+        withAnimation {
+            isFocus = false
+            buttonText = "Create New User"
         }
     }
 }
