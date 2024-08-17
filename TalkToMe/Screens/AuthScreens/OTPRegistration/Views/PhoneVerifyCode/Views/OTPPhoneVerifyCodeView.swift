@@ -33,11 +33,9 @@ struct OTPPhoneVerifyCodeView: View {
                         
                         TimerView(
                                                     onTimerEnd: {
-                                                        // Действие при окончании таймера
                                                         print("Timer ended")
                                                     },
                                                     onResendCode: {
-                                                        // Действие при повторной отправке кода
                                                         print("Code resent")
                                                     }
                                                 )

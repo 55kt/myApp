@@ -15,7 +15,7 @@
 		4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FFF2C5D65260094FA11 /* PhoneNumberInputField.swift */; };
 		4B3830022C5D65CE0094FA11 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3830012C5D65CE0094FA11 /* CountryPickerView.swift */; };
 		4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */; };
-		4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4292C529E8F008C8393 /* MainTabView.swift */; };
+		4B74F42A2C529E8F008C8393 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4292C529E8F008C8393 /* GeneralView.swift */; };
 		4B74F42C2C529E90008C8393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42B2C529E90008C8393 /* Assets.xcassets */; };
 		4B74F42F2C529E90008C8393 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */; };
 		4B74F4492C556131008C8393 /* OTPPhoneNumberInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4482C556131008C8393 /* OTPPhoneNumberInputView.swift */; };
@@ -47,6 +47,8 @@
 		4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */; };
 		4BF0941E2C6FA4DA000E305F /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941D2C6FA4DA000E305F /* TestView.swift */; };
 		4BF094202C6FCC9F000E305F /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941F2C6FCC9F000E305F /* TimerView.swift */; };
+		4BF094252C70FF42000E305F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094242C70FF42000E305F /* MainTabView.swift */; };
+		4BF094282C710203000E305F /* MainTabViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094272C710203000E305F /* MainTabViewExtension.swift */; };
 		4BF626242C669C5500FF77B9 /* TappedFieldTextChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF626232C669C5500FF77B9 /* TappedFieldTextChange.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +62,7 @@
 		4B3830012C5D65CE0094FA11 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
 		4B74F4242C529E8F008C8393 /* TalkToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToMeApp.swift; sourceTree = "<group>"; };
-		4B74F4292C529E8F008C8393 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		4B74F4292C529E8F008C8393 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		4B74F42B2C529E90008C8393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B74F42E2C529E90008C8393 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B74F4482C556131008C8393 /* OTPPhoneNumberInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPPhoneNumberInputView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,8 @@
 		4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScreenView.swift; sourceTree = "<group>"; };
 		4BF0941D2C6FA4DA000E305F /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		4BF0941F2C6FCC9F000E305F /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		4BF094242C70FF42000E305F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		4BF094272C710203000E305F /* MainTabViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewExtension.swift; sourceTree = "<group>"; };
 		4BF626232C669C5500FF77B9 /* TappedFieldTextChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedFieldTextChange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */,
-				4B74F4292C529E8F008C8393 /* MainTabView.swift */,
+				4B74F4292C529E8F008C8393 /* GeneralView.swift */,
 				4B74F4262C529E8F008C8393 /* TalkToMe */,
 				4B74F4252C529E8F008C8393 /* Products */,
 				4BC70D202C5FCBE400BB41DF /* Frameworks */,
@@ -161,6 +165,7 @@
 		4B74F4352C529F76008C8393 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4BF094212C70FF1D000E305F /* MainTabScreen */,
 				4B74F46D2C5AA393008C8393 /* IntroScreen */,
 				4B74F43E2C52C8EC008C8393 /* AuthScreens */,
 			);
@@ -262,6 +267,39 @@
 				4BF0941D2C6FA4DA000E305F /* TestView.swift */,
 			);
 			path = FinalRegisterScreen;
+			sourceTree = "<group>";
+		};
+		4BF094212C70FF1D000E305F /* MainTabScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4BF094232C70FF34000E305F /* Views */,
+				4BF094222C70FF2C000E305F /* SubViews */,
+				4BF094262C7101E2000E305F /* Extensions */,
+			);
+			path = MainTabScreen;
+			sourceTree = "<group>";
+		};
+		4BF094222C70FF2C000E305F /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		4BF094232C70FF34000E305F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BF094242C70FF42000E305F /* MainTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4BF094262C7101E2000E305F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4BF094272C710203000E305F /* MainTabViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4BF626252C6A3ACB00FF77B9 /* Views */ = {
@@ -472,12 +510,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B74F4512C565402008C8393 /* OTPPhoneVerifyCodeView.swift in Sources */,
+				4BF094282C710203000E305F /* MainTabViewExtension.swift in Sources */,
 				4BF0941E2C6FA4DA000E305F /* TestView.swift in Sources */,
 				4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */,
 				4B74F46F2C5AA40B008C8393 /* TextTabHolderView.swift in Sources */,
 				4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */,
 				4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */,
-				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
+				4B74F42A2C529E8F008C8393 /* GeneralView.swift in Sources */,
 				4B382FFE2C5D64750094FA11 /* NavPlaceHolder.swift in Sources */,
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
 				4B74F4672C57EF73008C8393 /* Page.swift in Sources */,
@@ -491,6 +530,7 @@
 				4BF626242C669C5500FF77B9 /* TappedFieldTextChange.swift in Sources */,
 				4BC70D3F2C629F4200BB41DF /* CodeInputPlatforms.swift in Sources */,
 				4BC70D2F2C62572500BB41DF /* NavigationTextArea.swift in Sources */,
+				4BF094252C70FF42000E305F /* MainTabView.swift in Sources */,
 				4B74F4562C56910F008C8393 /* IntroGradient.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4BC70D3D2C629C1F00BB41DF /* VerifyButton.swift in Sources */,

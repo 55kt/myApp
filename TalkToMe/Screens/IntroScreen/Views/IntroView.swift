@@ -52,5 +52,5 @@ struct IntroView: View {
     
 // MARK: - Preview
 #Preview {
-    MainTabView()
+    GeneralView()
 }

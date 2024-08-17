@@ -1,17 +1,17 @@
 import SwiftUI
 
-struct MainTabView: View {
+struct GeneralView: View {
     
     // MARK: - Body
     var body: some View {
         NavigationStack {
-            OTPPhoneVerifyCodeView(loginData: OTPViewModel())
+            MainTabView()
         }
     }
 }
 
 // MARK: - Preview
 #Preview {
-    MainTabView()
+    GeneralView()
 
 }
