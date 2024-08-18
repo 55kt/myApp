@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B0FE4B12C71F0C7004D10F0 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4B02C71F0C7004D10F0 /* SettingsScreenView.swift */; };
+		4B0FE4B42C71F268004D10F0 /* SettingsRowItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4B32C71F268004D10F0 /* SettingsRowItemModel.swift */; };
+		4B0FE4B62C721CAA004D10F0 /* SettingsRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4B52C721CAA004D10F0 /* SettingsRowItemView.swift */; };
+		4B0FE4B82C722504004D10F0 /* SettingsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4B72C722504004D10F0 /* SettingsHeaderView.swift */; };
 		4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B366BBF2C6D2872001D5D63 /* CameraView.swift */; };
 		4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */; };
@@ -49,10 +53,18 @@
 		4BF094202C6FCC9F000E305F /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941F2C6FCC9F000E305F /* TimerView.swift */; };
 		4BF094252C70FF42000E305F /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094242C70FF42000E305F /* MainTabView.swift */; };
 		4BF094282C710203000E305F /* MainTabViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094272C710203000E305F /* MainTabViewExtension.swift */; };
+		4BF0942D2C7126CA000E305F /* ChatsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0942C2C7126CA000E305F /* ChatsTabView.swift */; };
+		4BF094302C712760000E305F /* ChatScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0942F2C712760000E305F /* ChatScreenExtension.swift */; };
+		4BF094322C712C53000E305F /* ChatScreenRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094312C712C53000E305F /* ChatScreenRow.swift */; };
+		4BF094352C712D26000E305F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094342C712D26000E305F /* Extensions.swift */; };
 		4BF626242C669C5500FF77B9 /* TappedFieldTextChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF626232C669C5500FF77B9 /* TappedFieldTextChange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B0FE4B02C71F0C7004D10F0 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
+		4B0FE4B32C71F268004D10F0 /* SettingsRowItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowItemModel.swift; sourceTree = "<group>"; };
+		4B0FE4B52C721CAA004D10F0 /* SettingsRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowItemView.swift; sourceTree = "<group>"; };
+		4B0FE4B72C722504004D10F0 /* SettingsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHeaderView.swift; sourceTree = "<group>"; };
 		4B366BBF2C6D2872001D5D63 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
 		4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerSearchView.swift; sourceTree = "<group>"; };
@@ -97,6 +109,10 @@
 		4BF0941F2C6FCC9F000E305F /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		4BF094242C70FF42000E305F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		4BF094272C710203000E305F /* MainTabViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewExtension.swift; sourceTree = "<group>"; };
+		4BF0942C2C7126CA000E305F /* ChatsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTabView.swift; sourceTree = "<group>"; };
+		4BF0942F2C712760000E305F /* ChatScreenExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenExtension.swift; sourceTree = "<group>"; };
+		4BF094312C712C53000E305F /* ChatScreenRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreenRow.swift; sourceTree = "<group>"; };
+		4BF094342C712D26000E305F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4BF626232C669C5500FF77B9 /* TappedFieldTextChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappedFieldTextChange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +128,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B0FE4AC2C71F055004D10F0 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4B0FE4AF2C71F079004D10F0 /* Views */,
+				4B0FE4AE2C71F072004D10F0 /* SubViews */,
+				4B0FE4AD2C71F062004D10F0 /* Extensions */,
+				4B0FE4B22C71F252004D10F0 /* Model */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		4B0FE4AD2C71F062004D10F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B0FE4AE2C71F072004D10F0 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				4B0FE4B72C722504004D10F0 /* SettingsHeaderView.swift */,
+				4B0FE4B52C721CAA004D10F0 /* SettingsRowItemView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		4B0FE4AF2C71F079004D10F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4B0FE4B02C71F0C7004D10F0 /* SettingsScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4B0FE4B22C71F252004D10F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B0FE4B32C71F268004D10F0 /* SettingsRowItemModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4B382FF72C5D30A30094FA11 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +224,8 @@
 		4B74F4352C529F76008C8393 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4B0FE4AC2C71F055004D10F0 /* SettingsScreen */,
+				4BF094292C712698000E305F /* ChatsCsreen */,
 				4BF094212C70FF1D000E305F /* MainTabScreen */,
 				4B74F46D2C5AA393008C8393 /* IntroScreen */,
 				4B74F43E2C52C8EC008C8393 /* AuthScreens */,
@@ -300,6 +361,49 @@
 				4BF094272C710203000E305F /* MainTabViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4BF094292C712698000E305F /* ChatsCsreen */ = {
+			isa = PBXGroup;
+			children = (
+				4BF0942B2C7126AB000E305F /* Views */,
+				4BF0942A2C7126A4000E305F /* SubViews */,
+				4BF0942E2C712739000E305F /* Extensions */,
+			);
+			path = ChatsCsreen;
+			sourceTree = "<group>";
+		};
+		4BF0942A2C7126A4000E305F /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				4BF094332C712D06000E305F /* ChatScreenRow */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		4BF0942B2C7126AB000E305F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BF0942C2C7126CA000E305F /* ChatsTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4BF0942E2C712739000E305F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4BF0942F2C712760000E305F /* ChatScreenExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4BF094332C712D06000E305F /* ChatScreenRow */ = {
+			isa = PBXGroup;
+			children = (
+				4BF094312C712C53000E305F /* ChatScreenRow.swift */,
+				4BF094342C712D26000E305F /* Extensions.swift */,
+			);
+			path = ChatScreenRow;
 			sourceTree = "<group>";
 		};
 		4BF626252C6A3ACB00FF77B9 /* Views */ = {
@@ -509,6 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BF094352C712D26000E305F /* Extensions.swift in Sources */,
 				4B74F4512C565402008C8393 /* OTPPhoneVerifyCodeView.swift in Sources */,
 				4BF094282C710203000E305F /* MainTabViewExtension.swift in Sources */,
 				4BF0941E2C6FA4DA000E305F /* TestView.swift in Sources */,
@@ -517,17 +622,22 @@
 				4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */,
 				4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */,
 				4B74F42A2C529E8F008C8393 /* GeneralView.swift in Sources */,
+				4B0FE4B62C721CAA004D10F0 /* SettingsRowItemView.swift in Sources */,
 				4B382FFE2C5D64750094FA11 /* NavPlaceHolder.swift in Sources */,
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
 				4B74F4672C57EF73008C8393 /* Page.swift in Sources */,
 				4BF094202C6FCC9F000E305F /* TimerView.swift in Sources */,
+				4BF0942D2C7126CA000E305F /* ChatsTabView.swift in Sources */,
 				4B382FF92C5D30C00094FA11 /* RoundedCorner.swift in Sources */,
 				4BC70D392C626F4400BB41DF /* NavBarElements.swift in Sources */,
 				4BC70D312C6257B600BB41DF /* UserAvatar.swift in Sources */,
+				4BF094322C712C53000E305F /* ChatScreenRow.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
+				4BF094302C712760000E305F /* ChatScreenExtension.swift in Sources */,
 				4BC70D412C62AE9D00BB41DF /* ColorExtension.swift in Sources */,
 				4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */,
 				4BF626242C669C5500FF77B9 /* TappedFieldTextChange.swift in Sources */,
+				4B0FE4B82C722504004D10F0 /* SettingsHeaderView.swift in Sources */,
 				4BC70D3F2C629F4200BB41DF /* CodeInputPlatforms.swift in Sources */,
 				4BC70D2F2C62572500BB41DF /* NavigationTextArea.swift in Sources */,
 				4BF094252C70FF42000E305F /* MainTabView.swift in Sources */,
@@ -535,7 +645,9 @@
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4BC70D3D2C629C1F00BB41DF /* VerifyButton.swift in Sources */,
 				4BC70D3B2C629B3300BB41DF /* SupportArea.swift in Sources */,
+				4B0FE4B12C71F0C7004D10F0 /* SettingsScreenView.swift in Sources */,
 				4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */,
+				4B0FE4B42C71F268004D10F0 /* SettingsRowItemModel.swift in Sources */,
 				4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */,
 				4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */,
 				4B74F46C2C57F8DC008C8393 /* MorphingSymbolView.swift in Sources */,
@@ -686,11 +798,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TalkToMe/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera to capture photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -698,9 +812,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mavrodimakis.TalkToMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -716,11 +834,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TalkToMe/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera to capture photos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -728,9 +848,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mavrodimakis.TalkToMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -1,15 +1,11 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State private var scrollOffset: CGFloat = 0
-    
-    // MARK: - Initializer
-    
     
     // MARK: - Body
     var body: some View {
         TabView {
-            placeholderItemView("Chats")
+            ChatsTabView()
                 .tabItem {
                     Image(systemName: Tab.chats.icon)
                     Text(Tab.chats.title)
@@ -19,7 +15,7 @@ struct MainTabView: View {
                     Image(systemName: Tab.chatsearch.icon)
                     Text(Tab.chatsearch.title)
                 }
-            placeholderItemView("Settings")
+            SettingsScreenView()
                 .tabItem {
                     Image(systemName: Tab.settings.icon)
                     Text(Tab.settings.title)

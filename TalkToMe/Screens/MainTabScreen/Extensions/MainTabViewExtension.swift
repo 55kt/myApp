@@ -7,7 +7,7 @@ extension MainTabView {
     internal func placeholderItemView(_ title: String) -> some View {
         ScrollView {
             VStack {
-                ForEach(0..<120) { _ in
+                ForEach(0..<12) { _ in
                     Text(title)
                         .font(.largeTitle)
                         .bold()
