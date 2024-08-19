@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct SettingsScreenView: View {
+    
     // MARK: - Properties
     @State private var searchText = ""
     

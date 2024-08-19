@@ -11,7 +11,11 @@ struct ChatsTabView: View {
                 arcivedButton()
                 
                 ForEach(0..<12) { _ in
-                    ChatScreenRow()
+                    NavigationLink {
+                        ChatRoomView()
+                    } label: {
+                        ChatScreenRow()
+                    }
                 }
                 
                 inboxFooterView()
