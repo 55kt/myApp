@@ -15,6 +15,8 @@
 		4B0FE4BE2C738149004D10F0 /* ChatRoomExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4BD2C738149004D10F0 /* ChatRoomExtension.swift */; };
 		4B0FE4C02C738390004D10F0 /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4BF2C738390004D10F0 /* TextInputArea.swift */; };
 		4B0FE4C62C738429004D10F0 /* TextInputAreaExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4C52C738429004D10F0 /* TextInputAreaExtensions.swift */; };
+		4B0FE4C82C739A53004D10F0 /* MessageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4C72C739A53004D10F0 /* MessageListController.swift */; };
+		4B0FE4CA2C739D8A004D10F0 /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4C92C739D8A004D10F0 /* MessageListView.swift */; };
 		4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B366BBF2C6D2872001D5D63 /* CameraView.swift */; };
 		4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */; };
@@ -73,6 +75,8 @@
 		4B0FE4BD2C738149004D10F0 /* ChatRoomExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomExtension.swift; sourceTree = "<group>"; };
 		4B0FE4BF2C738390004D10F0 /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
 		4B0FE4C52C738429004D10F0 /* TextInputAreaExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputAreaExtensions.swift; sourceTree = "<group>"; };
+		4B0FE4C72C739A53004D10F0 /* MessageListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListController.swift; sourceTree = "<group>"; };
+		4B0FE4C92C739D8A004D10F0 /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		4B366BBF2C6D2872001D5D63 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
 		4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerSearchView.swift; sourceTree = "<group>"; };
@@ -395,6 +399,7 @@
 			children = (
 				4BF094332C712D06000E305F /* ChatScreenRow */,
 				4B0FE4C22C7383C4004D10F0 /* TextInputArea */,
+				4B0FE4C72C739A53004D10F0 /* MessageListController.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 			children = (
 				4BF0942C2C7126CA000E305F /* ChatsTabView.swift */,
 				4B0FE4BB2C73807C004D10F0 /* ChatRoomView.swift */,
+				4B0FE4C92C739D8A004D10F0 /* MessageListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 				4B74F4512C565402008C8393 /* OTPPhoneVerifyCodeView.swift in Sources */,
 				4BF094282C710203000E305F /* MainTabViewExtension.swift in Sources */,
 				4BF0941E2C6FA4DA000E305F /* TestView.swift in Sources */,
+				4B0FE4CA2C739D8A004D10F0 /* MessageListView.swift in Sources */,
 				4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */,
 				4B74F46F2C5AA40B008C8393 /* TextTabHolderView.swift in Sources */,
 				4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */,
@@ -656,6 +663,7 @@
 				4BF094322C712C53000E305F /* ChatScreenRow.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
 				4BF094302C712760000E305F /* ChatScreenTabExtension.swift in Sources */,
+				4B0FE4C82C739A53004D10F0 /* MessageListController.swift in Sources */,
 				4BC70D412C62AE9D00BB41DF /* ColorExtension.swift in Sources */,
 				4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */,
 				4BF626242C669C5500FF77B9 /* TappedFieldTextChange.swift in Sources */,

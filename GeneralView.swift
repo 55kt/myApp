@@ -13,5 +13,4 @@ struct GeneralView: View {
 // MARK: - Preview
 #Preview {
     GeneralView()
-
 }
