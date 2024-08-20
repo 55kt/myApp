@@ -18,6 +18,7 @@ final class MessageListController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.gray.withAlphaComponent(0.2)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     } ()
@@ -48,15 +49,23 @@ extension MessageListController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
         
+        let message = MessageItemModel.stubMessages[indexPath.row]
+        
         cell.contentConfiguration = UIHostingConfiguration {
-            BubbleText(item: .receivedPlaceholder)
+            switch message.type {
+            case .text:
+                BubbleText(item: message)
+            case .video, .photo:
+                BubbleImage(item: message)
+            }
         }
+        
         return cell
     }
     
     // Function for number of rows
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return MessageItemModel.stubMessages.count
     }
     
     // Function for height
@@ -67,6 +76,7 @@ extension MessageListController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// MARK: - Preview
 #Preview {
     MessageListView()
 }

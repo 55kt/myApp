@@ -10,9 +10,41 @@ struct ChatRoomView: View {
                 leadingNavItems()
                 trailingNavItems()
             }
+            .navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) {
                 TextInputArea()
             }
+    }
+    
+    // MARK: - Methods
+    @ToolbarContentBuilder
+    private func leadingNavItems() -> some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            HStack {
+                Circle()
+                    .frame(width: 35, height: 35)
+                
+                Text("Username Here")
+                    .bold()
+            }
+        }
+    }
+    
+    @ToolbarContentBuilder
+    private func trailingNavItems() -> some ToolbarContent {
+        ToolbarItemGroup(placement: .topBarTrailing) {
+            Button {
+                // Some action
+            } label: {
+                Image(systemName: "video")
+            }
+            
+            Button {
+                // Some action
+            } label: {
+                Image(systemName: "phone")
+            }
+        }
     }
 }
 

@@ -6,12 +6,13 @@ struct MessageItemModel: Identifiable {
 
     let id = UUID().uuidString
     let text: String
+    let type: MessageType
     let direction: MessageDirection
     
     
-    static let sentPlaceholder = MessageItemModel(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ex urna, congue nec mi in, hendrerit ultricies neque. Vivamus ac ipsum placerat, luctus mi aliquet, pulvinar ex.", direction: .sent)
+    static let sentPlaceholder = MessageItemModel(text: "Lorem ipsum dolor sit amet.", type: .text, direction: .sent)
     
-    static let receivedPlaceholder = MessageItemModel(text: "Donec sit amet nunc sapien. Aenean convallis, mi a fringilla maximus, arcu libero volutpat mauris, sit amet lobortis massa dui id odio.", direction: .received)
+    static let receivedPlaceholder = MessageItemModel(text: "Donec sit amet nunc sapien.", type: .text, direction: .received)
     
     var alignment: Alignment {
         return direction == .sent ? .leading : .trailing
@@ -24,6 +25,16 @@ struct MessageItemModel: Identifiable {
     var backgroundColor: Color {
         return direction == .sent ? Color.bubbleGreen : .bubbleWhite
     }
+    
+    static let stubMessages: [MessageItemModel] = [
+        MessageItemModel(text: "Hello, World!", type: .text, direction: .sent),
+        MessageItemModel(text: "Check this photo", type: .photo, direction: .received),
+        MessageItemModel(text: "Check out this video", type: .video, direction: .sent)
+    ]
+}
+
+enum MessageType {
+    case text, photo, video
 }
 
 enum MessageDirection {

@@ -10,7 +10,7 @@ struct BubbleText: View {
             Text("Hello, World! And whats app this is my app and this message is for testing bubble view")
                 .padding(10)
                 .background(item.backgroundColor)
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                 .applyTail(direction: item.direction)
             
             timeStampTextView()
@@ -39,7 +39,7 @@ struct BubbleText: View {
     }
 }
 
-// MARK: - Body
+// MARK: - Preview
 #Preview {
     ScrollView {
         BubbleText(item: .sentPlaceholder)

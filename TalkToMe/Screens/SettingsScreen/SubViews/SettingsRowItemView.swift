@@ -20,6 +20,7 @@ struct SettingsRowItemView: View {
         }
     }
     
+    // MARK: - Methods
     @ViewBuilder
     private func iconImageView() -> some View {
         switch item.imageType {

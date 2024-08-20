@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct SettingsHeaderView: View {
+    
+    // MARK: - Body
     var body: some View {
         Section {
             HStack {
@@ -14,6 +16,7 @@ struct SettingsHeaderView: View {
         }
     }
     
+    // MARK: - Methods
     // Fucntion to display user info
     private func userInfoTextView() -> some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -39,6 +42,7 @@ struct SettingsHeaderView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     SettingsHeaderView()
 }
