@@ -17,6 +17,7 @@ final class MessageListController: UIViewController {
         let tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     } ()
@@ -44,14 +45,11 @@ extension MessageListController: UITableViewDelegate, UITableViewDataSource {
     // Function for creating cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.backgroundColor = UIColor.gray.withAlphaComponent(0.1)
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
+        
         cell.contentConfiguration = UIHostingConfiguration {
-            Text("Placeholder")
-                .font(.largeTitle)
-                .bold()
-                .frame(maxWidth: .infinity)
-                .frame(height: 200)
-                .background(Color.gray.opacity(0.1))
+            BubbleText(item: .receivedPlaceholder)
         }
         return cell
     }
@@ -67,4 +65,8 @@ extension MessageListController: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+}
+
+#Preview {
+    MessageListView()
 }

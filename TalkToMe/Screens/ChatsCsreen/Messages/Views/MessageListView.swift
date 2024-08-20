@@ -4,7 +4,6 @@ struct MessageListView: UIViewControllerRepresentable {
     typealias UIViewControllerType = MessageListController
     
     func makeUIViewController(context: Context) -> MessageListController {
-        let messageListController = MessageListController()
         return MessageListController()
     }
     
