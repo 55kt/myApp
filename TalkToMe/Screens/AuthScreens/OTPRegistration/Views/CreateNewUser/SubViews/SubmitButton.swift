@@ -26,7 +26,7 @@ struct SubmitButton: View {
                     .font(.system(size: 20, weight: .medium))
                     .padding(.vertical, 19)
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .background(isUsernameValid ? Color.yellow : Color.yellow.opacity(0.3))
+                    .background(isUsernameValid ? Color.white : Color.white.opacity(0.3))
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                     .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)
                     .scaleEffect(isUsernameValid ? 1.0 : 0.95)

@@ -28,12 +28,16 @@ struct BubbleImage: View {
     
     // MARK: - Methods
     private func playButton() -> some View {
-        Image(systemName: "play.fill")
-            .padding()
-            .imageScale(.large)
-            .foregroundStyle(.gray)
-            .background(.thinMaterial)
-            .clipShape(Circle())
+        Button {
+            // Some action
+        } label: {
+            Image(systemName: "play.fill")
+                .padding()
+                .imageScale(.large)
+                .foregroundStyle(.gray)
+                .background(.thinMaterial)
+                .clipShape(Circle())
+        }
     }
     
     private func messageTextView() -> some View {

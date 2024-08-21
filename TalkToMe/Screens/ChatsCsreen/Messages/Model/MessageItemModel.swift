@@ -29,12 +29,13 @@ struct MessageItemModel: Identifiable {
     static let stubMessages: [MessageItemModel] = [
         MessageItemModel(text: "Hello, World!", type: .text, direction: .sent),
         MessageItemModel(text: "Check this photo", type: .photo, direction: .received),
-        MessageItemModel(text: "Check out this video", type: .video, direction: .sent)
+        MessageItemModel(text: "Check out this video", type: .video, direction: .sent),
+        MessageItemModel(text: "", type: .audio, direction: .received)
     ]
 }
 
 enum MessageType {
-    case text, photo, video
+    case text, photo, video, audio
 }
 
 enum MessageDirection {

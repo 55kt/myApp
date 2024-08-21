@@ -10,7 +10,7 @@ struct VerifyButton: View {
                 .font(.system(size: 20, weight: .medium))
                 .padding(.vertical, 18)
                 .frame(minWidth: 0, maxWidth: .infinity)
-                .background(boolPlaceholder ? Color.yellow : Color.white.opacity(0.3))
+                .background(boolPlaceholder ? Color.white : Color.white.opacity(0.3))
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .disabled(!boolPlaceholder)
                 .padding(.horizontal, 20)

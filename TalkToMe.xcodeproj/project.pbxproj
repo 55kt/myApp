@@ -21,6 +21,7 @@
 		4B0FE4D12C74CF0B004D10F0 /* BubbleTail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4D02C74CF0B004D10F0 /* BubbleTail.swift */; };
 		4B0FE4D32C74D15C004D10F0 /* BubbleTailModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4D22C74D15C004D10F0 /* BubbleTailModifier.swift */; };
 		4B0FE4D82C74EB5D004D10F0 /* BubbleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4D72C74EB5D004D10F0 /* BubbleImage.swift */; };
+		4B0FE4DA2C7500B7004D10F0 /* BubbleAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0FE4D92C7500B7004D10F0 /* BubbleAudio.swift */; };
 		4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B366BBF2C6D2872001D5D63 /* CameraView.swift */; };
 		4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */; };
@@ -83,6 +84,7 @@
 		4B0FE4D02C74CF0B004D10F0 /* BubbleTail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTail.swift; sourceTree = "<group>"; };
 		4B0FE4D22C74D15C004D10F0 /* BubbleTailModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTailModifier.swift; sourceTree = "<group>"; };
 		4B0FE4D72C74EB5D004D10F0 /* BubbleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleImage.swift; sourceTree = "<group>"; };
+		4B0FE4D92C7500B7004D10F0 /* BubbleAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleAudio.swift; sourceTree = "<group>"; };
 		4B366BBF2C6D2872001D5D63 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
 		4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerSearchView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				4B0FE4D02C74CF0B004D10F0 /* BubbleTail.swift */,
 				4B0FE4D22C74D15C004D10F0 /* BubbleTailModifier.swift */,
 				4B0FE4D72C74EB5D004D10F0 /* BubbleImage.swift */,
+				4B0FE4D92C7500B7004D10F0 /* BubbleAudio.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				4B74F4492C556131008C8393 /* OTPPhoneNumberInputView.swift in Sources */,
 				4B0FE4C62C738429004D10F0 /* TextInputAreaExtensions.swift in Sources */,
 				4BC70D332C6258B300BB41DF /* UsernameField.swift in Sources */,
+				4B0FE4DA2C7500B7004D10F0 /* BubbleAudio.swift in Sources */,
 				4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */,
 				4BC70D352C625A7100BB41DF /* SubmitButton.swift in Sources */,
 				4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */,

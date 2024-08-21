@@ -22,7 +22,7 @@ struct ContinueButton: View {
                     .font(.system(size: 20))
                     .padding(.vertical, 18)
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .background(phoneNumber.count >= 10 ? Color.yellow : Color.yellow.opacity(0.3))
+                    .background(phoneNumber.count >= 10 ? Color.white : Color.white.opacity(0.3))
                     .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                     .padding(.horizontal, 16)
                     .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: -5)

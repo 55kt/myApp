@@ -57,6 +57,8 @@ extension MessageListController: UITableViewDelegate, UITableViewDataSource {
                 BubbleText(item: message)
             case .video, .photo:
                 BubbleImage(item: message)
+            case.audio:
+                BubbleAudio(item: message)
             }
         }
         

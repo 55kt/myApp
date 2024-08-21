@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 
 extension MainTabView {
-    
+
     // Add a placeholder item
     internal func placeholderItemView(_ title: String) -> some View {
         ScrollView {

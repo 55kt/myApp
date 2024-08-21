@@ -5,7 +5,7 @@ struct GeneralView: View {
     // MARK: - Body
     var body: some View {
         NavigationStack {
-            IntroView()
+            MainTabView()
         }
     }
 }

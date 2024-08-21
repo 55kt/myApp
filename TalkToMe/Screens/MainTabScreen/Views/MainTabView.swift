@@ -2,6 +2,11 @@ import SwiftUI
 
 struct MainTabView: View {
     
+    init() {
+        let thumbImage = UIImage(systemName: "circle.fill")
+        UISlider.appearance().setThumbImage(thumbImage, for: .normal)
+    }
+    
     // MARK: - Body
     var body: some View {
         TabView {

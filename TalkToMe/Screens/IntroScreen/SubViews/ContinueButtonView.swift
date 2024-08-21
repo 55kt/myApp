@@ -23,7 +23,7 @@ struct ContinueButtonView: View {
             .font(.system(size: 20, weight: .medium))
             .padding(.vertical, 18)
             .frame(minWidth: 0, maxWidth: .infinity)
-            .background(.yellow)
+            .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .padding()
     }
