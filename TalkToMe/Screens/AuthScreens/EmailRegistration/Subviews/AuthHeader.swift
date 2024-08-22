@@ -10,7 +10,7 @@ struct AuthHeader: View {
                 .foregroundColor(.white)
                 .opacity(0.9)
             
-            Text("TalkToMe")
+            Text("TalkToMe") 
                 .font(.largeTitle)
                 .foregroundStyle(.white)
                 .fontWeight(.semibold)
