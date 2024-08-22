@@ -17,11 +17,14 @@ struct ChatsTabView: View {
                         ChatScreenRow()
                     }
                 }
-                
                 inboxFooterView()
                     .listRowSeparator(.hidden)
             }
             .navigationTitle("Chats")
+            .background{
+                GrayGradient()
+                    .ignoresSafeArea()
+            }
             .searchable(text: $searchText)
             .listStyle(.plain)
             .toolbar {

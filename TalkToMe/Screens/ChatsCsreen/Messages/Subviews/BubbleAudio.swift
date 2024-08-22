@@ -72,6 +72,8 @@ struct BubbleAudio: View {
     .frame(maxWidth: .infinity)
     .padding(.horizontal)
     .background(Color.orange.opacity(0.4))
+    
+    // Slider Options for change color
     .onAppear {
         let thumbImage = UIImage(systemName: "circle.fill")
         UISlider.appearance().setThumbImage(thumbImage, for: .normal)
