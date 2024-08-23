@@ -3,10 +3,11 @@ import Foundation
 final class AuthScreenModel: ObservableObject {
     
     // MARK: - Published Properties
-    @Published var isLoading: Bool = false
+    @Published var isLoading = false
     @Published var email = ""
     @Published var password = ""
     @Published var username = ""
+    @Published var errorState: (showError: Bool, errorMessage: String) = (false, "ErrorState error Message !")
     
     // MARK: - Computed Properties
     var disableLoginButton: Bool {
@@ -15,5 +16,27 @@ final class AuthScreenModel: ObservableObject {
     
     var disableSignUpButton: Bool {
         return email.isEmpty || password.isEmpty || username.isEmpty || isLoading
+    }
+    
+    
+    // Function for auth user
+    func handleSignUp() async {
+        DispatchQueue.main.async {
+            self.isLoading = true
+        }
+        
+        do {
+            try await AuthManager.shared.createAccount(for: username, with: email, and: password)
+        } catch {
+            DispatchQueue.main.async {
+                self.errorState.errorMessage = "Failed to create account \(error.localizedDescription)"
+                self.errorState.showError = true
+                self.isLoading = false
+            }
+        }
+
+        DispatchQueue.main.async {
+            self.isLoading = false
+        }
     }
 }

@@ -26,5 +26,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:48003602360:ios:21b0272f5747cae1e7214d</string>
+	<key>DATABASE_URL</key>
+	<string>https://talktome-ea314-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
