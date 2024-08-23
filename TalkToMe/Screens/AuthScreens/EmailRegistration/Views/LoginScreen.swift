@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LoginScreen: View {
     // MARK: - Properties
-    @StateObject private var asm = AuthScreenModel()
+    @StateObject private var authScreenModel = AuthScreenModel()
     
     // MARK: - Body
     var body: some View {
@@ -11,15 +11,17 @@ struct LoginScreen: View {
                 Spacer()
                 AuthHeader()
                 
-                AuthTextField(type: .email, text: $asm.email)
-                AuthTextField(type: .password, text: $asm.password)
+                AuthTextField(type: .email, text: $authScreenModel.email)
+                AuthTextField(type: .password, text: $authScreenModel.password)
                 
                 forgotPasswordButton()
                 
                 AuthButton(buttonName: "Log In", buttonAction: {
-                    // Some Action
+                    Task {
+                        await authScreenModel.handleSignUp()
+                    }
                 })
-                .disabled(asm.disableLoginButton)
+                .disabled(authScreenModel.disableLoginButton)
                 Spacer()
                 
                 signUpButton()
@@ -29,11 +31,16 @@ struct LoginScreen: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(GrayGradient())
             .ignoresSafeArea()
+            .alert(isPresented: $authScreenModel.errorState.showError) {
+                Alert(
+                    title: Text(authScreenModel.errorState.errorMessage),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
     }
     
     // MARK: - Methods
-    // Forgot password function
     private func forgotPasswordButton() -> some View {
         Button {
             // Some action
@@ -47,7 +54,6 @@ struct LoginScreen: View {
         }
     }
     
-    // Sign up function
     private func signUpButton() -> some View {
         NavigationLink {
             SignUpScreen(asm: AuthScreenModel())

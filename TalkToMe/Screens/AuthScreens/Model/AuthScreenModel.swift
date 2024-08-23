@@ -18,7 +18,6 @@ final class AuthScreenModel: ObservableObject {
         return email.isEmpty || password.isEmpty || username.isEmpty || isLoading
     }
     
-    
     // Function for auth user
     func handleSignUp() async {
         DispatchQueue.main.async {
@@ -27,16 +26,18 @@ final class AuthScreenModel: ObservableObject {
         
         do {
             try await AuthManager.shared.createAccount(for: username, with: email, and: password)
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
         } catch {
             DispatchQueue.main.async {
                 self.errorState.errorMessage = "Failed to create account \(error.localizedDescription)"
                 self.errorState.showError = true
                 self.isLoading = false
+                
+                // Отладочное сообщение
+                print("Error occurred: \(self.errorState.errorMessage)")
             }
-        }
-
-        DispatchQueue.main.async {
-            self.isLoading = false
         }
     }
 }
