@@ -1,5 +1,6 @@
 import Foundation
 
+@MainActor
 final class AuthScreenModel: ObservableObject {
     
     // MARK: - Published Properties
@@ -20,24 +21,13 @@ final class AuthScreenModel: ObservableObject {
     
     // Function for auth user
     func handleSignUp() async {
-        DispatchQueue.main.async {
-            self.isLoading = true
-        }
-        
+        isLoading = true
         do {
             try await AuthManager.shared.createAccount(for: username, with: email, and: password)
-            DispatchQueue.main.async {
-                self.isLoading = false
-            }
         } catch {
-            DispatchQueue.main.async {
-                self.errorState.errorMessage = "Failed to create account \(error.localizedDescription)"
-                self.errorState.showError = true
-                self.isLoading = false
-                
-                // Отладочное сообщение
-                print("Error occurred: \(self.errorState.errorMessage)")
-            }
+            self.errorState.errorMessage = "Failed to create account \(error.localizedDescription)"
+            self.errorState.showError = true
+            self.isLoading = false
         }
     }
 }

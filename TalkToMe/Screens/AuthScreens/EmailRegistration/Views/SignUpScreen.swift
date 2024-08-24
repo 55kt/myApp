@@ -3,7 +3,7 @@ import SwiftUI
 struct SignUpScreen: View {
     // MARK: - Properties
     @Environment(\.dismiss) private var dismiss
-    @ObservedObject var asm: AuthScreenModel
+    @ObservedObject var authScreenModel: AuthScreenModel
     
     // MARK: - Body
     var body: some View {
@@ -11,18 +11,16 @@ struct SignUpScreen: View {
             Spacer()
             
             AuthHeader()
-            AuthTextField(type: .email, text: $asm.email)
+            AuthTextField(type: .email, text: $authScreenModel.email)
+                        
+            AuthTextField(type: .custom("Username", "at"), text: $authScreenModel.username)
             
-            let userNameInputType = AuthTextField.InputType.custom("Username", "at")
-            
-            AuthTextField(type: userNameInputType, text: $asm.username)
-            
-            AuthTextField(type: .password, text: $asm.password)
+            AuthTextField(type: .password, text: $authScreenModel.password)
             
             AuthButton(buttonName: "Create an account") {
-                Task { await asm.handleSignUp() }
+                Task { await authScreenModel.handleSignUp() }
             }
-            .disabled(asm.disableSignUpButton)
+            .disabled(authScreenModel.disableSignUpButton)
             
             Spacer()
             
@@ -59,5 +57,5 @@ struct SignUpScreen: View {
 }
 // MARK: - Preview
 #Preview {
-    SignUpScreen(asm: AuthScreenModel())
+    SignUpScreen(authScreenModel: AuthScreenModel())
 }

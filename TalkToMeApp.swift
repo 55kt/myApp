@@ -18,9 +18,7 @@ struct TalkToMeApp: App {
 
   var body: some Scene {
     WindowGroup {
-      NavigationView {
-        GeneralView()
-      }
+      RootScreen()
     }
   }
 }

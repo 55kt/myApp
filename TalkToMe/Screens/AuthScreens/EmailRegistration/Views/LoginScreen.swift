@@ -16,12 +16,11 @@ struct LoginScreen: View {
                 
                 forgotPasswordButton()
                 
-                AuthButton(buttonName: "Log In", buttonAction: {
-                    Task {
-                        await authScreenModel.handleSignUp()
-                    }
-                })
+                AuthButton(buttonName: "Log In") {
+                    Task { await authScreenModel.handleSignUp() }
+                }
                 .disabled(authScreenModel.disableLoginButton)
+                
                 Spacer()
                 
                 signUpButton()
@@ -32,11 +31,11 @@ struct LoginScreen: View {
             .background(GrayGradient())
             .ignoresSafeArea()
             .alert(isPresented: $authScreenModel.errorState.showError) {
-                Alert(
-                    title: Text(authScreenModel.errorState.errorMessage),
-                    dismissButton: .default(Text("OK"))
-                )
-            }
+                            Alert(
+                                title: Text(authScreenModel.errorState.errorMessage),
+                                dismissButton: .default(Text("Ok"))
+                            )
+                        }
         }
     }
     
@@ -56,7 +55,7 @@ struct LoginScreen: View {
     
     private func signUpButton() -> some View {
         NavigationLink {
-            SignUpScreen(asm: AuthScreenModel())
+            SignUpScreen(authScreenModel: AuthScreenModel())
         } label: {
             HStack {
                 Image(systemName: "sparkles")
