@@ -11,7 +11,7 @@ struct FinalScreenView: View {
                 IntroGradient()
                 
                 if showMainView {
-                    MainTabView()
+                    //
                 } else {
                     VStack(spacing: 0) {
                         Text("Done")

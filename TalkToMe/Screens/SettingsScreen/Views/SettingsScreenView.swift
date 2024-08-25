@@ -32,6 +32,23 @@ struct SettingsScreenView: View {
             }
             .navigationTitle("Settings")
             .searchable(text: $searchText)
+            .toolbar {
+                leadingNavItem()
+            }
+        }
+    }
+}
+
+extension SettingsScreenView {
+    @ToolbarContentBuilder
+    private func leadingNavItem() -> some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            Button("Sign Out") {
+                Task {
+                    try? await AuthManager.shared.logOut()
+                }
+            }
+            .foregroundStyle(.red)
         }
     }
 }

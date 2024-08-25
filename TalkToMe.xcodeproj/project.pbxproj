@@ -75,6 +75,8 @@
 		4BE4E9C92C78F706007684CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BE4E9C82C78F706007684CC /* GoogleService-Info.plist */; };
 		4BE4E9CD2C7A297B007684CC /* RootScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9CC2C7A297B007684CC /* RootScreen.swift */; };
 		4BE4E9D02C7A29AC007684CC /* RootScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9CF2C7A29AC007684CC /* RootScreenModel.swift */; };
+		4BE4E9D52C7A4BE1007684CC /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9D42C7A4BE1007684CC /* UserItem.swift */; };
+		4BE4E9D82C7A4CFE007684CC /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9D72C7A4CFE007684CC /* FirebaseConstants.swift */; };
 		4BF094172C6E559E000E305F /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094162C6E559E000E305F /* CropView.swift */; };
 		4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094182C6E585E000E305F /* PickerExtensions.swift */; };
 		4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */; };
@@ -151,6 +153,8 @@
 		4BE4E9C82C78F706007684CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4BE4E9CC2C7A297B007684CC /* RootScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreen.swift; sourceTree = "<group>"; };
 		4BE4E9CF2C7A29AC007684CC /* RootScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenModel.swift; sourceTree = "<group>"; };
+		4BE4E9D42C7A4BE1007684CC /* UserItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
+		4BE4E9D72C7A4CFE007684CC /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		4BF094162C6E559E000E305F /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
 		4BF094182C6E585E000E305F /* PickerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerExtensions.swift; sourceTree = "<group>"; };
 		4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScreenView.swift; sourceTree = "<group>"; };
@@ -343,8 +347,6 @@
 				4BE4E9B02C7776CC007684CC /* EmailRegistration */,
 				4B74F4572C56921E008C8393 /* OTPRegistration */,
 				4BF0941A2C6FA47D000E305F /* FinalRegisterScreen */,
-				4BE4E9BE2C77AA44007684CC /* Model */,
-				4BE4E9C12C78E60D007684CC /* Services */,
 			);
 			path = AuthScreens;
 			sourceTree = "<group>";
@@ -434,7 +436,10 @@
 			children = (
 				4BE4E9B12C777738007684CC /* Views */,
 				4BE4E9B42C7777FD007684CC /* Subviews */,
+				4BE4E9D62C7A4CAD007684CC /* Utils */,
+				4BE4E9C12C78E60D007684CC /* Services */,
 				4BE4E9B92C77810E007684CC /* Components */,
+				4BE4E9D32C7A4B47007684CC /* Models */,
 			);
 			path = EmailRegistration;
 			sourceTree = "<group>";
@@ -463,14 +468,6 @@
 				4BE4E9BA2C778120007684CC /* AuthButton.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		4BE4E9BE2C77AA44007684CC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4BE4E9BF2C77AA58007684CC /* AuthScreenModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		4BE4E9C12C78E60D007684CC /* Services */ = {
@@ -504,6 +501,23 @@
 				4BE4E9CF2C7A29AC007684CC /* RootScreenModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4BE4E9D32C7A4B47007684CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4BE4E9BF2C77AA58007684CC /* AuthScreenModel.swift */,
+				4BE4E9D42C7A4BE1007684CC /* UserItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4BE4E9D62C7A4CAD007684CC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4BE4E9D72C7A4CFE007684CC /* FirebaseConstants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		4BF0941A2C6FA47D000E305F /* FinalRegisterScreen */ = {
@@ -827,6 +841,7 @@
 				4B0FE4C02C738390004D10F0 /* TextInputArea.swift in Sources */,
 				4BC70D392C626F4400BB41DF /* NavBarElements.swift in Sources */,
 				4B0FE4CF2C73B15F004D10F0 /* BubbleText.swift in Sources */,
+				4BE4E9D82C7A4CFE007684CC /* FirebaseConstants.swift in Sources */,
 				4BE4E9BB2C778120007684CC /* AuthButton.swift in Sources */,
 				4BC70D312C6257B600BB41DF /* UserAvatar.swift in Sources */,
 				4B0FE4BC2C73807C004D10F0 /* ChatRoomView.swift in Sources */,
@@ -840,6 +855,7 @@
 				4BE4E9CD2C7A297B007684CC /* RootScreen.swift in Sources */,
 				4B0FE4B82C722504004D10F0 /* SettingsHeaderView.swift in Sources */,
 				4BC70D3F2C629F4200BB41DF /* CodeInputPlatforms.swift in Sources */,
+				4BE4E9D52C7A4BE1007684CC /* UserItem.swift in Sources */,
 				4BE4E99C2C7633B1007684CC /* GrayGradient.swift in Sources */,
 				4BC70D2F2C62572500BB41DF /* NavigationTextArea.swift in Sources */,
 				4BF094252C70FF42000E305F /* MainTabView.swift in Sources */,

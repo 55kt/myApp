@@ -23,6 +23,7 @@ protocol AuthProvider {
 enum AuthError: Error {
     case accountCreationFailed(_ description: String)
     case failedToSaveUserInfo(_ description: String)
+    case emailLoginFailed(_ description: String)
 }
 
 extension AuthError: LocalizedError {
@@ -31,6 +32,8 @@ extension AuthError: LocalizedError {
         case .accountCreationFailed(let description):
             return description
         case .failedToSaveUserInfo(let description):
+            return description
+        case .emailLoginFailed(let description):
             return description
         }
     }
@@ -55,7 +58,14 @@ final class AuthManager: AuthProvider {
     }
     
     func login(with email: String, and password: String) async throws {
-        //
+        do {
+            let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
+            fetchCurrentUserInfo()
+            print("🔐 Successfully logged in \(authResult.user.email ?? "") !")
+        } catch {
+            print("🔐 Failed to logged into the account with: \(email) !")
+            throw AuthError.emailLoginFailed(error.localizedDescription)
+        }
     }
     
     func createAccount(for username: String, with email: String, and password: String) async throws {
@@ -72,7 +82,13 @@ final class AuthManager: AuthProvider {
         }
     
     func logOut() async throws {
-        
+        do {
+            try Auth.auth().signOut()
+            authState.send(.loggedOut)
+            print("🔐 Successfully logged out !")
+        } catch {
+            print("🔐 Failed to logout current user: \(error.localizedDescription)")
+        }
     }
     
 }
@@ -80,8 +96,8 @@ final class AuthManager: AuthProvider {
 extension AuthManager {
     private func saveUserInfoDatabase(user: UserItem) async throws {
         do {
-            let userDictionary = ["uid": user.uid, "username": user.username, "email": user.email]
-            try await Database.database().reference().child("users").child(user.uid).setValue(userDictionary)
+            let userDictionary: [String: Any] = [.uid: user.uid, .username: user.username, .email: user.email]
+            try await FirebaseConstants.UsersRef.child(user.uid).setValue(userDictionary)
         } catch {
             print("🔐 Failed to save created user info in database: \(error.localizedDescription)")
             throw AuthError.failedToSaveUserInfo(error.localizedDescription)
@@ -90,7 +106,7 @@ extension AuthManager {
     
     private func fetchCurrentUserInfo() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("users").child(currentUid).observe(.value) {[weak self] snapshot in
+        FirebaseConstants.UsersRef.child(currentUid).observe(.value) {[weak self] snapshot in
             
             guard let userDict = snapshot.value as? [String: Any] else { return }
             let loggedInUser = UserItem(dictionary: userDict)
@@ -101,38 +117,4 @@ extension AuthManager {
         }
         
     }
-}
-
-struct UserItem: Identifiable, Hashable, Decodable {
-    let uid: String
-    let username: String
-    let email: String
-    var bio: String? = nil
-    var profileImageUrl: String? = nil
-    
-    var id: String {
-        return uid
-    }
-    
-    var bioUnwrapped: String {
-        return bio ?? "Hello, World! I am new here."
-    }
-}
-
-extension UserItem {
-    init(dictionary: [String: Any]) {
-        self.uid = dictionary[.uid] as? String ?? ""
-        self.username = dictionary[.username] as? String ?? ""
-        self.email = dictionary[.email] as? String ?? ""
-        self.bio = dictionary[.bio] as? String ?? nil
-        self.profileImageUrl = dictionary[.profileImageUrl] as? String ?? nil
-    }
-}
-
-extension String {
-    static let uid = "uid"
-    static let username = "username"
-    static let email = "email"
-    static let bio = "bio"
-    static let profileImageUrl = "profileImageUrl"
 }

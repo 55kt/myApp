@@ -2,7 +2,12 @@ import SwiftUI
 
 struct MainTabView: View {
     
-    init() {
+    // MARK: - Properties
+    private let currentUser: UserItem
+    
+    // MARK: - Initializer
+    init(_ currentUser: UserItem) {
+        self.currentUser = currentUser
         let thumbImage = UIImage(systemName: "circle.fill")
         UISlider.appearance().setThumbImage(thumbImage, for: .normal)
     }
@@ -31,5 +36,5 @@ struct MainTabView: View {
 
 // MARK: - Preview
 #Preview {
-    MainTabView()
+    MainTabView(.placeholder)
 }
