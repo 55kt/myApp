@@ -79,6 +79,8 @@
 		4BE4E9D82C7A4CFE007684CC /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9D72C7A4CFE007684CC /* FirebaseConstants.swift */; };
 		4BE4E9DC2C7CD14D007684CC /* ChatPartnerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9DB2C7CD14D007684CC /* ChatPartnerPickerView.swift */; };
 		4BE4E9DE2C7CD926007684CC /* ChatPartnerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9DD2C7CD926007684CC /* ChatPartnerRow.swift */; };
+		4BE4E9E22C7CE428007684CC /* ChatPartnerPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9E12C7CE428007684CC /* ChatPartnerPickerViewModel.swift */; };
+		4BE4E9E42C7CE875007684CC /* AddGroupChatPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9E32C7CE875007684CC /* AddGroupChatPartnerView.swift */; };
 		4BF094172C6E559E000E305F /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094162C6E559E000E305F /* CropView.swift */; };
 		4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094182C6E585E000E305F /* PickerExtensions.swift */; };
 		4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */; };
@@ -159,6 +161,8 @@
 		4BE4E9D72C7A4CFE007684CC /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		4BE4E9DB2C7CD14D007684CC /* ChatPartnerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPartnerPickerView.swift; sourceTree = "<group>"; };
 		4BE4E9DD2C7CD926007684CC /* ChatPartnerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPartnerRow.swift; sourceTree = "<group>"; };
+		4BE4E9E12C7CE428007684CC /* ChatPartnerPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPartnerPickerViewModel.swift; sourceTree = "<group>"; };
+		4BE4E9E32C7CE875007684CC /* AddGroupChatPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupChatPartnerView.swift; sourceTree = "<group>"; };
 		4BF094162C6E559E000E305F /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
 		4BF094182C6E585E000E305F /* PickerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerExtensions.swift; sourceTree = "<group>"; };
 		4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScreenView.swift; sourceTree = "<group>"; };
@@ -532,6 +536,14 @@
 			path = ChatPartnerRow;
 			sourceTree = "<group>";
 		};
+		4BE4E9E02C7CE3FD007684CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4BE4E9E12C7CE428007684CC /* ChatPartnerPickerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4BF0941A2C6FA47D000E305F /* FinalRegisterScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,9 +589,10 @@
 		4BF094292C712698000E305F /* ChatsCsreen */ = {
 			isa = PBXGroup;
 			children = (
-				4B0FE4D42C74E5CF004D10F0 /* Messages */,
 				4BF0942B2C7126AB000E305F /* Views */,
 				4BF0942A2C7126A4000E305F /* SubViews */,
+				4B0FE4D42C74E5CF004D10F0 /* Messages */,
+				4BE4E9E02C7CE3FD007684CC /* ViewModel */,
 			);
 			path = ChatsCsreen;
 			sourceTree = "<group>";
@@ -600,6 +613,7 @@
 				4BF0942C2C7126CA000E305F /* ChatsTabView.swift */,
 				4B0FE4BB2C73807C004D10F0 /* ChatRoomView.swift */,
 				4BE4E9DB2C7CD14D007684CC /* ChatPartnerPickerView.swift */,
+				4BE4E9E32C7CE875007684CC /* AddGroupChatPartnerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -847,6 +861,7 @@
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
 				4B74F4672C57EF73008C8393 /* Page.swift in Sources */,
 				4BF094202C6FCC9F000E305F /* TimerView.swift in Sources */,
+				4BE4E9E22C7CE428007684CC /* ChatPartnerPickerViewModel.swift in Sources */,
 				4B0FE4D82C74EB5D004D10F0 /* BubbleImage.swift in Sources */,
 				4BF0942D2C7126CA000E305F /* ChatsTabView.swift in Sources */,
 				4BE4E9C02C77AA58007684CC /* AuthScreenModel.swift in Sources */,
@@ -900,6 +915,7 @@
 				4B3830022C5D65CE0094FA11 /* CountryPickerView.swift in Sources */,
 				4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */,
 				4B74F4692C57F7BB008C8393 /* IntroView.swift in Sources */,
+				4BE4E9E42C7CE875007684CC /* AddGroupChatPartnerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

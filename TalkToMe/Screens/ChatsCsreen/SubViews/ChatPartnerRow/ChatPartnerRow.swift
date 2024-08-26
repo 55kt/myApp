@@ -1,8 +1,17 @@
 import SwiftUI
 
-struct ChatPartnerRow: View {
-    let user: UserItem
+struct ChatPartnerRow<Content: View>:  View {
+    // MARK: - Properties
+    private let user: UserItem
+    private let trailingItems: Content
     
+    // MARK: - Initializer
+    init(user: UserItem, @ViewBuilder trailingItems: () -> Content = { EmptyView() }) {
+        self.user = user
+        self.trailingItems = trailingItems()
+    }
+    
+    // MARK: - Body
     var body: some View {
         HStack {
             Circle()
@@ -16,10 +25,13 @@ struct ChatPartnerRow: View {
                 Text(user.bioUnwrapped)
                     .foregroundStyle(.gray)
             }
+            
+            trailingItems
         }
     }
 }
 
+// MARK: - Preview
 #Preview {
     ChatPartnerRow(user: .placeholder)
 }
