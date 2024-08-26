@@ -13,7 +13,7 @@ struct SignUpScreen: View {
             AuthHeader()
             AuthTextField(type: .email, text: $authScreenModel.email)
                         
-            AuthTextField(type: .custom("Username", "at"), text: $authScreenModel.username)
+            AuthTextField(type: .custom("Username", "number.circle"), text: $authScreenModel.username)
             
             AuthTextField(type: .password, text: $authScreenModel.password)
             
@@ -27,6 +27,12 @@ struct SignUpScreen: View {
             loginBackButton()
                 .padding(.bottom, 30)
         }
+        .alert(isPresented: $authScreenModel.errorState.showError) {
+                        Alert(
+                            title: Text(authScreenModel.errorState.errorMessage),
+                            dismissButton: .default(Text("Ok"))
+                        )
+                    }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background{
             IntroGradient()

@@ -9,23 +9,23 @@ enum AuthState {
 
 protocol AuthProvider {
     
+    // MARK: - Properties
     static var shared: AuthProvider { get }
-    
     var authState: CurrentValueSubject<AuthState, Never> { get }
-    
     func autoLogin() async
-    
     func login(with email: String, and password: String) async throws
     func createAccount(for username: String, with email: String, and password: String) async throws
     func logOut() async throws
 }
 
+// Error Cases
 enum AuthError: Error {
     case accountCreationFailed(_ description: String)
     case failedToSaveUserInfo(_ description: String)
     case emailLoginFailed(_ description: String)
 }
 
+// Errors for auth
 extension AuthError: LocalizedError {
     var errorDescription: String? {
         switch self {
@@ -39,8 +39,8 @@ extension AuthError: LocalizedError {
     }
 }
 
+// Class for auth
 final class AuthManager: AuthProvider {
-    
     private init() {
         Task { await autoLogin() }
     }
@@ -57,6 +57,7 @@ final class AuthManager: AuthProvider {
         }
     }
     
+    // Function for login
     func login(with email: String, and password: String) async throws {
         do {
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
@@ -68,6 +69,7 @@ final class AuthManager: AuthProvider {
         }
     }
     
+    // Function for create account
     func createAccount(for username: String, with email: String, and password: String) async throws {
             do {
                 let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
@@ -81,6 +83,7 @@ final class AuthManager: AuthProvider {
             }
         }
     
+    // Function for logout
     func logOut() async throws {
         do {
             try Auth.auth().signOut()
@@ -93,6 +96,7 @@ final class AuthManager: AuthProvider {
     
 }
 
+// Extension for AuthManager
 extension AuthManager {
     private func saveUserInfoDatabase(user: UserItem) async throws {
         do {
@@ -104,6 +108,7 @@ extension AuthManager {
         }
     }
     
+    // Function for fetch current user information
     private func fetchCurrentUserInfo() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
         FirebaseConstants.UsersRef.child(currentUid).observe(.value) {[weak self] snapshot in

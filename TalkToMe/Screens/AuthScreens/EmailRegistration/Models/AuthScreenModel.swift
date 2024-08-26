@@ -31,6 +31,7 @@ final class AuthScreenModel: ObservableObject {
         }
     }
     
+    // Function for login
     func handleLogin() async {
         isLoading = true
         do {

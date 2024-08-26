@@ -8,7 +8,7 @@ struct UsernameField: View {
         HStack {
             Image(systemName: "number.circle")
                 .resizable()
-                .frame(width: 30, height: 30)
+                .frame(width: 33, height: 30)
                 .fontWeight(.semibold)
                 .frame(width: 30)
             
