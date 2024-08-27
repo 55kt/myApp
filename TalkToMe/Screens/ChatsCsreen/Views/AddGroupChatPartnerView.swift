@@ -9,24 +9,31 @@ struct AddGroupChatPartnerView: View {
     // MARK: - Body
     var body: some View {
         List {
+            if viewModel.showSelectedUsers {
+                Text("Selected Users")
+            }
             Section {
-                ForEach(0..<12) { _ in
+                ForEach([UserItem.placeholder]) { item in
                     Button {
-                        print("Item selected")
+                        viewModel.handleItemSelection(item)
                     } label: {
                         chatPartnerRow(.placeholder)
                     }
                 }
             }
         }
+        .animation(.easeInOut, value: viewModel.showSelectedUsers)
         .searchable(text: $searchText)
     }
     
     private func chatPartnerRow(_ user: UserItem) -> some View {
         ChatPartnerRow(user: .placeholder) {
             Spacer()
-            Image(systemName: "circle")
-                .foregroundStyle(Color(.systemGray4))
+            let isSelected = viewModel.isUserSelected(user)
+            let imageName = isSelected ? "checkmark.circle.fill" : "circle"
+            let foregroundStyle = isSelected ? Color.blue : Color(.systemGray4)
+            Image(systemName: imageName)
+                .foregroundStyle(foregroundStyle)
                 .imageScale(.large)
         }
     }

@@ -15,10 +15,16 @@ final class ChatPartnerPickerViewModel: ObservableObject {
     
     // MARK: - Public Methods
     func handleItemSelection(_ item: UserItem) {
-        
+        if isUserSelected(item) {
+            guard let index = selectedChatPartners.firstIndex(where: { $0.uid == item.uid }) else { return }
+            selectedChatPartners.remove(at: index)
+        } else {
+            selectedChatPartners.append(item)
+        }
     }
     
-    func handleItemSelection(_ item: UserItem) {
-        
+    func isUserSelected(_ user: UserItem) -> Bool {
+        let isSelected = selectedChatPartners.contains { $0.uid == user.uid }
+        return isSelected
     }
 }
