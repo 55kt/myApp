@@ -1,16 +1,24 @@
 import Foundation
 
 enum ChatCreationRoute {
-    case addGroupChatMembers
+    case groupPartnerPicker
     case setUpGroupChat
 }
 
+enum ChatContants {
+    static let maxGroupMembers = 12
+}
+
 final class ChatPartnerPickerViewModel: ObservableObject {
-    @Published var navStack = [ChatCreationRoute]()
-    @Published var selectedChatPartners = [UserItem]()
+    @Published var navStack = [ChatCreationRoute]() // variable to keep track of navigation
+    @Published var selectedChatPartners = [UserItem]() // variable to keep track of selected users
     
     var showSelectedUsers: Bool {
         return !selectedChatPartners.isEmpty
+    }
+    
+    var disableNextButton: Bool {
+        return selectedChatPartners.isEmpty
     }
     
     // MARK: - Public Methods
@@ -23,6 +31,7 @@ final class ChatPartnerPickerViewModel: ObservableObject {
         }
     }
     
+    // function to check if user is selected
     func isUserSelected(_ user: UserItem) -> Bool {
         let isSelected = selectedChatPartners.contains { $0.uid == user.uid }
         return isSelected

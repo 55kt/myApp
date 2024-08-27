@@ -16,6 +16,19 @@ struct UserItem: Identifiable, Hashable, Decodable {
     }
     
     static let placeholder = UserItem(uid: "1", username: "admin", email: "admin@mail.com")
+    
+    static let plaseholders: [UserItem] = [
+        UserItem(uid: "1", username: "Osas", email: "osask@yahoo.com"),
+        UserItem(uid: "2", username: "JohnDoe", email: "johndoe@example.com", bio: "Hello, I'm John."),
+        UserItem(uid: "3", username: "JaneSmith", email: "janesmith@example.com", bio: "Passionate about coding."),
+        UserItem(uid: "4", username: "Alice", email: "alice@gmail.com", bio: "Tech enthusiast."),
+        UserItem(uid: "5", username: "Bob", email: "bob@example.com", bio: "Lover of nature."),
+        UserItem(uid: "6", username: "Ella", email: "ella@hotmail.com", bio: "Dreamer."),
+        UserItem(uid: "7", username: "Michael", email: "michael@gmail.com"),
+        UserItem(uid: "8", username: "Sophie", email: "sophie@example.com", bio: "Coffee addict ☕️"),
+        UserItem(uid: "9", username: "David", email: "david@example.com", bio: "Music lover."),
+        UserItem(uid: "10", username: "Emily", email: "emily@yahoo.com", bio: "Travel enthusiast.")
+    ]
 }
 
 extension UserItem {

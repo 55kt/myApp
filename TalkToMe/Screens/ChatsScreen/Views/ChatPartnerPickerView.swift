@@ -14,7 +14,7 @@ struct ChatPartnerPickerView: View {
                 ForEach(ChatPartnerPickerOption.allCases) { item in
                     HeaderItemView(item: item)
                         .onTapGesture {
-                            viewModel.navStack.append(.addGroupChatMembers)
+                            viewModel.navStack.append(.groupPartnerPicker)
                         }
                 }
                 
@@ -46,10 +46,10 @@ extension ChatPartnerPickerView {
     @ViewBuilder
     private func destinationView(for route: ChatCreationRoute) -> some View {
         switch route {
-        case .addGroupChatMembers:
-            AddGroupChatPartnerView(viewModel: viewModel)
+        case .groupPartnerPicker:
+            GroupPartnerPickerView(viewModel: viewModel)
         case .setUpGroupChat:
-            Text("Set up Group Chat")
+            NewGroupSetUpView(viewModel: viewModel)
         }
     }
 }
