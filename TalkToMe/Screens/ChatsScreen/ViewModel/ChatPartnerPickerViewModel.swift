@@ -1,4 +1,5 @@
 import Foundation
+import FirebaseAuth
 
 enum ChatCreationRoute {
     case groupPartnerPicker
@@ -40,9 +41,12 @@ final class ChatPartnerPickerViewModel: ObservableObject {
     func fetchUsers() async {
         do {
             let userNode = try await UserService.paginateUsers(lastCursor: lastCursor, pageSize: 5)
-            self.users.append(contentsOf: userNode.users)
+            var fetchedUsers = userNode.users
+            guard let currentUid = Auth.auth().currentUser?.uid else { return }
+            fetchedUsers = fetchedUsers.filter { $0.uid != currentUid }
+            self.users.append(contentsOf: fetchedUsers)
             self.lastCursor = userNode.currentCursor
-//            print("lastCursor: \(lastCursor)")
+            print("lastCursor: \(lastCursor) \(users.count)")
         } catch {
             print("💿 Failed to fetch users in ChatPartnerPickerViewModel")
         }
