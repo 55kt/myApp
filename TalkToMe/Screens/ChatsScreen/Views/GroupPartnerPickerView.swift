@@ -16,13 +16,17 @@ struct GroupPartnerPickerView: View {
                 }
             }
             Section {
-                ForEach(UserItem.plaseholders) { item in
+                ForEach(viewModel.users) { item in
                     Button {
                         viewModel.handleItemSelection(item)
                     } label: {
                         chatPartnerRow(item)
                     }
                 }
+            }
+            
+            if viewModel.isPaginatable {
+                loadMoreUsers()
             }
         }
         .animation(.easeInOut, value: viewModel.showSelectedUsers)
@@ -44,6 +48,15 @@ struct GroupPartnerPickerView: View {
                 .foregroundStyle(foregroundStyle)
                 .imageScale(.large)
         }
+    }
+    
+    private func loadMoreUsers() -> some View {
+        ProgressView()
+            .frame(maxWidth: .infinity)
+            .listRowBackground(Color.clear)
+            .task {
+                await viewModel.fetchUsers()
+            }
     }
 }
 

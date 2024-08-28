@@ -19,13 +19,16 @@ struct ChatPartnerPickerView: View {
                 }
                 
                 Section {
-                    ForEach(0..<12) { _ in
-                        ChatPartnerRow(user: .placeholder)
+                    ForEach(viewModel.users) { user in
+                        ChatPartnerRow(user: user)
                     }
                 } header: {
                     Text("Contacts in TalkToMe")
                         .textCase(nil)
                         .bold()
+                }
+                if viewModel.isPaginatable {
+                    loadMoreUsers()
                 }
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search user")
@@ -38,6 +41,15 @@ struct ChatPartnerPickerView: View {
                 trailingNavItem()
             }
         }
+    }
+    
+    private func loadMoreUsers() -> some View {
+        ProgressView()
+            .frame(maxWidth: .infinity)
+            .listRowBackground(Color.clear)
+            .task {
+                await viewModel.fetchUsers()
+            }
     }
 }
 

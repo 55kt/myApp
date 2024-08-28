@@ -9,9 +9,13 @@ enum ChatContants {
     static let maxGroupMembers = 12
 }
 
+@MainActor
 final class ChatPartnerPickerViewModel: ObservableObject {
+    // MARK: - Properties
     @Published var navStack = [ChatCreationRoute]() // variable to keep track of navigation
     @Published var selectedChatPartners = [UserItem]() // variable to keep track of selected users
+    @Published private(set) var users = [UserItem]()
+    private var lastCursor: String?
     
     var showSelectedUsers: Bool {
         return !selectedChatPartners.isEmpty
@@ -21,7 +25,29 @@ final class ChatPartnerPickerViewModel: ObservableObject {
         return selectedChatPartners.isEmpty
     }
     
+    var isPaginatable: Bool {
+        return !users.isEmpty
+    }
+    
+    // MARK: - Initializer
+    init() {
+        Task {
+            await fetchUsers()
+        }
+    }
+    
     // MARK: - Public Methods
+    func fetchUsers() async {
+        do {
+            let userNode = try await UserService.paginateUsers(lastCursor: lastCursor, pageSize: 5)
+            self.users.append(contentsOf: userNode.users)
+            self.lastCursor = userNode.currentCursor
+//            print("lastCursor: \(lastCursor)")
+        } catch {
+            print("💿 Failed to fetch users in ChatPartnerPickerViewModel")
+        }
+    }
+    
     func handleItemSelection(_ item: UserItem) {
         if isUserSelected(item) {
             guard let index = selectedChatPartners.firstIndex(where: { $0.uid == item.uid }) else { return }

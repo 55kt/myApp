@@ -101,7 +101,7 @@ extension AuthManager {
     private func saveUserInfoDatabase(user: UserItem) async throws {
         do {
             let userDictionary: [String: Any] = [.uid: user.uid, .username: user.username, .email: user.email]
-            try await FirebaseConstants.UsersRef.child(user.uid).setValue(userDictionary)
+            try await FirebaseConstants.UserRef.child(user.uid).setValue(userDictionary)
         } catch {
             print("🔐 Failed to save created user info in database: \(error.localizedDescription)")
             throw AuthError.failedToSaveUserInfo(error.localizedDescription)
@@ -111,7 +111,7 @@ extension AuthManager {
     // Function for fetch current user information
     private func fetchCurrentUserInfo() {
         guard let currentUid = Auth.auth().currentUser?.uid else { return }
-        FirebaseConstants.UsersRef.child(currentUid).observe(.value) {[weak self] snapshot in
+        FirebaseConstants.UserRef.child(currentUid).observe(.value) {[weak self] snapshot in
             
             guard let userDict = snapshot.value as? [String: Any] else { return }
             let loggedInUser = UserItem(dictionary: userDict)
@@ -122,4 +122,17 @@ extension AuthManager {
         }
         
     }
+}
+
+extension AuthManager {
+    static let testAccounts: [String] = [
+        "r5i7M@example.com",
+        "JG7v0@example.com",
+        "HlR1U@example.com",
+        "Jw6nS@example.com",
+        "f9xwT@example.com",
+        "0Y9Xr@example.com",
+        "o7wI8@example.com",
+        "l8L6f@example.com",
+    ]
 }
