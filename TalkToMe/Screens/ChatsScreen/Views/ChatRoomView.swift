@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ChatRoomView: View {
+    // MARK: - Properties
+    let channel: ChannelItem
     
     // MARK: - Body
     var body: some View {
@@ -24,7 +26,7 @@ struct ChatRoomView: View {
                 Circle()
                     .frame(width: 35, height: 35)
                 
-                Text("Username Here")
+                Text(channel.title)
                     .bold()
             }
         }
@@ -51,6 +53,6 @@ struct ChatRoomView: View {
 // MARK: - Preview
 #Preview {
     NavigationStack {
-        ChatRoomView()
+        ChatRoomView(channel: .placeholder)
     }
 }
