@@ -7,6 +7,8 @@ struct ChatPartnerPickerView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = ChatPartnerPickerViewModel()
     
+    var onCreate: (_ newChannel: ChannelItem) -> ()
+    
     // MARK: - Body
     var body: some View {
         NavigationStack(path: $viewModel.navStack) {
@@ -21,6 +23,9 @@ struct ChatPartnerPickerView: View {
                 Section {
                     ForEach(viewModel.users) { user in
                         ChatPartnerRow(user: user)
+                            .onTapGesture {
+                                onCreate(.placeholder)
+                            }
                     }
                 } header: {
                     Text("Contacts in TalkToMe")
@@ -144,5 +149,7 @@ enum ChatPartnerPickerOption: String, CaseIterable, Identifiable {
 
 // MARK: - Preview
 #Preview {
-    ChatPartnerPickerView()
+    ChatPartnerPickerView { channel in
+        
+    }
 }

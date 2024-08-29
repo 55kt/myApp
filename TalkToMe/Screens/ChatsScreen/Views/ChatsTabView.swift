@@ -3,7 +3,7 @@ import SwiftUI
 struct ChatsTabView: View {
     // MARK: - Properties
     @State private var searchText = ""
-    @State private var showChatPartnerPicker: Bool = false
+    @StateObject private var viewModel = ChatTabViewModel()
     
     // MARK: - Body
     var body: some View {
@@ -32,8 +32,13 @@ struct ChatsTabView: View {
                 leadingNavItems()
                 trailingNavItems()
             }
-            .sheet(isPresented: $showChatPartnerPicker) {
-                ChatPartnerPickerView()
+            .sheet(isPresented: $viewModel.showChatPartnerPicker) {
+                ChatPartnerPickerView(onCreate: viewModel.onNewChannelCreation)
+            }
+            .navigationDestination(isPresented: $viewModel.navigateToChatRoom) {
+                if let newChannel = viewModel.newChannel {
+                    ChatRoomView()
+                }
             }
         }
     }
@@ -67,7 +72,7 @@ struct ChatsTabView: View {
     // Toolbar button for new chat
     private func newChatButton() -> some View {
         Button {
-            showChatPartnerPicker = true
+            viewModel.showChatPartnerPicker = true
         } label: {
             Image(.plus)
         }

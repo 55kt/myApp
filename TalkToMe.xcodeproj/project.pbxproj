@@ -84,6 +84,8 @@
 		4BE4E9E62C7E1597007684CC /* SelectedChatPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9E52C7E1596007684CC /* SelectedChatPartnerView.swift */; };
 		4BE4E9E82C7E2DA3007684CC /* NewGroupSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9E72C7E2DA3007684CC /* NewGroupSetUpView.swift */; };
 		4BE4E9EB2C7E4A38007684CC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9EA2C7E4A38007684CC /* UserService.swift */; };
+		4BE4E9EF2C80BD96007684CC /* ChannelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9EE2C80BD96007684CC /* ChannelItem.swift */; };
+		4BE4E9F12C80C1A8007684CC /* ChatTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9F02C80C1A8007684CC /* ChatTabViewModel.swift */; };
 		4BF094172C6E559E000E305F /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094162C6E559E000E305F /* CropView.swift */; };
 		4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094182C6E585E000E305F /* PickerExtensions.swift */; };
 		4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */; };
@@ -169,6 +171,8 @@
 		4BE4E9E52C7E1596007684CC /* SelectedChatPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedChatPartnerView.swift; sourceTree = "<group>"; };
 		4BE4E9E72C7E2DA3007684CC /* NewGroupSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupSetUpView.swift; sourceTree = "<group>"; };
 		4BE4E9EA2C7E4A38007684CC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		4BE4E9EE2C80BD96007684CC /* ChannelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItem.swift; sourceTree = "<group>"; };
+		4BE4E9F02C80C1A8007684CC /* ChatTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTabViewModel.swift; sourceTree = "<group>"; };
 		4BF094162C6E559E000E305F /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
 		4BF094182C6E585E000E305F /* PickerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerExtensions.swift; sourceTree = "<group>"; };
 		4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScreenView.swift; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 				4B74F43E2C52C8EC008C8393 /* AuthScreens */,
 				4BF094212C70FF1D000E305F /* MainTabScreen */,
 				4BF094292C712698000E305F /* ChatsScreen */,
+				4BE4E9EC2C80BD60007684CC /* Channel */,
 				4B0FE4AC2C71F055004D10F0 /* SettingsScreen */,
 			);
 			path = Screens;
@@ -547,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				4BE4E9E12C7CE428007684CC /* ChatPartnerPickerViewModel.swift */,
+				4BE4E9F02C80C1A8007684CC /* ChatTabViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -557,6 +563,22 @@
 				4BE4E9EA2C7E4A38007684CC /* UserService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		4BE4E9EC2C80BD60007684CC /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				4BE4E9ED2C80BD70007684CC /* Models */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		4BE4E9ED2C80BD70007684CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4BE4E9EE2C80BD96007684CC /* ChannelItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4BF0941A2C6FA47D000E305F /* FinalRegisterScreen */ = {
@@ -914,8 +936,10 @@
 				4BC70D3D2C629C1F00BB41DF /* VerifyButton.swift in Sources */,
 				4BC70D3B2C629B3300BB41DF /* SupportArea.swift in Sources */,
 				4B0FE4B12C71F0C7004D10F0 /* SettingsScreenView.swift in Sources */,
+				4BE4E9F12C80C1A8007684CC /* ChatTabViewModel.swift in Sources */,
 				4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */,
 				4BE4E9DC2C7CD14D007684CC /* ChatPartnerPickerView.swift in Sources */,
+				4BE4E9EF2C80BD96007684CC /* ChannelItem.swift in Sources */,
 				4B0FE4B42C71F268004D10F0 /* SettingsRowItemModel.swift in Sources */,
 				4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */,
 				4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */,
