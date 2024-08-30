@@ -42,6 +42,9 @@ struct ChatPartnerPickerView: View {
                 destinationView(for: route)
             }
             .navigationBarTitleDisplayMode(.inline)
+            .alert(isPresented: $viewModel.errorState.showError) {
+                Alert(title: Text("Oh No ☹️"), message: Text(viewModel.errorState.errorMessage), dismissButton: .default(Text("Ok")))
+            }
             .toolbar {
                 trailingNavItem()
             }
