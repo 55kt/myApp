@@ -2,8 +2,9 @@ import SwiftUI
 
 struct NewGroupSetUpView: View {
     // MARK: - Properties
-    @State private var text = ""
+    @State private var channelName = ""
     @ObservedObject var viewModel: ChatPartnerPickerViewModel
+    var onCreate: (_ newChannel: ChannelItem) -> ()
     
     // MARK: - Body
     var body: some View {
@@ -41,7 +42,7 @@ struct NewGroupSetUpView: View {
         HStack {
             profileImageView()
             
-            TextField("", text: $text, prompt: Text("Group Name (optional)"), axis: .vertical)
+            TextField("", text: $channelName, prompt: Text("Group Name (optional)"), axis: .vertical)
         }
     }
     
@@ -64,7 +65,7 @@ struct NewGroupSetUpView: View {
     private func trailingNavItem() -> some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
             Button("Create") {
-                
+                viewModel.createGroupChannel(channelName, completion: onCreate)
             }
             .bold()
             .disabled(viewModel.disableNextButton)
@@ -75,6 +76,8 @@ struct NewGroupSetUpView: View {
 // MARK: - Preview
 #Preview {
     NavigationStack {
-        NewGroupSetUpView(viewModel: ChatPartnerPickerViewModel())
+        NewGroupSetUpView(viewModel: ChatPartnerPickerViewModel()) { _ in
+            
+        }
     }
 }

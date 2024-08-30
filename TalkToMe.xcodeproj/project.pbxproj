@@ -87,6 +87,7 @@
 		4BE4E9EF2C80BD96007684CC /* ChannelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9EE2C80BD96007684CC /* ChannelItem.swift */; };
 		4BE4E9F12C80C1A8007684CC /* ChatTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9F02C80C1A8007684CC /* ChatTabViewModel.swift */; };
 		4BE4E9F32C80D12A007684CC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9F22C80D12A007684CC /* String+Extensions.swift */; };
+		4BE6FE012C82225100337E7E /* MessageItems+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6FE002C82225100337E7E /* MessageItems+Types.swift */; };
 		4BF094172C6E559E000E305F /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094162C6E559E000E305F /* CropView.swift */; };
 		4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094182C6E585E000E305F /* PickerExtensions.swift */; };
 		4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */; };
@@ -175,6 +176,7 @@
 		4BE4E9EE2C80BD96007684CC /* ChannelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelItem.swift; sourceTree = "<group>"; };
 		4BE4E9F02C80C1A8007684CC /* ChatTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTabViewModel.swift; sourceTree = "<group>"; };
 		4BE4E9F22C80D12A007684CC /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4BE6FE002C82225100337E7E /* MessageItems+Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessageItems+Types.swift"; sourceTree = "<group>"; };
 		4BF094162C6E559E000E305F /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
 		4BF094182C6E585E000E305F /* PickerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerExtensions.swift; sourceTree = "<group>"; };
 		4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScreenView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				4B0FE4CC2C73AFEC004D10F0 /* MessageItemModel.swift */,
+				4BE6FE002C82225100337E7E /* MessageItems+Types.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */,
 				4BC70D352C625A7100BB41DF /* SubmitButton.swift in Sources */,
 				4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */,
+				4BE6FE012C82225100337E7E /* MessageItems+Types.swift in Sources */,
 				4BF094172C6E559E000E305F /* CropView.swift in Sources */,
 				4B3830022C5D65CE0094FA11 /* CountryPickerView.swift in Sources */,
 				4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */,
