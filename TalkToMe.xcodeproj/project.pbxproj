@@ -44,6 +44,7 @@
 		4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */; };
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
+		4BB8CE882C84DA8A00F07F26 /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE872C84DA8A00F07F26 /* ChatRoomViewModel.swift */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
@@ -139,6 +140,7 @@
 		4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonView.swift; sourceTree = "<group>"; };
 		4B74F4722C5AA5DA008C8393 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		4BB8CE872C84DA8A00F07F26 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -559,6 +561,7 @@
 			children = (
 				4BE4E9E12C7CE428007684CC /* ChatPartnerPickerViewModel.swift */,
 				4BE4E9F02C80C1A8007684CC /* ChatTabViewModel.swift */,
+				4BB8CE872C84DA8A00F07F26 /* ChatRoomViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B74F4512C565402008C8393 /* OTPPhoneVerifyCodeView.swift in Sources */,
+				4BB8CE882C84DA8A00F07F26 /* ChatRoomViewModel.swift in Sources */,
 				4BE4E9D02C7A29AC007684CC /* RootScreenModel.swift in Sources */,
 				4BF094282C710203000E305F /* MainTabViewExtension.swift in Sources */,
 				4BE4E9BD2C779FED007684CC /* SignUpScreen.swift in Sources */,

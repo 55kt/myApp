@@ -3,7 +3,12 @@ import SwiftUI
 struct TextInputArea: View {
     
     // MARK: - Properties
-    @State private var text = ""
+    @Binding var textMessage: String
+    let onSendHandler: () -> ()
+    
+    private var disableSendButton: Bool {
+        return textMessage.isEmptyOrWhitespace
+    }
     
     // MARK: - Body
     var body: some View {
@@ -11,8 +16,12 @@ struct TextInputArea: View {
             imagePickerButton()
                 .padding(3)
             audioRecorderButton()
-            messageTextField(text: $text)
-            sendMessageButton()
+            messageTextField(text: $textMessage)
+            sendMessageButton() {
+                onSendHandler()
+            }
+                .disabled(disableSendButton)
+                .grayscale(disableSendButton ? 0.8 : 0)
         }
         .padding(.bottom)
         .padding(.horizontal, 8)
@@ -23,5 +32,5 @@ struct TextInputArea: View {
 
 // MARK: - Preview
 #Preview {
-    TextInputArea()
+    TextInputArea(textMessage: .constant("")) {}
 }

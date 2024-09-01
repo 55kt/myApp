@@ -46,9 +46,9 @@ extension TextInputArea {
     }
     
     // Send message button
-    internal func sendMessageButton() -> some View {
+    internal func sendMessageButton(action: @escaping () -> ()) -> some View {
         Button {
-            // Some action
+            action()
         } label: {
             Image(systemName: "arrow.up")
                 .fontWeight(.heavy)
