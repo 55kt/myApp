@@ -1,6 +1,10 @@
 import SwiftUI
 
 struct ChatScreenRow: View {
+    // MARK: - Properties
+    let channel: ChannelItem
+    
+    // MARK: - Body
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             Circle()
@@ -17,7 +21,7 @@ struct ChatScreenRow: View {
     // Username and time text row function
     private func titleTextView() -> some View {
         HStack {
-            Text("Username Here")
+            Text(channel.title)
                 .lineLimit(1)
                 .bold()
             
@@ -31,13 +35,14 @@ struct ChatScreenRow: View {
     
     // Last message preview text row function
     private func lastMessagePreview() -> some View {
-        Text("Last message preview text here...")
+        Text(channel.lastMessage)
             .foregroundStyle(.gray)
             .font(.system(size: 16))
             .lineLimit(2)
     }
 }
 
+// MARK: - Preview
 #Preview {
-    ChatScreenRow()
+    ChatScreenRow(channel: .placeholder)
 }

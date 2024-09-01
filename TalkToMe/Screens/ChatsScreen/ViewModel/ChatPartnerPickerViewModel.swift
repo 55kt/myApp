@@ -1,5 +1,6 @@
 import Foundation
 import FirebaseAuth
+import Combine
 
 enum ChatCreationRoute {
     case groupPartnerPicker
@@ -22,8 +23,10 @@ final class ChatPartnerPickerViewModel: ObservableObject {
     @Published var selectedChatPartners = [UserItem]() // variable to keep track of selected users
     @Published private(set) var users = [UserItem]()
     @Published var errorState: (showError: Bool, errorMessage: String) = (false, "Oh No")
+    private var subscription: AnyCancellable?
     
     private var lastCursor: String?
+    private var currentUser: UserItem?
     
     var showSelectedUsers: Bool {
         return !selectedChatPartners.isEmpty
@@ -43,8 +46,23 @@ final class ChatPartnerPickerViewModel: ObservableObject {
     
     // MARK: - Initializer
     init() {
-        Task {
-            await fetchUsers()
+        listenForAuthState()
+    }
+    
+    deinit {
+        subscription?.cancel()
+        subscription = nil
+    }
+    
+    private func listenForAuthState() {
+        subscription = AuthManager.shared.authState.receive(on: DispatchQueue.main).sink { [weak self] authState in
+            switch authState {
+            case .loggedIn(let loggedInUser):
+                self?.currentUser = loggedInUser
+                Task { await self?.fetchUsers() }
+            default:
+                break
+            }
         }
     }
     
@@ -95,9 +113,12 @@ final class ChatPartnerPickerViewModel: ObservableObject {
         Task {
             if let channelId = await verifyDirectChannelExists(with: chatPartner.uid) {
                 let snapshot = try await FirebaseConstants.ChannelsRef.child(channelId).getData()
-                var channelDict = snapshot.value as! [String: Any]
+                let channelDict = snapshot.value as! [String: Any] // let ? var
                 var directChannel = ChannelItem(channelDict)
                 directChannel.members = selectedChatPartners
+                if let currentUser {
+                    directChannel.members.append(currentUser)
+                }
                 completion(directChannel)
                 
             } else {
@@ -189,6 +210,9 @@ final class ChatPartnerPickerViewModel: ObservableObject {
         
         var newChannelItem = ChannelItem(channelDict)
         newChannelItem.members = selectedChatPartners
+        if let currentUser {
+            newChannelItem.members.append(currentUser)
+        }
         return .success(newChannelItem)
     }
 }
