@@ -3,7 +3,12 @@ import SwiftUI
 struct ChatRoomView: View {
     // MARK: - Properties
     let channel: ChannelItem
-    @StateObject private var viewModel = ChatRoomViewModel()
+    @StateObject private var viewModel: ChatRoomViewModel
+    
+    init(channel: ChannelItem) {
+        self.channel = channel
+        _viewModel = StateObject(wrappedValue: ChatRoomViewModel(channel))
+    }
     
     // MARK: - Body
     var body: some View {

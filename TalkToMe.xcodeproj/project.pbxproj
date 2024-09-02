@@ -45,6 +45,7 @@
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
 		4BB8CE882C84DA8A00F07F26 /* ChatRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE872C84DA8A00F07F26 /* ChatRoomViewModel.swift */; };
+		4BB8CE8A2C85F19700F07F26 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE892C85F19700F07F26 /* MessageService.swift */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
@@ -141,6 +142,7 @@
 		4B74F4722C5AA5DA008C8393 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		4BB8CE872C84DA8A00F07F26 /* ChatRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewModel.swift; sourceTree = "<group>"; };
+		4BB8CE892C85F19700F07F26 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 			isa = PBXGroup;
 			children = (
 				4BE4E9EA2C7E4A38007684CC /* UserService.swift */,
+				4BB8CE892C85F19700F07F26 /* MessageService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -964,6 +967,7 @@
 				4BE4E9B32C777741007684CC /* LoginScreen.swift in Sources */,
 				4BE4E9C32C78E62D007684CC /* AuthProvider.swift in Sources */,
 				4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */,
+				4BB8CE8A2C85F19700F07F26 /* MessageService.swift in Sources */,
 				4BC70D352C625A7100BB41DF /* SubmitButton.swift in Sources */,
 				4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */,
 				4BE6FE012C82225100337E7E /* MessageItems+Types.swift in Sources */,
