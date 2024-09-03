@@ -4,7 +4,8 @@ import Combine
 final class ChatRoomViewModel: ObservableObject {
     @Published var textMessage = ""
     @Published var messages = [MessageItem]()
-    private let channel: ChannelItem
+    
+    private(set) var channel: ChannelItem
     private var subscriptions = Set<AnyCancellable>()
     private var currentUser: UserItem?
     

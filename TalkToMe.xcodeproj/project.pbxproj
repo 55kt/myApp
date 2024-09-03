@@ -66,6 +66,8 @@
 		4BB8CEDD2C8632DA00F07F26 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEDC2C8632DA00F07F26 /* SettingsItem.swift */; };
 		4BB8CEE02C86338000F07F26 /* UpdatesTabScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEDF2C86338000F07F26 /* UpdatesTabScreen.swift */; };
 		4BB8CEE32C8634F000F07F26 /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEE22C8634F000F07F26 /* FirebaseConstants.swift */; };
+		4BB8CEE52C8778EC00F07F26 /* ChannelCreationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEE42C8778EC00F07F26 /* ChannelCreationTextView.swift */; };
+		4BB8CEE72C87852700F07F26 /* AdminMessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEE62C87852700F07F26 /* AdminMessageTextView.swift */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
@@ -162,6 +164,8 @@
 		4BB8CEDC2C8632DA00F07F26 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		4BB8CEDF2C86338000F07F26 /* UpdatesTabScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesTabScreen.swift; sourceTree = "<group>"; };
 		4BB8CEE22C8634F000F07F26 /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
+		4BB8CEE42C8778EC00F07F26 /* ChannelCreationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCreationTextView.swift; sourceTree = "<group>"; };
+		4BB8CEE62C87852700F07F26 /* AdminMessageTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMessageTextView.swift; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -475,6 +479,8 @@
 				4BB8CEC92C86307800F07F26 /* MessageListController.swift */,
 				4BB8CECB2C86309D00F07F26 /* MessageListView.swift */,
 				4BB8CECD2C8630B800F07F26 /* TextInputArea.swift */,
+				4BB8CEE42C8778EC00F07F26 /* ChannelCreationTextView.swift */,
+				4BB8CEE62C87852700F07F26 /* AdminMessageTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -826,6 +832,7 @@
 				4BB8CE8C2C861E4700F07F26 /* CustomModifiers.swift in Sources */,
 				4BF0941E2C6FA4DA000E305F /* TestView.swift in Sources */,
 				4BB8CE942C86214800F07F26 /* UserItem.swift in Sources */,
+				4BB8CEE72C87852700F07F26 /* AdminMessageTextView.swift in Sources */,
 				4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */,
 				4B74F46F2C5AA40B008C8393 /* TextTabHolderView.swift in Sources */,
 				4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */,
@@ -881,6 +888,7 @@
 				4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */,
 				4BB8CECE2C8630B800F07F26 /* TextInputArea.swift in Sources */,
 				4BB8CED22C86311800F07F26 /* MessageItem.swift in Sources */,
+				4BB8CEE52C8778EC00F07F26 /* ChannelCreationTextView.swift in Sources */,
 				4B74F46C2C57F8DC008C8393 /* MorphingSymbolView.swift in Sources */,
 				4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */,
 				4BB8CE972C86218A00F07F26 /* AuthScreenModel.swift in Sources */,
