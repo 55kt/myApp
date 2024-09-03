@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct RootScreen: View {
-    // MARK: - Properties
     @StateObject private var viewModel = RootScreenModel()
     
     var body: some View {

@@ -59,7 +59,12 @@
          <EnvironmentVariable
             key = "IDELogRedirectionPolicy"
             value = "oslogToStdio"
-            isEnabled = "YES">
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "CG_NUMERICS_SHOW_BACKTRACE"
+            value = "1"
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

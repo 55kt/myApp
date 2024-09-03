@@ -11,15 +11,15 @@ final class RootScreenModel: ObservableObject {
                 self?.authState = latestAuthState
             }
         
-        AuthManager.testAccounts.forEach { email in
-            registerTestAccount(with: email)
-        }
+//        AuthManager.testAccounts.forEach { email in
+//            registerTestAccount(with: email)
+//        }
     }
     
-    private func registerTestAccount(with email: String) {
-        Task {
-            let username = email.replacingOccurrences(of: "@example.com", with: "")
-            try await AuthManager.shared.createAccount(for: username, with: email, and: "12345678")
-        }
-    }
+//    private func registerTestAccount(with email: String) {
+//        Task {
+//            let username = email.replacingOccurrences(of: "@test.com", with: "")
+//            try? await AuthManager.shared.createAccount(for: username, with: email, and: "12345678")
+//        }
+//    }
 }

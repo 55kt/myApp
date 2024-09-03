@@ -4,7 +4,7 @@ import FirebaseDatabase
 
 struct UserService {
     
-    static func getUsers(with uids: [String], completion: @escaping (UserNode) -> () ) {
+    static func getUsers(with uids: [String], completion: @escaping (UserNode) -> Void) {
         var users: [UserItem] = []
         for uid in uids {
             let query = FirebaseConstants.UserRef.child(uid)
@@ -33,10 +33,10 @@ struct UserService {
         }
         
         guard let first = mainSnapshot.children.allObjects.first as? DataSnapshot,
-              let allObjects = mainSnapshot.children.allObjects as? [DataSnapshot] else { return .emptyNode}
+              let allObjects = mainSnapshot.children.allObjects as? [DataSnapshot] else { return .emptyNode }
         
-        let users: [UserItem] = allObjects.compactMap { userSnaphot in
-            let userDict = userSnaphot.value as? [String: Any] ?? [:]
+        let users: [UserItem] = allObjects.compactMap { userSnapshot in
+            let userDict = userSnapshot.value as? [String: Any] ?? [:]
             return UserItem(dictionary: userDict)
         }
         
