@@ -71,6 +71,10 @@ struct ChannelItem: Identifiable, Hashable {
         return members.first { $0.uid == createdBy }?.username ?? "Unknown"
     }
     
+    var allMembersFetched: Bool {
+        return members.count == membersCount
+    }
+    
     static let placeholder = ChannelItem.init(id: "1", lastMessage: "Hello world", creationDate: Date(), lastMessageTimeStamp: Date(), membersCount: 2, adminUids: [], membersUids: [], members: [], createdBy: "")
     
     

@@ -4,7 +4,12 @@ struct ChannelTabScreen: View {
     
     // MARK: - Properties
     @State private var searchText = ""
-    @StateObject private var viewModel = ChannelTabViewModel()
+    @StateObject private var viewModel: ChannelTabViewModel
+    
+    // MARK: - Initializers
+    init(_ currentUser: UserItem) {
+        self._viewModel = StateObject(wrappedValue: ChannelTabViewModel(currentUser))
+    }
     
     // MARK: - Body
     var body: some View {
@@ -135,5 +140,5 @@ extension ChannelTabScreen {
 
 // MARK: - Preview
 #Preview {
-    ChannelTabScreen()
+    ChannelTabScreen(.placeholder)
 }
