@@ -39,7 +39,7 @@ struct BubbleAudioView: View {
         } label: {
             Image(systemName: "play.fill")
                 .padding(10)
-                .background(item.direction == .received ? .green : .white)
+                .background(item.direction == .received ? .gray : .white)
                 .clipShape(Circle())
                 .foregroundStyle(item.direction == .received ? .white : .black)
         }
