@@ -48,9 +48,7 @@ final class ChannelTabViewModel: ObservableObject {
             var channel = ChannelItem(dict)
             self.getChannelMembers(channel) { members in
                 channel.members = members
-                if channel.isGroupChat == false {
-                    channel.members.append(self.currentUser)
-                }
+                channel.members.append(self.currentUser)
                 self.channelDictionary[channelId] = channel
                 self.reloadData()
 //                self?.channels.append(channel)
