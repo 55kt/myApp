@@ -2,15 +2,15 @@ import SwiftUI
 
 struct MediaAttachmentPreview: View {
     // MARK: - Properties
-    
+    let selectedPhotos: [UIImage]
     
     // MARK: - Body
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 audioAttachmentPreview()
-                ForEach(0..<12) { _ in
-                    thumbnailImageView()
+                ForEach(selectedPhotos, id: \.self) { image in
+                    thumbnailImageView(image)
                 }
             }
         }
@@ -20,14 +20,14 @@ struct MediaAttachmentPreview: View {
     }
     
     // MARK: - Methods
-    private func thumbnailImageView() -> some View {
+    private func thumbnailImageView(_ image: UIImage) -> some View {
         Button {
             // Some action
         } label: {
-            Image(.stubImage0)
+            Image(uiImage: image)
                 .resizable()
                 .scaledToFill()
-                .frame(width: Constants.imageDimen, height: Constants.listHeight)
+                .frame(width: Constants.imageDimen, height: Constants.imageDimen)
                 .clipShape(RoundedRectangle(cornerRadius: 5))
                 .clipped()
                 .overlay(alignment: .topTrailing) {
@@ -106,5 +106,5 @@ extension MediaAttachmentPreview {
 
 // MARK: - Preview
 #Preview {
-    MediaAttachmentPreview()
+    MediaAttachmentPreview(selectedPhotos: [])
 }
