@@ -4,9 +4,10 @@ struct BubbleTextView: View {
     let item: MessageItem
     
     var body: some View {
-        HStack(alignment: .bottom, spacing: 5) {
+        HStack(alignment: .bottom, spacing: 6) {
             if item.showGroupPartnerInfo {
                 CircularProfileImageView(item.sender?.profileImageUrl, size: .mini)
+                    .offset(y: 3)
             }
             
             if item.direction == .sent {

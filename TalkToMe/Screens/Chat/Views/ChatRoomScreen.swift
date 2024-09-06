@@ -4,12 +4,13 @@ struct ChatRoomScreen: View {
     let channel: ChannelItem
     @StateObject private var viewModel: ChatRoomViewModel
     
+    // MARK: - Initializer
     init(channel: ChannelItem) {
         self.channel = channel
         _viewModel = StateObject(wrappedValue: ChatRoomViewModel(channel))
     }
     
-    
+    // MARK: - Body
     var body: some View {
         MessageListView(viewModel)
             .toolbar(.hidden, for: .tabBar)
@@ -19,12 +20,22 @@ struct ChatRoomScreen: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) {
-                TextInputArea(textMessage: $viewModel.textMessage) {
-                    viewModel.sendMessage()
-                }
+                bottomSafeAreaView()
             }
     }
-}
+    
+    private func bottomSafeAreaView() -> some View {
+        VStack(spacing: 0) {
+            Divider()
+            MediaAttachmentPreview()
+            Divider()
+            
+            TextInputArea(textMessage: $viewModel.textMessage) {
+                viewModel.sendMessage()
+            }
+        }
+    }
+ }
 
 // MARK: Toolbar Items
 extension ChatRoomScreen {
