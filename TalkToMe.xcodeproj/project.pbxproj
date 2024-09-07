@@ -75,6 +75,7 @@
 		4BB8CEF22C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF12C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift */; };
 		4BB8CEF42C8C9D7800F07F26 /* MediaPickerItem_Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF32C8C9D7800F07F26 /* MediaPickerItem_Types.swift */; };
 		4BB8CEF62C8CA4DB00F07F26 /* URL+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */; };
+		4BB8CEFA2C8CAFA000F07F26 /* MediaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF92C8CAFA000F07F26 /* MediaPlayerView.swift */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
@@ -179,6 +180,7 @@
 		4BB8CEF12C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoPickerItem+Extensions.swift"; sourceTree = "<group>"; };
 		4BB8CEF32C8C9D7800F07F26 /* MediaPickerItem_Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerItem_Types.swift; sourceTree = "<group>"; };
 		4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extensions.swift"; sourceTree = "<group>"; };
+		4BB8CEF92C8CAFA000F07F26 /* MediaPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerView.swift; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */,
 				4BE4E99B2C7633B1007684CC /* GrayGradient.swift */,
 				4BB8CEEB2C89DF0600F07F26 /* CircularProfileImageView.swift */,
+				4BB8CEF92C8CAFA000F07F26 /* MediaPlayerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				4BB8CECA2C86307900F07F26 /* MessageListController.swift in Sources */,
 				4B3830022C5D65CE0094FA11 /* CountryPickerView.swift in Sources */,
 				4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */,
+				4BB8CEFA2C8CAFA000F07F26 /* MediaPlayerView.swift in Sources */,
 				4B74F4692C57F7BB008C8393 /* IntroView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

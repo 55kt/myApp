@@ -3,12 +3,13 @@ import SwiftUI
 struct MediaAttachmentPreview: View {
     // MARK: - Properties
     let mediaAttachments: [MediaAttachment]
+    let actionHandler: (_ action: UserAction) -> Void
     
     // MARK: - Body
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                audioAttachmentPreview()
+//                audioAttachmentPreview(mediaAttachments)
                 ForEach(mediaAttachments) { attachment in
                     thumbnailImageView(attachment)
                 }
@@ -35,7 +36,7 @@ struct MediaAttachmentPreview: View {
                     cancelButton()
                 }
                 .overlay {
-                    playButton("play.fill")
+                    playButton("play.fill", attachment: attachment)
                         .opacity(attachment.type == .video(UIImage(), .stubURL) ? 1 : 0)
                 }
         }
@@ -58,9 +59,9 @@ struct MediaAttachmentPreview: View {
         }
     }
     
-    private func playButton(_ systemName: String) -> some View {
+    private func playButton(_ systemName: String, attachment: MediaAttachment) -> some View {
         Button {
-            // Some action
+            actionHandler(.play(attachment))
         } label: {
             Image(systemName: systemName)
                 .scaledToFit()
@@ -75,10 +76,10 @@ struct MediaAttachmentPreview: View {
         }
     }
     
-    private func audioAttachmentPreview() -> some View {
+    private func audioAttachmentPreview(_ attachment: MediaAttachment) -> some View {
         ZStack {
             LinearGradient(colors: [.green, .green.opacity(0.8), .teal], startPoint: .topLeading, endPoint: .bottom)
-            playButton("mic.fill")
+            playButton("mic.fill", attachment: attachment)
         }
         .frame(width: Constants.imageDimen * 2, height: Constants.imageDimen)
         .clipShape(RoundedRectangle(cornerRadius: 5))
@@ -104,9 +105,15 @@ extension MediaAttachmentPreview {
         static let listHeight: CGFloat = 100
         static let imageDimen: CGFloat = 80
     }
+    
+    enum UserAction {
+        case play(_ item: MediaAttachment)
+    }
 }
 
 // MARK: - Preview
 #Preview {
-    MediaAttachmentPreview(mediaAttachments: [])
+    MediaAttachmentPreview(mediaAttachments: []) { _ in
+        //
+    }
 }
