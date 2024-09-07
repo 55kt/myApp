@@ -72,6 +72,9 @@
 		4BB8CEEC2C89DF0600F07F26 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEEB2C89DF0600F07F26 /* CircularProfileImageView.swift */; };
 		4BB8CEEE2C89EB5900F07F26 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEED2C89EB5900F07F26 /* Date+Extensions.swift */; };
 		4BB8CEF02C8B283300F07F26 /* MediaAttachmentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEEF2C8B283300F07F26 /* MediaAttachmentPreview.swift */; };
+		4BB8CEF22C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF12C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift */; };
+		4BB8CEF42C8C9D7800F07F26 /* MediaPickerItem_Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF32C8C9D7800F07F26 /* MediaPickerItem_Types.swift */; };
+		4BB8CEF62C8CA4DB00F07F26 /* URL+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
@@ -173,6 +176,9 @@
 		4BB8CEEB2C89DF0600F07F26 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		4BB8CEED2C89EB5900F07F26 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		4BB8CEEF2C8B283300F07F26 /* MediaAttachmentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAttachmentPreview.swift; sourceTree = "<group>"; };
+		4BB8CEF12C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoPickerItem+Extensions.swift"; sourceTree = "<group>"; };
+		4BB8CEF32C8C9D7800F07F26 /* MediaPickerItem_Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPickerItem_Types.swift; sourceTree = "<group>"; };
+		4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extensions.swift"; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -255,6 +261,8 @@
 				4BC70D402C62AE9D00BB41DF /* ColorExtension.swift */,
 				4BE4E9F22C80D12A007684CC /* String+Extensions.swift */,
 				4BB8CEED2C89EB5900F07F26 /* Date+Extensions.swift */,
+				4BB8CEF12C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift */,
+				4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -466,6 +474,7 @@
 			children = (
 				4BB8CED12C86311800F07F26 /* MessageItem.swift */,
 				4BB8CED32C86315000F07F26 /* MessageItems+Types.swift */,
+				4BB8CEF32C8C9D7800F07F26 /* MediaPickerItem_Types.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -886,8 +895,10 @@
 				4BB8CE9A2C8621BB00F07F26 /* AuthButton.swift in Sources */,
 				4BB8CEA52C8622A100F07F26 /* CallsTabScreen.swift in Sources */,
 				4BB8CEC42C86302300F07F26 /* BubbleTailView.swift in Sources */,
+				4BB8CEF22C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift in Sources */,
 				4B74F4282C529E8F008C8393 /* TalkToMeApp.swift in Sources */,
 				4BC70D3D2C629C1F00BB41DF /* VerifyButton.swift in Sources */,
+				4BB8CEF62C8CA4DB00F07F26 /* URL+extensions.swift in Sources */,
 				4BB8CEB02C8623E500F07F26 /* ChannelTabScreen.swift in Sources */,
 				4BB8CEEC2C89DF0600F07F26 /* CircularProfileImageView.swift in Sources */,
 				4BB8CEB62C86244C00F07F26 /* GroupPartnerPickerScreen.swift in Sources */,
@@ -916,6 +927,7 @@
 				4BB8CE8A2C85F19700F07F26 /* MessageService.swift in Sources */,
 				4BB8CEE02C86338000F07F26 /* UpdatesTabScreen.swift in Sources */,
 				4BC70D352C625A7100BB41DF /* SubmitButton.swift in Sources */,
+				4BB8CEF42C8C9D7800F07F26 /* MediaPickerItem_Types.swift in Sources */,
 				4BB8CE9C2C8621E400F07F26 /* AuthHeaderView.swift in Sources */,
 				4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */,
 				4BB8CEA92C86233A00F07F26 /* ChannelTabViewModel.swift in Sources */,

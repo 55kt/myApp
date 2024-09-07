@@ -2,17 +2,18 @@ import SwiftUI
 
 struct MediaAttachmentPreview: View {
     // MARK: - Properties
-    let selectedPhotos: [UIImage]
+    let mediaAttachments: [MediaAttachment]
     
     // MARK: - Body
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 audioAttachmentPreview()
-                ForEach(selectedPhotos, id: \.self) { image in
-                    thumbnailImageView(image)
+                ForEach(mediaAttachments) { attachment in
+                    thumbnailImageView(attachment)
                 }
             }
+            .padding(.horizontal)
         }
         .frame(height: Constants.listHeight)
         .frame(maxWidth: .infinity)
@@ -20,11 +21,11 @@ struct MediaAttachmentPreview: View {
     }
     
     // MARK: - Methods
-    private func thumbnailImageView(_ image: UIImage) -> some View {
+    private func thumbnailImageView(_ attachment: MediaAttachment) -> some View {
         Button {
             // Some action
         } label: {
-            Image(uiImage: image)
+            Image(uiImage: attachment.thumbnail)
                 .resizable()
                 .scaledToFill()
                 .frame(width: Constants.imageDimen, height: Constants.imageDimen)
@@ -35,6 +36,7 @@ struct MediaAttachmentPreview: View {
                 }
                 .overlay {
                     playButton("play.fill")
+                        .opacity(attachment.type == .video(UIImage(), .stubURL) ? 1 : 0)
                 }
         }
     }
@@ -78,7 +80,7 @@ struct MediaAttachmentPreview: View {
             LinearGradient(colors: [.green, .green.opacity(0.8), .teal], startPoint: .topLeading, endPoint: .bottom)
             playButton("mic.fill")
         }
-        .frame(width: Constants.imageDimen * 2, height: Constants.listHeight)
+        .frame(width: Constants.imageDimen * 2, height: Constants.imageDimen)
         .clipShape(RoundedRectangle(cornerRadius: 5))
         .clipped()
         .overlay(alignment: .topTrailing) {
@@ -106,5 +108,5 @@ extension MediaAttachmentPreview {
 
 // MARK: - Preview
 #Preview {
-    MediaAttachmentPreview(selectedPhotos: [])
+    MediaAttachmentPreview(mediaAttachments: [])
 }
