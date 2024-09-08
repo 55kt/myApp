@@ -78,6 +78,7 @@
 		4BB8CEFA2C8CAFA000F07F26 /* MediaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF92C8CAFA000F07F26 /* MediaPlayerView.swift */; };
 		4BB8CEFC2C8DB21200F07F26 /* VoiceRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEFB2C8DB21200F07F26 /* VoiceRecorderService.swift */; };
 		4BB8CEFE2C8DED7400F07F26 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEFD2C8DED7400F07F26 /* TimeInterval+Extensions.swift */; };
+		4BB8CF002C8DF7F700F07F26 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEFF2C8DF7F700F07F26 /* FirebaseHelper.swift */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
@@ -185,6 +186,7 @@
 		4BB8CEF92C8CAFA000F07F26 /* MediaPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerView.swift; sourceTree = "<group>"; };
 		4BB8CEFB2C8DB21200F07F26 /* VoiceRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderService.swift; sourceTree = "<group>"; };
 		4BB8CEFD2C8DED7400F07F26 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
+		4BB8CEFF2C8DF7F700F07F26 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				4BB8CE8B2C861E4700F07F26 /* CustomModifiers.swift */,
+				4BB8CEFF2C8DF7F700F07F26 /* FirebaseHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -926,6 +929,7 @@
 				4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */,
 				4BB8CECE2C8630B800F07F26 /* TextInputArea.swift in Sources */,
 				4BB8CED22C86311800F07F26 /* MessageItem.swift in Sources */,
+				4BB8CF002C8DF7F700F07F26 /* FirebaseHelper.swift in Sources */,
 				4BB8CEE52C8778EC00F07F26 /* ChannelCreationTextView.swift in Sources */,
 				4B74F46C2C57F8DC008C8393 /* MorphingSymbolView.swift in Sources */,
 				4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */,
