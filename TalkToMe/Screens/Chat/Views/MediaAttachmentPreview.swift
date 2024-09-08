@@ -11,7 +11,11 @@ struct MediaAttachmentPreview: View {
             HStack {
 //                audioAttachmentPreview(mediaAttachments)
                 ForEach(mediaAttachments) { attachment in
-                    thumbnailImageView(attachment)
+                    if attachment.type == .audio {
+                        audioAttachmentPreview(attachment)
+                    } else {
+                        thumbnailImageView(attachment)
+                    }
                 }
             }
             .padding(.horizontal)
@@ -80,6 +84,7 @@ struct MediaAttachmentPreview: View {
         ZStack {
             LinearGradient(colors: [.green, .green.opacity(0.8), .teal], startPoint: .topLeading, endPoint: .bottom)
             playButton("mic.fill", attachment: attachment)
+                .offset(y: -10)
         }
         .frame(width: Constants.imageDimen * 2, height: Constants.imageDimen)
         .clipShape(RoundedRectangle(cornerRadius: 5))

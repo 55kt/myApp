@@ -38,6 +38,6 @@ struct MediaPlayerView: View {
 }
 
 //// MARK: - Preview
-//#Preview {
-//    MediaPlayerView(player: <#AVPlayer#>)
-//}
+#Preview {
+    MediaPlayerView(player: AVPlayer(), dismissPlayer: {})
+}
