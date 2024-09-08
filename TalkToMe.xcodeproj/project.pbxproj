@@ -77,6 +77,7 @@
 		4BB8CEF62C8CA4DB00F07F26 /* URL+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */; };
 		4BB8CEFA2C8CAFA000F07F26 /* MediaPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEF92C8CAFA000F07F26 /* MediaPlayerView.swift */; };
 		4BB8CEFC2C8DB21200F07F26 /* VoiceRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEFB2C8DB21200F07F26 /* VoiceRecorderService.swift */; };
+		4BB8CEFE2C8DED7400F07F26 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEFD2C8DED7400F07F26 /* TimeInterval+Extensions.swift */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
@@ -183,6 +184,7 @@
 		4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+extensions.swift"; sourceTree = "<group>"; };
 		4BB8CEF92C8CAFA000F07F26 /* MediaPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerView.swift; sourceTree = "<group>"; };
 		4BB8CEFB2C8DB21200F07F26 /* VoiceRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderService.swift; sourceTree = "<group>"; };
+		4BB8CEFD2C8DED7400F07F26 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				4BB8CEED2C89EB5900F07F26 /* Date+Extensions.swift */,
 				4BB8CEF12C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift */,
 				4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */,
+				4BB8CEFD2C8DED7400F07F26 /* TimeInterval+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				4B74F46F2C5AA40B008C8393 /* TextTabHolderView.swift in Sources */,
 				4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */,
 				4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */,
+				4BB8CEFE2C8DED7400F07F26 /* TimeInterval+Extensions.swift in Sources */,
 				4B74F42A2C529E8F008C8393 /* MainTabView.swift in Sources */,
 				4B382FFE2C5D64750094FA11 /* NavPlaceHolder.swift in Sources */,
 				4B74F44C2C556812008C8393 /* OTPViewModel.swift in Sources */,
