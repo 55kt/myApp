@@ -12,6 +12,7 @@ final class ChatRoomViewModel: ObservableObject {
     @Published var videoPlayerState: (show: Bool, player: AVPlayer?) = (false, nil)
     @Published var isRecordingVoiceMessage = false
     @Published var elapsedVoiceMessageTime: TimeInterval = 0
+    @Published var scrollToBottomRequest: (scroll: Bool, isAnimated: Bool) = (false, false)
     
     private(set) var channel: ChannelItem
     private var subscriptions = Set<AnyCancellable>()
@@ -80,7 +81,15 @@ final class ChatRoomViewModel: ObservableObject {
             }
         } else {
             sendMultipleMediaMessages(textMessage, attachments: mediaAttachments)
+            clearTextInputArea()
         }
+    }
+    
+    private func clearTextInputArea() {
+        mediaAttachments.removeAll()
+        photoPickerItems.removeAll()
+        textMessage = ""
+        UIApplication.dismissKeyboard()
     }
     
     private func sendMultipleMediaMessages(_ text: String, attachments: [MediaAttachment]) {
@@ -104,12 +113,16 @@ final class ChatRoomViewModel: ObservableObject {
             
             let uploadParams = MessageUploadParams(channel: channel, text: text, type: .photo, attachment: attachment, thumbnailURL: imageUrl.absoluteString, sender: currentUser)
             
-            MessageService.sendMediaMessage(to: channel, params: uploadParams) {
-                //
-                print("uploaded Photo To DB")
+            MessageService.sendMediaMessage(to: channel, params: uploadParams) { [weak self] in
+                self?.scrollToButtom(isAnimated: true)
             }
         }
         
+    }
+    
+    private func scrollToButtom(isAnimated: Bool) {
+        scrollToBottomRequest.scroll = true
+        scrollToBottomRequest.isAnimated = isAnimated
     }
     
     private func uploadImageToStorage(_ attachment: MediaAttachment, completion: @escaping(_ imageUrl: URL) -> Void) {

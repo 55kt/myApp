@@ -79,6 +79,8 @@
 		4BB8CEFC2C8DB21200F07F26 /* VoiceRecorderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEFB2C8DB21200F07F26 /* VoiceRecorderService.swift */; };
 		4BB8CEFE2C8DED7400F07F26 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEFD2C8DED7400F07F26 /* TimeInterval+Extensions.swift */; };
 		4BB8CF002C8DF7F700F07F26 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CEFF2C8DF7F700F07F26 /* FirebaseHelper.swift */; };
+		4BB8CF022C8F5E5400F07F26 /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CF012C8F5E5400F07F26 /* UIApplication+Extensions.swift */; };
+		4BB8CF042C8F60DA00F07F26 /* UIWindowScene+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CF032C8F60DA00F07F26 /* UIWindowScene+Extensions.swift */; };
 		4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */; };
 		4BC70D2B2C610E1100BB41DF /* CreateUserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2A2C610E1100BB41DF /* CreateUserScreenView.swift */; };
 		4BC70D2D2C61119600BB41DF /* OpacityBackgroundLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC70D2C2C61119600BB41DF /* OpacityBackgroundLogo.swift */; };
@@ -187,6 +189,8 @@
 		4BB8CEFB2C8DB21200F07F26 /* VoiceRecorderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecorderService.swift; sourceTree = "<group>"; };
 		4BB8CEFD2C8DED7400F07F26 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
 		4BB8CEFF2C8DF7F700F07F26 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		4BB8CF012C8F5E5400F07F26 /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		4BB8CF032C8F60DA00F07F26 /* UIWindowScene+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindowScene+Extensions.swift"; sourceTree = "<group>"; };
 		4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4BC70D232C5FCBFE00BB41DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4BC70D242C5FCF3700BB41DF /* ContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButton.swift; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				4BB8CEF12C8C9BCE00F07F26 /* PhotoPickerItem+Extensions.swift */,
 				4BB8CEF52C8CA4DB00F07F26 /* URL+extensions.swift */,
 				4BB8CEFD2C8DED7400F07F26 /* TimeInterval+Extensions.swift */,
+				4BB8CF012C8F5E5400F07F26 /* UIApplication+Extensions.swift */,
+				4BB8CF032C8F60DA00F07F26 /* UIWindowScene+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -868,6 +874,7 @@
 				4BB8CEF02C8B283300F07F26 /* MediaAttachmentPreview.swift in Sources */,
 				4BB8CEFC2C8DB21200F07F26 /* VoiceRecorderService.swift in Sources */,
 				4BB8CE942C86214800F07F26 /* UserItem.swift in Sources */,
+				4BB8CF042C8F60DA00F07F26 /* UIWindowScene+Extensions.swift in Sources */,
 				4BB8CEE72C87852700F07F26 /* AdminMessageTextView.swift in Sources */,
 				4BB8CEEE2C89EB5900F07F26 /* Date+Extensions.swift in Sources */,
 				4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */,
@@ -889,6 +896,7 @@
 				4BB8CEC82C86305B00F07F26 /* ChatRoomScreen.swift in Sources */,
 				4BB8CEDD2C8632DA00F07F26 /* SettingsItem.swift in Sources */,
 				4BB8CED72C86319E00F07F26 /* CommunityTabScreen.swift in Sources */,
+				4BB8CF022C8F5E5400F07F26 /* UIApplication+Extensions.swift in Sources */,
 				4BE4E9EB2C7E4A38007684CC /* UserService.swift in Sources */,
 				4BB8CEB82C86246800F07F26 /* NewGroupSetUpScreen.swift in Sources */,
 				4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */,
