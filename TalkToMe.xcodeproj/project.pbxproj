@@ -501,11 +501,11 @@
 		4BB8CEBE2C862A2D00F07F26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4BB8CEC72C86305B00F07F26 /* ChatRoomScreen.swift */,
 				4BB8CEBF2C862E7C00F07F26 /* BubbleAudioView.swift */,
 				4BB8CEC12C862EA000F07F26 /* BubbleImageView.swift */,
 				4BB8CEC32C86302300F07F26 /* BubbleTailView.swift */,
 				4BB8CEC52C86304300F07F26 /* BubbleTextView.swift */,
-				4BB8CEC72C86305B00F07F26 /* ChatRoomScreen.swift */,
 				4BB8CEC92C86307800F07F26 /* MessageListController.swift */,
 				4BB8CECB2C86309D00F07F26 /* MessageListView.swift */,
 				4BB8CECD2C8630B800F07F26 /* TextInputArea.swift */,

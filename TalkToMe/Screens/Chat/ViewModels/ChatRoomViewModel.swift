@@ -22,6 +22,10 @@ final class ChatRoomViewModel: ObservableObject {
         return !mediaAttachments.isEmpty || !photoPickerItems.isEmpty
     }
     
+    var disableSendButton: Bool {
+        return mediaAttachments.isEmpty && textMessage.isEmptyOrWhiteSpace
+    }
+    
     init(_ channel: ChannelItem) {
         self.channel = channel
         listenToAuthState()
@@ -46,7 +50,7 @@ final class ChatRoomViewModel: ObservableObject {
                 if self.channel.allMembersFetched {
                     self.getMessages()
                     print("channel members: \(channel.members.map { $0.username })")
-
+                    
                 } else {
                     self.getAllChannelMembers()
                 }
@@ -70,8 +74,56 @@ final class ChatRoomViewModel: ObservableObject {
     
     func sendMessage() {
         guard let currentUser else { return }
-        MessageService.sendTextMessage(to: channel, from: currentUser, textMessage) {[weak self] in
-            self?.textMessage = ""
+        if mediaAttachments.isEmpty {
+            MessageService.sendTextMessage(to: channel, from: currentUser, textMessage) {[weak self] in
+                self?.textMessage = ""
+            }
+        } else {
+            sendMultipleMediaMessages(textMessage, attachments: mediaAttachments)
+        }
+    }
+    
+    private func sendMultipleMediaMessages(_ text: String, attachments: [MediaAttachment]) {
+        mediaAttachments.forEach { attachment in
+            switch attachment.type {
+            case .photo:
+                sendPhotoMessage(text: text, attachment)
+            case .video:
+                break
+            case .audio:
+                break
+            }
+        }
+    }
+    
+    private func sendPhotoMessage(text: String, _ attachment: MediaAttachment) {
+        uploadImageToStorage(attachment) { [weak self] imageUrl in
+            
+            guard let self = self, let currentUser else { return }
+            print("uploaded Image To Storage: \(imageUrl)")
+            
+            let uploadParams = MessageUploadParams(channel: channel, text: text, type: .photo, attachment: attachment, thumbnailURL: imageUrl.absoluteString, sender: currentUser)
+            
+            MessageService.sendMediaMessage(to: channel, params: uploadParams) {
+                //
+                print("uploaded Photo To DB")
+            }
+        }
+        
+    }
+    
+    private func uploadImageToStorage(_ attachment: MediaAttachment, completion: @escaping(_ imageUrl: URL) -> Void) {
+        FirebaseHelper.uploadImage(attachment.thumbnail, for: .photoMessage) { result in
+            switch result {
+            case .success(let imageURL):
+                completion(imageURL)
+                
+            case .failure(let error):
+                print("Failed to upload Image to Storage: \(error.localizedDescription)")
+                
+            }
+        } progressHandler: { progress in
+            print("UPLOAD IMAGE PROGRESS: \(progress)")
         }
     }
     
@@ -127,12 +179,12 @@ final class ChatRoomViewModel: ObservableObject {
     private func onPhotoPickerSelection() {
         $photoPickerItems.sink { [weak self] photoItems in
             guard let self = self else { return }
-//            self.mediaAttachments.removeAll()
+            //            self.mediaAttachments.removeAll()
             let audioRecordings = mediaAttachments.filter({ $0.type == .audio(.stubURL, .stubTimeInterval) })
             self.mediaAttachments = audioRecordings
             Task { await self.parsePhotoPickerItems(photoItems) }
         }.store(in: &subscriptions)
-        }
+    }
     
     private func parsePhotoPickerItems(_ photoPickerItems: [PhotosPickerItem]) async {
         for photoItem in photoPickerItems {
@@ -141,12 +193,12 @@ final class ChatRoomViewModel: ObservableObject {
                     let videoAttachment = MediaAttachment(id: itemIdentifier, type: .video(thumbnailImage, movie.url))
                     self.mediaAttachments.insert(videoAttachment, at: 0)
                 }
-                    
+                
             } else {
                 guard
-                let data = try? await photoItem.loadTransferable(type: Data.self),
-                let thumbnail = UIImage(data: data),
-                let itemIdentifier = photoItem.itemIdentifier
+                    let data = try? await photoItem.loadTransferable(type: Data.self),
+                    let thumbnail = UIImage(data: data),
+                    let itemIdentifier = photoItem.itemIdentifier
                 else { return }
                 let photoAttachment = MediaAttachment(id: itemIdentifier, type: .photo(thumbnail))
                 self.mediaAttachments.insert(photoAttachment, at: 0)
