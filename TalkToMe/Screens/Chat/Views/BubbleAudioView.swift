@@ -1,9 +1,19 @@
 import SwiftUI
+import AVKit
 
 struct BubbleAudioView: View {
+    
+    // MARK: - Properties
+    @EnvironmentObject private var voiceMessagePlayer: VoiceMessagePlayer
+    @State private var playbackState: VoiceMessagePlayer.PlaybackState = .stopped
+    
     let item: MessageItem
     @State private var sliderValue: Double = 0
     @State private var sliderRange: ClosedRange<Double> = 0...20
+    @State private var playbackTime = "00:00"
+    @State private var isDraggingSlider = false
+    
+    // MARK: - Body
     var body: some View {
         HStack(alignment: .bottom, spacing: 3) {
             
@@ -18,11 +28,21 @@ struct BubbleAudioView: View {
             
             HStack {
                 playButton()
-                Slider(value: $sliderValue, in: sliderRange)
+                Slider(value: $sliderValue, in: sliderRange) { editing in
+                    isDraggingSlider = editing
+                    if !editing {
+                        voiceMessagePlayer.seek(to: sliderValue)
+                    }
+                }
                     .tint(.gray)
                 
-                Text("04:00")
-                    .foregroundStyle(.gray)
+                if playbackState == .stopped {
+                    Text(item.audioDurationInString)
+                        .foregroundStyle(.gray)
+                } else {
+                    Text(playbackTime)
+                        .foregroundStyle(.gray)
+                }
             }
             .padding(10)
             .background(Color.gray.opacity(0.1))
@@ -41,15 +61,26 @@ struct BubbleAudioView: View {
         .frame(maxWidth: .infinity, alignment: item.alignment)
         .padding(.leading, item.leadingPadding)
         .padding(.trailing, item.trailingPadding)
-
-        
+        .onReceive(voiceMessagePlayer.$playbackState) { state in
+            observePlaybackState(state)
+        }
+        .onReceive(voiceMessagePlayer.$currentTime) { currentTime in
+            guard voiceMessagePlayer.currentURL?.absoluteString == item.audioURL else { return }
+            listen(to: currentTime)
+        }
+        .onReceive(voiceMessagePlayer.$playerItem) { playerItem in
+            guard voiceMessagePlayer.currentURL?.absoluteString == item.audioURL else { return }
+            guard let audioDuration = item.audioDuration else { return }
+            sliderRange = 0...audioDuration
+        }
     }
     
+    // MARK: - Methods
     private func playButton() -> some View {
         Button {
-            
+            handlePlayVoiceMessage()
         } label: {
-            Image(systemName: "play.fill")
+            Image(systemName: playbackState.icon)
                 .padding(10)
                 .background(item.direction == .received ? .green : .white)
                 .clipShape(Circle())
@@ -64,17 +95,46 @@ struct BubbleAudioView: View {
     }
 }
 
-#Preview {
-    ScrollView {
-        BubbleAudioView(item: .receivedPlaceholder)
-        BubbleAudioView(item: .sentPlaceholder)
-
+// MARK: - Extensions
+extension BubbleAudioView {
+    private func handlePlayVoiceMessage() {
+        if playbackState == .stopped || playbackState == .paused {
+            guard let audioURLString = item.audioURL, let voiceMessageUrl = URL(string: audioURLString) else { return }
+            voiceMessagePlayer.playAudio(from: voiceMessageUrl)
+        } else {
+            voiceMessagePlayer.pauseAudio()
+        }
     }
-    .frame(maxWidth: .infinity)
-    .padding(.horizontal)
-    .background(Color.gray.opacity(0.4))
-    .onAppear {
-        let thumbImage = UIImage(systemName: "circle.fill")
-        UISlider.appearance().setThumbImage(thumbImage, for: .normal)
+    
+    private func observePlaybackState(_ state: VoiceMessagePlayer.PlaybackState) {
+        if state == .stopped {
+            playbackState = .stopped
+            sliderValue = 0
+        } else {
+            guard voiceMessagePlayer.currentURL?.absoluteString == item.audioURL else { return }
+            playbackState = state
+        }
+    }
+    
+    private func listen(to currentTime: CMTime) {
+        guard !isDraggingSlider else { return }
+        playbackTime = currentTime.seconds.formatElapsedTime
+        sliderValue = currentTime.seconds
     }
 }
+
+// MARK: - Preview
+//#Preview {
+//    ScrollView {
+//        BubbleAudioView(item: .receivedPlaceholder)
+//        BubbleAudioView(item: .sentPlaceholder)
+//
+//    }
+//    .frame(maxWidth: .infinity)
+//    .padding(.horizontal)
+//    .background(Color.gray.opacity(0.4))
+//    .onAppear {
+//        let thumbImage = UIImage(systemName: "circle.fill")
+//        UISlider.appearance().setThumbImage(thumbImage, for: .normal)
+//    }
+//}

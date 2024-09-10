@@ -6,6 +6,7 @@ struct ChatRoomScreen: View {
     // MARK: - Properties
     let channel: ChannelItem
     @StateObject private var viewModel: ChatRoomViewModel
+    @StateObject private var voiceMessagePlayer = VoiceMessagePlayer()
     
     // MARK: - Initializer
     init(channel: ChannelItem) {
@@ -36,6 +37,7 @@ struct ChatRoomScreen: View {
                     }
                 }
             }
+            .environmentObject(voiceMessagePlayer)
     }
     
     private func bottomSafeAreaView() -> some View {
