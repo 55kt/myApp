@@ -29,6 +29,7 @@
 		4B74F4712C5AA525008C8393 /* ContinueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */; };
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
+		4B8B84972C9098F7003DD520 /* VoiceMessagePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B84962C9098F7003DD520 /* VoiceMessagePlayer.swift */; };
 		4BB8CE8A2C85F19700F07F26 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE892C85F19700F07F26 /* MessageService.swift */; };
 		4BB8CE8C2C861E4700F07F26 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE8B2C861E4700F07F26 /* CustomModifiers.swift */; };
 		4BB8CE912C86200100F07F26 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE902C86200100F07F26 /* AuthProvider.swift */; };
@@ -140,6 +141,7 @@
 		4B74F4702C5AA525008C8393 /* ContinueButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueButtonView.swift; sourceTree = "<group>"; };
 		4B74F4722C5AA5DA008C8393 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		4B8B84962C9098F7003DD520 /* VoiceMessagePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessagePlayer.swift; sourceTree = "<group>"; };
 		4BB8CE892C85F19700F07F26 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		4BB8CE8B2C861E4700F07F26 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		4BB8CE902C86200100F07F26 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				4BB8CECF2C8630DE00F07F26 /* ChatRoomViewModel.swift */,
+				4B8B84962C9098F7003DD520 /* VoiceMessagePlayer.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -956,6 +959,7 @@
 				4BB8CEA92C86233A00F07F26 /* ChannelTabViewModel.swift in Sources */,
 				4BF094172C6E559E000E305F /* CropView.swift in Sources */,
 				4BB8CECA2C86307900F07F26 /* MessageListController.swift in Sources */,
+				4B8B84972C9098F7003DD520 /* VoiceMessagePlayer.swift in Sources */,
 				4B3830022C5D65CE0094FA11 /* CountryPickerView.swift in Sources */,
 				4B3830002C5D65260094FA11 /* PhoneNumberInputField.swift in Sources */,
 				4BB8CEFA2C8CAFA000F07F26 /* MediaPlayerView.swift in Sources */,
