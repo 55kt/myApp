@@ -30,6 +30,7 @@
 		4B74F4732C5AA5DA008C8393 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4722C5AA5DA008C8393 /* HeaderView.swift */; };
 		4B74F4752C5AA625008C8393 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74F4742C5AA625008C8393 /* IndicatorView.swift */; };
 		4B8B84972C9098F7003DD520 /* VoiceMessagePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B84962C9098F7003DD520 /* VoiceMessagePlayer.swift */; };
+		4B8B84992C91EBBE003DD520 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8B84982C91EBBE003DD520 /* Haptics.swift */; };
 		4BB8CE8A2C85F19700F07F26 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE892C85F19700F07F26 /* MessageService.swift */; };
 		4BB8CE8C2C861E4700F07F26 /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE8B2C861E4700F07F26 /* CustomModifiers.swift */; };
 		4BB8CE912C86200100F07F26 /* AuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8CE902C86200100F07F26 /* AuthProvider.swift */; };
@@ -142,6 +143,7 @@
 		4B74F4722C5AA5DA008C8393 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4B74F4742C5AA625008C8393 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		4B8B84962C9098F7003DD520 /* VoiceMessagePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceMessagePlayer.swift; sourceTree = "<group>"; };
+		4B8B84982C91EBBE003DD520 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		4BB8CE892C85F19700F07F26 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		4BB8CE8B2C861E4700F07F26 /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		4BB8CE902C86200100F07F26 /* AuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProvider.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			children = (
 				4BB8CE8B2C861E4700F07F26 /* CustomModifiers.swift */,
 				4BB8CEFF2C8DF7F700F07F26 /* FirebaseHelper.swift */,
+				4B8B84982C91EBBE003DD520 /* Haptics.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -944,6 +947,7 @@
 				4BB8CEE52C8778EC00F07F26 /* ChannelCreationTextView.swift in Sources */,
 				4B74F46C2C57F8DC008C8393 /* MorphingSymbolView.swift in Sources */,
 				4BC70D252C5FCF3700BB41DF /* ContinueButton.swift in Sources */,
+				4B8B84992C91EBBE003DD520 /* Haptics.swift in Sources */,
 				4BB8CE972C86218A00F07F26 /* AuthScreenModel.swift in Sources */,
 				4B74F4492C556131008C8393 /* OTPPhoneNumberInputView.swift in Sources */,
 				4BB8CEC62C86304300F07F26 /* BubbleTextView.swift in Sources */,
