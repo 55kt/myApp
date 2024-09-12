@@ -10,11 +10,11 @@ struct AdminMessageTextView: View {
             if channel.isCreatedByMe {
                 textView("You created this group. Tap to add\n members")
             } else {
-                textView("\(channel.creatorName) created this group. Tap to add\n members")
+                textView("\(channel.creatorName) created this group.")
                 textView("\(channel.creatorName) added You")
             }
         }
-        
+        .frame(maxWidth: .infinity)
     }
     
     private func textView(_ text: String) -> some View {

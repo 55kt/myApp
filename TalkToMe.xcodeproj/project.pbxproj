@@ -111,6 +111,7 @@
 		4BE4E9EB2C7E4A38007684CC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9EA2C7E4A38007684CC /* UserService.swift */; };
 		4BE4E9EF2C80BD96007684CC /* ChannelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9EE2C80BD96007684CC /* ChannelItem.swift */; };
 		4BE4E9F32C80D12A007684CC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9F22C80D12A007684CC /* String+Extensions.swift */; };
+		4BED5D6F2C9223500048F8E5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */; };
 		4BF094172C6E559E000E305F /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094162C6E559E000E305F /* CropView.swift */; };
 		4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094182C6E585E000E305F /* PickerExtensions.swift */; };
 		4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */; };
@@ -231,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BED5D6F2C9223500048F8E5 /* UserNotifications.framework in Frameworks */,
 				4BE4E9AB2C766DF2007684CC /* FirebaseAnalytics in Frameworks */,
 				4BE4E9A12C766955007684CC /* FirebaseDatabase in Frameworks */,
 				4BE4E9AF2C766E0F007684CC /* FirebasePerformance in Frameworks */,
