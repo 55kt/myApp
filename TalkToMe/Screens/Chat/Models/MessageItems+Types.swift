@@ -7,7 +7,7 @@ enum AdminMessageType: String {
     case channelNameChanged
 }
 
-enum MessageType {
+enum MessageType: Hashable {
     case admin(_ type: AdminMessageType), text, photo, video, audio
     
     var title: String {
@@ -25,6 +25,25 @@ enum MessageType {
             
         case .audio:
             return "audio"
+            
+        }
+    }
+    
+    var iconName: String {
+        switch self {
+        case .admin:
+            return "megaphone.fill"
+        case .text:
+            return ""
+            
+        case .photo:
+            return "photo.fill"
+            
+        case .video:
+            return "video.fill"
+            
+        case .audio:
+            return "mic.fill"
             
         }
     }

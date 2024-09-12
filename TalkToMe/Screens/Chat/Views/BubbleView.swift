@@ -6,6 +6,7 @@ struct BubbleView: View {
     let message: MessageItem
     let channel: ChannelItem
     let isNewDay: Bool
+    let showSenderName: Bool
     
     // MARK: - Body
     var body: some View {
@@ -15,6 +16,11 @@ struct BubbleView: View {
                 newDayTimeStampTextView()
                     .padding()
             }
+            
+            if showSenderName {
+                senderNameTextView()
+            }
+            
             composeDinamicBubbleView()
         }
         .frame(maxWidth: .infinity)
@@ -57,9 +63,19 @@ struct BubbleView: View {
             .clipShape(Capsule())
             .frame(maxWidth: .infinity)
     }
+    
+    private func senderNameTextView() -> some View {
+        Text(message.sender?.username ?? "Unknown user 🤷🏼‍♂️")
+            .lineLimit(1)
+            .foregroundStyle(.gray)
+            .font(.footnote)
+            .padding(.bottom, 2)
+            .padding(.horizontal)
+            .padding(.leading, 20)
+    }
 }
 
 // MARK: - Preview
 #Preview {
-    BubbleView(message: .sentPlaceholder, channel: .placeholder, isNewDay: false)
+    BubbleView(message: .sentPlaceholder, channel: .placeholder, isNewDay: false, showSenderName: false)
 }
