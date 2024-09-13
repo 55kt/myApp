@@ -13,6 +13,8 @@ final class ChatRoomViewModel: ObservableObject {
     @Published var isRecordingVoiceMessage = false
     @Published var elapsedVoiceMessageTime: TimeInterval = 0
     @Published var scrollToBottomRequest: (scroll: Bool, isAnimated: Bool) = (false, false)
+    @Published var isPaginating = false
+    private var currentPage: String?
     
     private(set) var channel: ChannelItem
     private var subscriptions = Set<AnyCancellable>()
@@ -133,7 +135,7 @@ final class ChatRoomViewModel: ObservableObject {
                 sender: currentUser,
                 audioURL: fileURL.absoluteString,
                 audioDuration: audioDuration
-                )
+            )
             
             MessageService.sendMediaMessage(to: self.channel, params: uploadParams) { [weak self] in
                 self?.scrollToButtom(isAnimated: true)
@@ -146,7 +148,7 @@ final class ChatRoomViewModel: ObservableObject {
             self?.uploadImageToStorage(attachment) {[weak self] thumbnailURL in
                 guard let self = self, let currentUser else { return }
                 let uploadParams = MessageUploadParams(channel: self.channel, text: text, type: .video, attachment: attachment, thumbnailURL: thumbnailURL.absoluteString, videoURL: videoURL.absoluteString, sender: currentUser)
-
+                
                 MessageService.sendMediaMessage(to: self.channel, params: uploadParams) {[weak self] in
                     self?.scrollToButtom(isAnimated: true)
                 }
@@ -187,14 +189,16 @@ final class ChatRoomViewModel: ObservableObject {
         } progressHandler: { progress in
             print("Upload file progress \(progress)")
         }
-
+        
     }
     
-    private func getMessages() {
-        MessageService.getMessages(for: channel) {[weak self] messages in
-            self?.messages = messages
+    func getMessages() {
+        isPaginating = currentPage != nil
+        MessageService.getHistoricalMessages(for: channel, lastCursor: currentPage, pageSize: 12) { [weak self] messageNode in
+            self?.messages.insert(contentsOf: messageNode.messages, at: 0)
+            self?.currentPage = messageNode.currentCursor
             self?.scrollToButtom(isAnimated: false)
-            print("messages: \(messages.map { $0.text })")
+            self?.isPaginating = false
         }
     }
     
