@@ -99,6 +99,7 @@ struct MessageService {
             guard let first = mainSnapshot.children.allObjects.first as? DataSnapshot,
                   let allObjects = mainSnapshot.children.allObjects as? [DataSnapshot]
             else { return }
+            
             var messages: [MessageItem] = allObjects.compactMap { messageSnapshot in
                 let messageDict = messageSnapshot.value as? [String: Any] ?? [:]
                 var message = MessageItem(id: messageSnapshot.key, isGroupChat: channel.isGroupChat, dict: messageDict)
@@ -110,6 +111,7 @@ struct MessageService {
             messages.sort { $0.timeStamp < $1.timeStamp }
             
             if messages.count == mainSnapshot.childrenCount {
+                if lastCursor == nil { messages.removeLast() }
                 let filterMessages = lastCursor == nil ? messages : messages.filter { $0.id != lastCursor }
                 let messageNode = MessageNode(messages: filterMessages, currentCursor: first.key)
                 completion(messageNode)
@@ -140,6 +142,7 @@ struct MessageService {
     
     static func listenForNewMessages(in channel: ChannelItem, completion: @escaping(MessageItem) -> Void) {
         FirebaseConstants.MessagesRef.child(channel.id)
+            .queryLimited(toLast: 1)
             .observe(.childAdded) { snapshot in
                 guard let messageDict = snapshot.value as? [String: Any] else { return }
                 var newMessage = MessageItem(id: snapshot.key, isGroupChat: channel.isGroupChat, dict: messageDict)
