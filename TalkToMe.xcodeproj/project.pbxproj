@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1320582C972EDB001BD301 /* SettingsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1320572C972EDB001BD301 /* SettingsTabViewModel.swift */; };
 		4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B366BBF2C6D2872001D5D63 /* CameraView.swift */; };
 		4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */; };
@@ -121,6 +122,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B1320572C972EDB001BD301 /* SettingsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewModel.swift; sourceTree = "<group>"; };
 		4B366BBF2C6D2872001D5D63 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
 		4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerSearchView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		4B0FE4AC2C71F055004D10F0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				4B1320562C972EBF001BD301 /* ViewModel */,
 				4B0FE4AF2C71F079004D10F0 /* Views */,
 				4B0FE4B22C71F252004D10F0 /* Models */,
 			);
@@ -272,6 +275,14 @@
 				4BB8CEDC2C8632DA00F07F26 /* SettingsItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4B1320562C972EBF001BD301 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B1320572C972EDB001BD301 /* SettingsTabViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4B382FF72C5D30A30094FA11 /* Extensions */ = {
@@ -907,6 +918,7 @@
 				4BB8CEC82C86305B00F07F26 /* ChatRoomScreen.swift in Sources */,
 				4BB8CEDD2C8632DA00F07F26 /* SettingsItem.swift in Sources */,
 				4BB8CED72C86319E00F07F26 /* CommunityTabScreen.swift in Sources */,
+				4B1320582C972EDB001BD301 /* SettingsTabViewModel.swift in Sources */,
 				4BB8CF022C8F5E5400F07F26 /* UIApplication+Extensions.swift in Sources */,
 				4BE4E9EB2C7E4A38007684CC /* UserService.swift in Sources */,
 				4BB8CEB82C86246800F07F26 /* NewGroupSetUpScreen.swift in Sources */,
