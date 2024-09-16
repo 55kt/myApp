@@ -5,12 +5,13 @@ struct SettingsTabScreen: View {
     
     // MARK: - Properties
     @State private var searchText = ""
-    @StateObject private var viewModel = SettingsTabViewModel()
+    @StateObject private var viewModel: SettingsTabViewModel
     private let currentUser: UserItem
     
     // MARK: - Initializer
     init(_ currentUser: UserItem) {
         self.currentUser = currentUser
+        self._viewModel = StateObject(wrappedValue: SettingsTabViewModel(currentUser))
     }
     
     // MARK: - Body
@@ -47,6 +48,14 @@ struct SettingsTabScreen: View {
             }
             .alert(isPresent: $viewModel.showProgressHUD, view: viewModel.progressHUDView)
             .alert(isPresent: $viewModel.showSuccessHUD, view: viewModel.successHUDView)
+            .alert("Update Your Profile", isPresented: $viewModel.showUserInfoEditor) {
+                TextField("Username", text: $viewModel.name)
+                TextField("Bio", text: $viewModel.bio)
+                Button("Update") { viewModel.updateUsernameBio() }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("Enter your new username or bio")
+            }
         }
     }
 }
@@ -67,6 +76,9 @@ private struct SettingsHeaderView: View {
                 profileImageView()
                 
                 userInfoTextView()
+                    .onTapGesture {
+                        viewModel.showUserInfoEditor = true
+                    }
             }
             PhotosPicker(selection: $viewModel.selectedPhotoItem, matching: .not(.videos)) {
                 SettingsItemView(item: .avatar)

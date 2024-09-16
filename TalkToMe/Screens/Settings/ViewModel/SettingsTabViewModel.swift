@@ -12,6 +12,11 @@ final class SettingsTabViewModel: ObservableObject {
     @Published var profilePhoto: MediaAttachment?
     @Published var showSuccessHUD = false
     @Published var showProgressHUD = false
+    @Published var showUserInfoEditor = false
+    @Published var name = ""
+    @Published var bio = ""
+    
+    private var currentUser: UserItem
     
     private var subscription: AnyCancellable?
     
@@ -19,10 +24,13 @@ final class SettingsTabViewModel: ObservableObject {
     private(set) var successHUDView = AlertAppleMusic17View(title: "Profile Info Updated", subtitle: nil, icon: .done)
     
     var disableSaveButton: Bool {
-        return profilePhoto == nil
+        return profilePhoto == nil || showProgressHUD
     }
     
-    init() {
+    init(_ currentUser: UserItem) {
+        self.currentUser = currentUser
+        self.name = currentUser.username
+        self.bio = currentUser.bio ?? ""
         onPhotoPickerSelection()
     }
     
@@ -64,11 +72,28 @@ final class SettingsTabViewModel: ObservableObject {
         FirebaseConstants.UserRef.child(currentUid).child(.profileImageUrl).setValue(imageUrl.absoluteString)
         showProgressHUD = false
         progressHUDView.dismiss()
+        currentUser.profileImageUrl = imageUrl.absoluteString
+        AuthManager.shared.authState.send(.loggedIn(currentUser))
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.showSuccessHUD = true
             self.profilePhoto = nil
             self.selectedPhotoItem = nil
         }
         print("Profile photo uploaded successfully: \(imageUrl.absoluteString)")
+    }
+    
+    func updateUsernameBio() {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        var dict: [String: Any] = [.bio: bio]
+        currentUser.bio = bio
+        
+        if !name.isEmptyOrWhiteSpace {
+            dict[.username] = name
+            currentUser.username = name
+        }
+        
+        FirebaseConstants.UserRef.child(currentUid).updateChildValues(dict)
+        showSuccessHUD = true
+        AuthManager.shared.authState.send(.loggedIn(currentUser))
     }
 }
