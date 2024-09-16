@@ -2,14 +2,18 @@ import SwiftUI
 import PhotosUI
 
 struct SettingsTabScreen: View {
+    
+    // MARK: - Properties
     @State private var searchText = ""
     @StateObject private var viewModel = SettingsTabViewModel()
     private let currentUser: UserItem
     
+    // MARK: - Initializer
     init(_ currentUser: UserItem) {
         self.currentUser = currentUser
     }
     
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             List {
@@ -39,25 +43,15 @@ struct SettingsTabScreen: View {
             .searchable(text: $searchText)
             .toolbar {
                 leadingNavItem()
+                trailingNavItem()
             }
+            .alert(isPresent: $viewModel.showProgressHUD, view: viewModel.progressHUDView)
+            .alert(isPresent: $viewModel.showSuccessHUD, view: viewModel.successHUDView)
         }
     }
 }
 
-extension SettingsTabScreen {
-    @ToolbarContentBuilder
-    private func leadingNavItem() -> some ToolbarContent {
-        ToolbarItem(placement: .topBarLeading) {
-            Button("Sign Out") {
-                Task {
-                    try? await AuthManager.shared.logOut()
-                }
-            }
-            .foregroundStyle(.red)
-        }
-    }
-}
-
+// MARK: - Methods
 private struct SettingsHeaderView: View {
     private let currentUser: UserItem
     @ObservedObject private var viewModel: SettingsTabViewModel
@@ -89,7 +83,7 @@ private struct SettingsHeaderView: View {
                     .frame(width: 55, height: 55)
                     .clipShape(Circle())
             } else {
-                CircularProfileImageView(nil, size: .custom(55))
+                CircularProfileImageView(currentUser.profileImageUrl, size: .custom(55))
             }
         }
     
@@ -118,6 +112,33 @@ private struct SettingsHeaderView: View {
     }
 }
 
+// MARK: - Extensions
+extension SettingsTabScreen {
+    @ToolbarContentBuilder
+    private func leadingNavItem() -> some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            Button("Sign Out") {
+                Task {
+                    try? await AuthManager.shared.logOut()
+                }
+            }
+            .foregroundStyle(.red)
+        }
+    }
+    
+    @ToolbarContentBuilder
+    private func trailingNavItem() -> some ToolbarContent {
+        ToolbarItem(placement: .topBarTrailing) {
+            Button("Save") {
+                viewModel.uploadProfilePhoto()
+            }
+            .bold()
+            .disabled(viewModel.disableSaveButton)
+        }
+    }
+}
+
+// MARK: - Preview
 #Preview {
     SettingsTabScreen(.placeholder)
 }

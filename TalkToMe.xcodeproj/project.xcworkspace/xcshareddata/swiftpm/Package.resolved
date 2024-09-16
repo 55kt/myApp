@@ -1,5 +1,5 @@
 {
-  "originHash" : "21e0ad1246818b9c019df4a0423c2d9f4d078d334774cda2fee80c832cdf6fb9",
+  "originHash" : "b3f86b5fb1bf339e3414753753154d2cb33887f31f221e98f1503d49a01d87bd",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "194a6706acbd25e4ef639bcaddea16e8758a3e27",
         "version" : "1.2024011602.0"
+      }
+    },
+    {
+      "identity" : "alertkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sparrowcode/AlertKit",
+      "state" : {
+        "revision" : "3b73be8db5a7e7efaf474c6ed919f5a437d843c9",
+        "version" : "5.1.9"
       }
     },
     {

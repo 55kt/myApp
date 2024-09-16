@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B1320582C972EDB001BD301 /* SettingsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1320572C972EDB001BD301 /* SettingsTabViewModel.swift */; };
+		4B13205B2C9744BA001BD301 /* AlertKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4B13205A2C9744BA001BD301 /* AlertKit */; };
 		4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B366BBF2C6D2872001D5D63 /* CameraView.swift */; };
 		4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */; };
@@ -112,7 +113,6 @@
 		4BE4E9EB2C7E4A38007684CC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9EA2C7E4A38007684CC /* UserService.swift */; };
 		4BE4E9EF2C80BD96007684CC /* ChannelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9EE2C80BD96007684CC /* ChannelItem.swift */; };
 		4BE4E9F32C80D12A007684CC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE4E9F22C80D12A007684CC /* String+Extensions.swift */; };
-		4BED5D6F2C9223500048F8E5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC70D212C5FCBE400BB41DF /* UserNotifications.framework */; };
 		4BF094172C6E559E000E305F /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094162C6E559E000E305F /* CropView.swift */; };
 		4BF094192C6E585E000E305F /* PickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF094182C6E585E000E305F /* PickerExtensions.swift */; };
 		4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF0941B2C6FA4B6000E305F /* FinalScreenView.swift */; };
@@ -234,9 +234,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BED5D6F2C9223500048F8E5 /* UserNotifications.framework in Frameworks */,
 				4BE4E9AB2C766DF2007684CC /* FirebaseAnalytics in Frameworks */,
 				4BE4E9A12C766955007684CC /* FirebaseDatabase in Frameworks */,
+				4B13205B2C9744BA001BD301 /* AlertKit in Frameworks */,
 				4BE4E9AF2C766E0F007684CC /* FirebasePerformance in Frameworks */,
 				4BB8CEEA2C89DEC300F07F26 /* Kingfisher in Frameworks */,
 				4BE4E9A52C766955007684CC /* FirebaseMessaging in Frameworks */,
@@ -827,6 +827,7 @@
 				4BE4E9AC2C766DFB007684CC /* FirebaseCrashlytics */,
 				4BE4E9AE2C766E0F007684CC /* FirebasePerformance */,
 				4BB8CEE92C89DEC300F07F26 /* Kingfisher */,
+				4B13205A2C9744BA001BD301 /* AlertKit */,
 			);
 			productName = TalkToMe;
 			productReference = 4B74F4242C529E8F008C8393 /* TalkToMe.app */;
@@ -859,6 +860,7 @@
 			packageReferences = (
 				4BE4E99D2C766955007684CC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				4BB8CEE82C89DEC300F07F26 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				4B1320592C9744BA001BD301 /* XCRemoteSwiftPackageReference "AlertKit" */,
 			);
 			productRefGroup = 4B74F4252C529E8F008C8393 /* Products */;
 			projectDirPath = "";
@@ -1209,6 +1211,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4B1320592C9744BA001BD301 /* XCRemoteSwiftPackageReference "AlertKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparrowcode/AlertKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.9;
+			};
+		};
 		4BB8CEE82C89DEC300F07F26 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -1228,6 +1238,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4B13205A2C9744BA001BD301 /* AlertKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B1320592C9744BA001BD301 /* XCRemoteSwiftPackageReference "AlertKit" */;
+			productName = AlertKit;
+		};
 		4BB8CEE92C89DEC300F07F26 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4BB8CEE82C89DEC300F07F26 /* XCRemoteSwiftPackageReference "Kingfisher" */;
