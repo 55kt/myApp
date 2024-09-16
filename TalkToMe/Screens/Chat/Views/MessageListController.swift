@@ -176,7 +176,6 @@ extension MessageListController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let selectedCell = collectionView.cellForItem(at: indexPath) else { return }
-//        selectedCell.backgroundColor = .green
         
         startingFrame = selectedCell.superview?.convert(selectedCell.frame, to: nil)
         

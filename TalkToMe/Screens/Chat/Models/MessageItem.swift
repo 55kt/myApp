@@ -69,6 +69,10 @@ struct MessageItem: Identifiable {
         return ownerUid == Auth.auth().currentUser?.uid ?? ""
     }
     
+    var menuAnchor: UnitPoint {
+        return direction == .received ? .topLeading : .topTrailing
+    }
+    
     func containsSameOwner(as message: MessageItem) -> Bool {
         if let userA = message.sender, let userB = self.sender {
             return userA == userB
