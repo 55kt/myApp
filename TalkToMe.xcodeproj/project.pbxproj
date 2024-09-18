@@ -11,6 +11,7 @@
 		4B13205B2C9744BA001BD301 /* AlertKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4B13205A2C9744BA001BD301 /* AlertKit */; };
 		4B13205D2C98646C001BD301 /* ReactionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13205C2C98646C001BD301 /* ReactionPickerView.swift */; };
 		4B13205F2C98726D001BD301 /* MessageMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B13205E2C98726D001BD301 /* MessageMenuView.swift */; };
+		4B1320612C9AF98C001BD301 /* MessageReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1320602C9AF98C001BD301 /* MessageReactionView.swift */; };
 		4B366BC02C6D2872001D5D63 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B366BBF2C6D2872001D5D63 /* CameraView.swift */; };
 		4B382FF02C5C09E40094FA11 /* CountryPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */; };
 		4B382FF22C5C0A050094FA11 /* CountryPickerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */; };
@@ -127,6 +128,7 @@
 		4B1320572C972EDB001BD301 /* SettingsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabViewModel.swift; sourceTree = "<group>"; };
 		4B13205C2C98646C001BD301 /* ReactionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionPickerView.swift; sourceTree = "<group>"; };
 		4B13205E2C98726D001BD301 /* MessageMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageMenuView.swift; sourceTree = "<group>"; };
+		4B1320602C9AF98C001BD301 /* MessageReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReactionView.swift; sourceTree = "<group>"; };
 		4B366BBF2C6D2872001D5D63 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		4B382FEF2C5C09E40094FA11 /* CountryPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewModel.swift; sourceTree = "<group>"; };
 		4B382FF12C5C0A050094FA11 /* CountryPickerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerSearchView.swift; sourceTree = "<group>"; };
@@ -537,6 +539,7 @@
 				4BB8CEC12C862EA000F07F26 /* BubbleImageView.swift */,
 				4BB8CEC32C86302300F07F26 /* BubbleTailView.swift */,
 				4BB8CEC52C86304300F07F26 /* BubbleTextView.swift */,
+				4B1320602C9AF98C001BD301 /* MessageReactionView.swift */,
 				4BB8CEC92C86307800F07F26 /* MessageListController.swift */,
 				4BB8CECB2C86309D00F07F26 /* MessageListView.swift */,
 				4BB8CECD2C8630B800F07F26 /* TextInputArea.swift */,
@@ -978,6 +981,7 @@
 				4BB8CE972C86218A00F07F26 /* AuthScreenModel.swift in Sources */,
 				4B74F4492C556131008C8393 /* OTPPhoneNumberInputView.swift in Sources */,
 				4BB8CEC62C86304300F07F26 /* BubbleTextView.swift in Sources */,
+				4B1320612C9AF98C001BD301 /* MessageReactionView.swift in Sources */,
 				4BC70D332C6258B300BB41DF /* UsernameField.swift in Sources */,
 				4BB8CEC02C862E7C00F07F26 /* BubbleAudioView.swift in Sources */,
 				4BF0941C2C6FA4B6000E305F /* FinalScreenView.swift in Sources */,

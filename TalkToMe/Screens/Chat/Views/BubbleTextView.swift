@@ -27,6 +27,10 @@ struct BubbleTextView: View {
         .frame(maxWidth: .infinity, alignment: item.alignment)
         .padding(.leading, item.leadingPadding)
         .padding(.trailing, item.trailingPadding)
+        .overlay(alignment: item.reactionAnchor) {
+            MessageReactionView(message: item)
+                .offset(x: item.showGroupPartnerInfo ? 50 : 0, y: 15)
+        }
     }
     
     private func timeStampTextView() -> some View {

@@ -71,6 +71,10 @@ struct BubbleAudioView: View {
         .frame(maxWidth: .infinity, alignment: item.alignment)
         .padding(.leading, item.leadingPadding)
         .padding(.trailing, item.trailingPadding)
+        .overlay(alignment: item.reactionAnchor) {
+            MessageReactionView(message: item)
+                .offset(x: item.showGroupPartnerInfo ? 50 : 0, y: 17)
+        }
         .onReceive(voiceMessagePlayer.$playbackState) { state in
             observePlaybackState(state)
         }
@@ -131,17 +135,18 @@ extension BubbleAudioView {
 }
 
 // MARK: - Preview
-//#Preview {
-//    ScrollView {
-//        BubbleAudioView(item: .receivedPlaceholder)
-//        BubbleAudioView(item: .sentPlaceholder)
-//
-//    }
-//    .frame(maxWidth: .infinity)
-//    .padding(.horizontal)
-//    .background(Color.gray.opacity(0.4))
-//    .onAppear {
-//        let thumbImage = UIImage(systemName: "circle.fill")
-//        UISlider.appearance().setThumbImage(thumbImage, for: .normal)
-//    }
-//}
+#Preview {
+    ScrollView {
+        BubbleAudioView(item: .receivedPlaceholder)
+        BubbleAudioView(item: .sentPlaceholder)
+
+    }
+    .environmentObject(VoiceMessagePlayer())
+    .frame(maxWidth: .infinity)
+    .padding(.horizontal)
+    .background(Color.gray.opacity(0.4))
+    .onAppear {
+        let thumbImage = UIImage(systemName: "circle.fill")
+        UISlider.appearance().setThumbImage(thumbImage, for: .normal)
+    }
+}
