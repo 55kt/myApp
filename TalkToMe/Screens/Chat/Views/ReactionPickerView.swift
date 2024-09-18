@@ -9,6 +9,8 @@ struct EmojiReaction {
 struct ReactionPickerView: View {
     // MARK: - Properties
     let message: MessageItem
+    let onTapHandler: ((_ selectedEmoji: Reaction) -> Void)
+    
     @State private var animateBackgroundView = false
     @State private var emojiStates: [EmojiReaction] = [
         EmojiReaction(reaction: .like),
@@ -49,7 +51,8 @@ struct ReactionPickerView: View {
     
     private func reactionButton(_ item: EmojiReaction, at index: Int) -> some View {
         Button {
-            // Some action
+            guard item.reaction != .more else { return }
+            onTapHandler(item.reaction)
         } label: {
             buttonBody(item, at: index)
                 .scaleEffect(emojiStates[index].isAnimating ? 1 : 0.01)
@@ -57,7 +60,7 @@ struct ReactionPickerView: View {
                 .onAppear {
                     let dinamicIndex = getAnimationIndex(index)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                        withAnimation(springAnimation.delay(Double(index) * 0.05)) {
+                        withAnimation(springAnimation.delay(Double(dinamicIndex) * 0.05)) {
                             emojiStates[index].isAnimating = true
                         }
                     }
@@ -86,7 +89,14 @@ struct ReactionPickerView: View {
         } else {
             Text(item.reaction.emoji)
                 .font(.system(size: 30))
+                .background(selectedEmojiIndicator(item.reaction))
         }
+    }
+    
+    private func selectedEmojiIndicator(_ reaction: Reaction) -> some View {
+        Color(.systemGray5)
+            .frame(width: 45, height: 45)
+            .clipShape(Circle())
     }
     
     private func backgroundView() -> some View {
@@ -106,6 +116,6 @@ struct ReactionPickerView: View {
     ZStack {
         Rectangle()
             .fill(.thinMaterial)
-        ReactionPickerView(message: .receivedPlaceholder)
+        ReactionPickerView(message: .receivedPlaceholder) {_ in}
     }
 }
