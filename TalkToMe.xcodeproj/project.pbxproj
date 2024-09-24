@@ -136,6 +136,7 @@
 		4B382FFD2C5D64750094FA11 /* NavPlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPlaceHolder.swift; sourceTree = "<group>"; };
 		4B382FFF2C5D65260094FA11 /* PhoneNumberInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberInputField.swift; sourceTree = "<group>"; };
 		4B3830012C5D65CE0094FA11 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
+		4B5C82D92CA30EF1009BF1C7 /* TalkToMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TalkToMe.entitlements; sourceTree = "<group>"; };
 		4B74F4242C529E8F008C8393 /* TalkToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74F4272C529E8F008C8393 /* TalkToMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkToMeApp.swift; sourceTree = "<group>"; };
 		4B74F4292C529E8F008C8393 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 		4B74F4262C529E8F008C8393 /* TalkToMe */ = {
 			isa = PBXGroup;
 			children = (
+				4B5C82D92CA30EF1009BF1C7 /* TalkToMe.entitlements */,
 				4B382FF72C5D30A30094FA11 /* Extensions */,
 				4B74F4452C541221008C8393 /* Helper */,
 				4B74F4352C529F76008C8393 /* Screens */,
@@ -1130,6 +1132,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TalkToMe/TalkToMe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TalkToMe/Preview Content\"";
@@ -1167,6 +1170,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TalkToMe/TalkToMe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TalkToMe/Preview Content\"";
