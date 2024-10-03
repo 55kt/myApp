@@ -27,7 +27,32 @@ const logger = require("firebase-functions/logger");
 
 const channelMessageRef = "/channel-messages/{channelId}/{messageId}"
 
-exports.listenForNewMessages = functions.database
+exports.sendNotificationsForMessages = functions.database
+.ref(channelMessageRef)
+.onCreate(async (snapshot, context) => {
+  const data = snapshot.val()
+  const textMessage = data.text
+  const senderName = data.channelNameAtSend
+  const chatPartnerFCMTokens = data.chatPartnerFCMTokens
+  const messageType = data.type
+
+  let notificationMessage = textMessage;
+
+  if (messageType == "photo") {
+    notificationMessage = "Sent a photo message"
+  } else if (messageType == "video") {
+    notificationMessage = "Sent a video message"
+  } else if (messageType == "audio") {
+    notificationMessage = "Sent a voice message"
+  }
+
+  for (const fcmToken of chatPartnerFCMTokens) {
+    await sendPushNotifications(notificationMessage, senderName, fcmToken)
+  }
+
+})
+
+listenForNewMessages = functions.database
 .ref(channelMessageRef)
 .onCreate(async (snapshot, context) => {
   const data = snapshot.val()
